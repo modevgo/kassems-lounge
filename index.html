@@ -19,6 +19,9 @@
     actual Jardin Majorelle in Marrakech (clearly captioned as inspiration).
   · Prices are shown as £[..], and opening hours / email / socials are marked
     "to confirm". Replace before final launch.
+  · The FOUNDER section uses [Chef's name] / [her hometown] placeholders and a
+    portrait PLACEHOLDER (no photo is faked); her pull-quote is drafted for her
+    to approve or replace. Confirm all three with the chef before launch.
 -->
 <style>
 /* ==========================================================================
@@ -360,6 +363,67 @@ h1,h2{ text-wrap: balance; }
   z-index: 0; opacity: .8;
 }
 
+/* --------------------------------------------------------------- FOUNDER */
+.founder{
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(900px 620px at -8% 14%, rgba(211,180,116,.12), transparent 60%),
+    radial-gradient(820px 600px at 104% 86%, rgba(20,86,59,.55), transparent 62%),
+    radial-gradient(620px 460px at 96% -6%, rgba(42,60,199,.13), transparent 60%),
+    linear-gradient(180deg, var(--forest-2), var(--forest));
+  padding-block: clamp(5rem, 11vw, 9.75rem);
+}
+.founder-grid{
+  display: grid; grid-template-columns: .9fr 1.1fr;
+  gap: clamp(2.5rem, 7vw, 6rem); align-items: center;
+}
+@media (max-width: 860px){ .founder-grid{ grid-template-columns: 1fr; } }
+.founder .eyebrow{ color: var(--canary); margin-bottom: 1.1rem; }
+.founder .eyebrow::after{ background: var(--gold); }
+.founder h2{ font-size: clamp(2rem, 4.2vw, 3.4rem); margin-bottom: 1.4rem; color: var(--white); }
+.founder h2 em{ font-style: italic; color: #E0C886; }
+.founder p{ margin-bottom: 1.1rem; color: var(--ivory-dim); }
+.founder blockquote{
+  margin-top: 1.8rem; padding-left: 1.4rem;
+  border-left: 3px solid var(--gold);
+  font-family: var(--serif); font-size: 1.35rem; font-style: italic; line-height: 1.45;
+  color: var(--gold-hi);
+}
+.founder blockquote cite{
+  display: block; margin-top: .7rem;
+  font-family: var(--sans); font-style: normal; font-size: .74rem;
+  font-weight: 600; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--mint);
+}
+/* the chef's arch — same arch language as the house frames, in emerald & gold,
+   holding the place of honour until her portrait arrives */
+.portrait{ margin: 0; }
+.portrait .frame::before{ border-color: var(--gold); opacity: .9; }
+.portrait-ph{
+  position: relative; z-index: 1;
+  height: clamp(380px, 50vw, 600px);
+  border-radius: clamp(150px, 17vw, 230px) clamp(150px, 17vw, 230px) 4px 4px;
+  border: 1px solid rgba(201,169,97,.42);
+  background:
+    radial-gradient(circle at 3px 3px, rgba(201,169,97,.20) 1.6px, transparent 2.4px) 0 0 / 19px 19px,
+    radial-gradient(520px 420px at 50% 16%, rgba(47,158,109,.38), transparent 72%),
+    linear-gradient(180deg, var(--emerald) 0%, var(--emerald-deep) 62%, #0A2A1C 100%);
+  box-shadow: 0 34px 70px rgba(2,12,8,.6), 0 10px 26px rgba(2,12,8,.4),
+              inset 0 0 0 10px rgba(7,26,18,.35), inset 0 0 0 11px rgba(201,169,97,.3);
+  display: grid; place-content: center; justify-items: center;
+  gap: .55rem; text-align: center; padding: 2.2rem 1.6rem;
+}
+.portrait-ph .ph-star{ font-size: 2.4rem; line-height: 1; color: var(--canary); text-shadow: 0 0 24px rgba(203,166,90,.45); }
+.portrait-ph .ph-name{ font-family: var(--serif); font-size: clamp(1.6rem, 2.6vw, 2.2rem); font-style: italic; color: var(--ivory); }
+.portrait-ph .ph-role{ font-size: .72rem; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--mint); }
+.portrait-ph .ph-rule{ width: 3.4rem; height: 1px; margin-block: .5rem; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.portrait-ph .ph-note{ font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ivory-dim); }
+.portrait-cap{
+  position: relative; z-index: 1;
+  margin-top: 1.5rem; text-align: center;
+  font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; color: var(--canary);
+}
+
 /* --------------------------------------------- MAJORELLE BAND (signature) */
 .majorelle{
   position: relative; overflow: hidden;
@@ -668,6 +732,7 @@ footer a:hover{ color: var(--mint); }
   <nav aria-label="Main">
     <ul class="nav-links">
       <li class="hide-m"><a href="#story">Our Story</a></li>
+      <li class="hide-m"><a href="#chef">Our Chef</a></li>
       <li class="hide-m"><a href="#kitchen">The Kitchen</a></li>
       <li class="hide-m"><a href="#atmosphere">The Lounge</a></li>
       <li class="hide-m"><a href="#visit">Visit</a></li>
@@ -714,6 +779,40 @@ footer a:hover{ color: var(--mint); }
     <figure class="frame reveal" style="--d:.15s">
       <img src="assets/msemen-tea.jpg" alt="Moroccan breakfast at Kassem's Lounge — msemen and baghrir with amlou, honey and olives, served with a silver teapot on the green velvet banquette" loading="lazy">
     </figure>
+  </div>
+</section>
+
+<!-- ============================================================= FOUNDER
+     HONESTY NOTE (for the client): the chef's NAME and HOMETOWN are
+     placeholders — [Chef's name] / [her hometown] — and the arch holds a
+     PLACEHOLDER, not a photo, until her portrait is supplied. The pull-quote
+     is drafted for her to approve or replace in her own words. The facts
+     stated (founder, head chef, a woman from Morocco, family recipes from
+     home, family-run) are as briefed. -->
+<section class="founder" id="chef" aria-label="Our head chef and founder">
+  <div class="wrap founder-grid">
+    <figure class="portrait reveal">
+      <div class="frame">
+        <div class="portrait-ph" role="img" aria-label="Placeholder for a portrait of our head chef and founder — photograph to follow">
+          <span class="ph-star" aria-hidden="true">&#10022;</span>
+          <span class="ph-name">[Chef&rsquo;s name]</span>
+          <span class="ph-role">Head chef &amp; founder</span>
+          <span class="ph-rule" aria-hidden="true"></span>
+          <span class="ph-note">Photograph to follow</span>
+        </div>
+      </div>
+      <figcaption class="portrait-cap">Our head chef &mdash; portrait to come</figcaption>
+    </figure>
+    <div class="reveal" style="--d:.15s">
+      <p class="eyebrow"><span class="ar" lang="ar" dir="rtl">&#1575;&#1604;&#1591;&#1575;&#1607;&#1610;&#1577;</span> &middot; The woman behind Kassem&rsquo;s</p>
+      <h2>Before there was a lounge, there was <em>her kitchen</em></h2>
+      <p>Kassem&rsquo;s begins with one woman. Our founder and head chef, [Chef&rsquo;s name], grew up in [her hometown], Morocco, in a home where the kitchen was never quiet &mdash; where she learned at her mother&rsquo;s side how semolina should feel between the fingers, how long a tagine can wait (longer than you think), and why the tea is always poured from a height.</p>
+      <p>When she came to England, she carried those recipes with her &mdash; not in a book, but in her hands: the dishes of her family&rsquo;s table, measured by memory and made by heart. In Hemel Hempstead she built them a home of their own and called it Kassem&rsquo;s Lounge &mdash; family-run from the first day, where the food is cooked the way it has always been cooked and every guest is welcomed the way guests are welcomed in Morocco: warmly, generously, never in a hurry.</p>
+      <p>Everything on this page passes through her hands. The bread of the old medinas, the preserved lemon of the souks, the couscous of the Atlas &mdash; she leads the kitchen every day, tasting every pot, and she would rather serve you slowly than serve you anything her mother wouldn&rsquo;t recognise. When you eat at Kassem&rsquo;s, you are eating at her table.</p>
+      <blockquote>&ldquo;I didn&rsquo;t bring recipes to England. I brought my family&rsquo;s kitchen.&rdquo;
+        <cite>&mdash; [Chef&rsquo;s name] &middot; founder &amp; head chef</cite>
+      </blockquote>
+    </div>
   </div>
 </section>
 
@@ -911,6 +1010,7 @@ footer a:hover{ color: var(--mint); }
       <h3>Explore</h3>
       <ul>
         <li><a href="#story">Our story</a></li>
+        <li><a href="#chef">Our chef</a></li>
         <li><a href="#kitchen">The kitchen</a></li>
         <li><a href="#atmosphere">The lounge</a></li>
         <li><a href="#visit">Find us</a></li>
