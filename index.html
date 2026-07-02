@@ -1,0 +1,959 @@
+<title>Kassem's Lounge — A Taste of Morocco in the Heart of Hemel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+/* ============================================================
+   KASSEM'S LOUNGE — "Riad at Dusk"
+   Ground:   #121A36  midnight Majorelle
+   Panel:    #1B2547 / #212C55  indigo surfaces
+   Brass:    #C9A050 / #E3BC6A  antique gold linework
+   Saffron:  #EFA63F  lantern glow
+   Bone:     #EDE4CF  warm parchment text
+   Spice:    #B8452F  sparing red accent
+   ============================================================ */
+
+* { box-sizing: border-box; }
+
+:root {
+  --night:        #121A36;
+  --night-deep:   #0C1226;
+  --panel:        #1B2547;
+  --panel-2:      #212C55;
+  --majorelle:    #2E3C7E;
+  --brass:        #C9A050;
+  --brass-bright: #E3BC6A;
+  --brass-30:     rgba(201, 160, 80, 0.30);
+  --brass-15:     rgba(201, 160, 80, 0.15);
+  --saffron:      #EFA63F;
+  --bone:         #EDE4CF;
+  --bone-dim:     #CFC5AB;
+  --mute:         #A79F86;
+  --spice:        #B8452F;
+  --serif: "Hoefler Text", "Palatino", "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  --sans: "Avenir Next", "Avenir", "Seravek", "Segoe UI", "Trebuchet MS", system-ui, sans-serif;
+  --measure: 65ch;
+  --pad: clamp(1.25rem, 5vw, 4rem);
+}
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  background: var(--night);
+  color: var(--bone-dim);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--brass); color: var(--night-deep); }
+
+a { color: var(--brass-bright); text-decoration-color: var(--brass-30); text-underline-offset: 3px; }
+a:hover { color: var(--bone); text-decoration-color: var(--brass); }
+
+:focus-visible {
+  outline: 2px solid var(--saffron);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  color: var(--bone);
+  font-weight: 600;
+  line-height: 1.12;
+  text-wrap: balance;
+  margin: 0;
+}
+
+p { margin: 0 0 1.1em; max-width: var(--measure); }
+
+.svg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* ---------- shared bits ---------- */
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brass);
+  display: flex;
+  align-items: center;
+  gap: 0.9em;
+  margin: 0 0 1.4rem;
+}
+.eyebrow::before {
+  content: "";
+  width: 2.25rem;
+  height: 1px;
+  background: var(--brass);
+  flex: none;
+}
+
+section { scroll-margin-top: 5.5rem; }
+.wrap { max-width: 72rem; margin-inline: auto; padding-inline: var(--pad); }
+
+.zdivider {
+  display: block;
+  width: min(46rem, 86%);
+  height: 3.4rem;
+  margin: 0 auto;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
+}
+
+/* ---------- nav ---------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(12, 18, 38, 0.86);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--brass-15);
+}
+.nav-inner {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 0.8rem var(--pad);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.wordmark {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  color: var(--bone);
+  text-decoration: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+}
+.wordmark:hover { color: var(--bone); }
+.wordmark small {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+.nav-links {
+  display: flex;
+  gap: 1.6rem;
+  margin-left: auto;
+  align-items: center;
+}
+.nav-links a {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+  text-decoration: none;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid transparent;
+}
+.nav-links a:hover { color: var(--brass-bright); border-bottom-color: var(--brass); }
+.nav-cta {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--night-deep) !important;
+  background: var(--brass);
+  text-decoration: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px 999px 999px 999px;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--brass-bright); color: var(--night-deep) !important; }
+@media (max-width: 46rem) {
+  .nav-links a:not(.nav-cta) { display: none; }
+}
+@media (max-width: 30rem) {
+  .cta-book { display: none; }
+  .nav-inner { gap: 0.8rem; }
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(58rem 30rem at 82% 105%, rgba(239, 166, 63, 0.14), transparent 62%),
+    radial-gradient(40rem 26rem at 8% -10%, rgba(46, 60, 126, 0.55), transparent 65%),
+    linear-gradient(180deg, #0E1530 0%, #121A36 55%, #18203F 100%);
+}
+.hero-grid {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: clamp(3rem, 7vh, 5.5rem) var(--pad) 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: end;
+  min-height: min(88svh, 56rem);
+}
+.hero-copy { padding-bottom: clamp(3rem, 8vh, 6rem); }
+.hero h1 {
+  font-size: clamp(2.5rem, 5.6vw, 4.4rem);
+  letter-spacing: -0.015em;
+  margin: 0 0 1.4rem;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--brass-bright);
+}
+.hero-sub {
+  font-size: clamp(1.02rem, 1.4vw, 1.16rem);
+  max-width: 34rem;
+  color: var(--bone-dim);
+  margin-bottom: 2.2rem;
+}
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 0.9rem; align-items: center; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-decoration: none;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.btn-solid { background: var(--brass); color: var(--night-deep); }
+.btn-solid:hover { background: var(--brass-bright); color: var(--night-deep); }
+.btn-ghost { border-color: var(--brass-30); color: var(--bone); }
+.btn-ghost:hover { border-color: var(--brass); color: var(--brass-bright); }
+
+.hero-arch-col {
+  align-self: end;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+.hero-arch {
+  display: block;
+  width: min(100%, 27rem);
+  height: auto;
+}
+@media (max-width: 52rem) {
+  .hero-grid { grid-template-columns: 1fr; align-items: start; min-height: 0; }
+  .hero-copy { padding-top: 1rem; padding-bottom: 0; }
+  .hero-arch { width: min(78%, 20rem); margin-inline: auto; }
+}
+
+.lantern { animation: breathe 9s ease-in-out infinite; transform-origin: 240px 470px; }
+.glint { fill: none; stroke: var(--brass-bright); stroke-width: 2; opacity: 0.35; animation: twinkle 7s ease-in-out infinite; }
+.glint.g2 { animation-delay: 2.3s; }
+.glint.g3 { animation-delay: 4.6s; }
+@keyframes breathe {
+  0%, 100% { opacity: 0.85; transform: translateY(0); }
+  50%      { opacity: 1;    transform: translateY(-14px); }
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50%      { opacity: 0.95; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lantern, .glint { animation: none; }
+}
+
+/* ---------- sections ---------- */
+
+.section { padding: clamp(3.5rem, 9vh, 6.5rem) 0; }
+
+.story-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+@media (max-width: 52rem) {
+  .story-grid { grid-template-columns: 1fr; }
+}
+.story h2, .menu h2, .experience h2, .visit h2 {
+  font-size: clamp(1.75rem, 3.4vw, 2.6rem);
+  margin-bottom: 1.6rem;
+}
+.facts {
+  list-style: none;
+  margin: 2.4rem 0 0;
+  padding: 1.4rem 0 0;
+  border-top: 1px solid var(--brass-15);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+}
+.facts li {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.tea-card {
+  background: var(--panel);
+  border: 1px solid var(--brass-15);
+  padding: 1.8rem 1.8rem 1.5rem;
+  border-radius: 120px 120px 10px 10px;
+  text-align: center;
+}
+.tea-card .ph { margin: 0 0 1rem; }
+.tea-note {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--bone);
+  max-width: none;
+  margin: 0;
+}
+
+/* ---------- placeholders (arch-framed image slots) ---------- */
+
+.ph { margin: 0; }
+.ph svg { display: block; width: 100%; height: auto; }
+.ph figcaption {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+  text-align: center;
+  margin-top: 0.8rem;
+}
+.arch-line { fill: none; stroke: var(--brass); stroke-width: 1.6; }
+.arch-line.thin { stroke-width: 0.7; opacity: 0.55; }
+.ph-star { fill: none; stroke: rgba(227, 188, 106, 0.55); stroke-width: 2.4; }
+
+/* ---------- menu ---------- */
+
+.menu-head { max-width: 46rem; }
+.menu-note {
+  font-size: 0.85rem;
+  color: var(--mute);
+  border-left: 2px solid var(--spice);
+  padding-left: 0.9rem;
+  max-width: 40rem;
+}
+.menu-features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.2rem, 2.5vw, 2rem);
+  margin: 3rem 0 3.5rem;
+}
+@media (max-width: 52rem) {
+  .menu-features { grid-template-columns: 1fr; max-width: 24rem; margin-inline: auto; }
+}
+.feature {
+  background: var(--panel);
+  border: 1px solid var(--brass-15);
+  border-radius: 10px;
+  padding: 1.6rem 1.5rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+.feature .ph { margin-bottom: 1.2rem; }
+.feature h3 {
+  font-size: 1.32rem;
+  margin-bottom: 0.5rem;
+}
+.feature p { font-size: 0.95rem; color: var(--bone-dim); margin-bottom: 1rem; }
+.feature .price {
+  margin-top: auto;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--brass-bright);
+  font-variant-numeric: tabular-nums;
+}
+
+.menu-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+@media (max-width: 52rem) {
+  .menu-groups { grid-template-columns: 1fr; }
+}
+.mgroup {
+  border-top: 1px solid var(--brass-30);
+  padding-top: 1.4rem;
+}
+.mgroup h3 {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 1.2rem;
+}
+.mgroup dl { margin: 0; }
+.mrow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  margin-bottom: 0.35rem;
+}
+.mrow dt {
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  color: var(--bone);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mrow .leader {
+  flex: 1;
+  border-bottom: 1px dotted var(--brass-30);
+  transform: translateY(-4px);
+  min-width: 1.5rem;
+}
+.mrow .price {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--brass-bright);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.mdesc {
+  margin: 0 0 1.15rem;
+  font-size: 0.9rem;
+  color: var(--mute);
+  max-width: none;
+}
+
+/* ---------- experience ---------- */
+
+.experience {
+  background:
+    radial-gradient(46rem 22rem at 50% 118%, rgba(239, 166, 63, 0.10), transparent 65%),
+    var(--night-deep);
+  border-top: 1px solid var(--brass-15);
+  border-bottom: 1px solid var(--brass-15);
+}
+.exp-lede {
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  font-style: italic;
+  color: var(--bone);
+  max-width: 44rem;
+  margin-bottom: 2.6rem;
+}
+.exp-cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.4rem, 3vw, 3rem);
+}
+@media (max-width: 52rem) {
+  .exp-cols { grid-template-columns: 1fr; }
+}
+.exp-col h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--brass-30);
+}
+.exp-col p { font-size: 0.95rem; margin: 0; }
+
+/* ---------- visit ---------- */
+
+.visit-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+@media (max-width: 52rem) {
+  .visit-grid { grid-template-columns: 1fr; }
+}
+.vblock { margin-bottom: 1.9rem; }
+.vblock h3 {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 0.5rem;
+}
+.vblock p { margin-bottom: 0.3em; }
+.vblock .big {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: var(--bone);
+}
+.tbc {
+  color: var(--mute);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+.map-card {
+  background: var(--panel);
+  border: 1px solid var(--brass-15);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.map-card svg { display: block; width: 100%; height: auto; }
+.map-caption {
+  padding: 0.7rem 1.1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mute);
+  border-top: 1px solid var(--brass-15);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.map-label { font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; fill: var(--bone-dim); }
+.map-label.brand { fill: var(--bone); font-size: 15px; }
+.map-small { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.14em; fill: var(--mute); text-transform: uppercase; }
+
+/* ---------- footer ---------- */
+
+footer {
+  border-top: 1px solid var(--brass-15);
+  background: var(--night-deep);
+  padding: 3rem 0 2.2rem;
+}
+.foot-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 4rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.foot-brand .wordmark { font-size: 1.5rem; padding: 0; }
+.foot-tag {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--brass-bright);
+  margin: 0.6rem 0 0;
+  font-size: 1rem;
+}
+.foot-meta { font-size: 0.9rem; color: var(--mute); }
+.foot-meta p { margin-bottom: 0.25em; }
+.small-print {
+  margin-top: 2.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--brass-15);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: var(--mute);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  justify-content: space-between;
+}
+
+/* ---------- reveal on scroll ---------- */
+
+body.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+body.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  body.js .reveal { opacity: 1; transform: none; transition: none; }
+}
+</style>
+
+<!-- Shared geometry: khatam (8-point star) + star-and-cross zellige tessellation + horseshoe-arch clips -->
+<svg class="svg-defs" aria-hidden="true" focusable="false">
+  <defs>
+    <path id="khatam" d="M28.28 0L20 8.28 20 20 8.28 20 0 28.28-8.28 20-20 20-20 8.28-28.28 0-20-8.28-20-20-8.28-20 0-28.28 8.28-20 20-20 20-8.28Z"/>
+    <pattern id="zellige" width="80" height="80" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="rgba(201,160,80,0.30)" stroke-width="1">
+        <use href="#khatam" transform="translate(0 0)"/>
+        <use href="#khatam" transform="translate(80 0)"/>
+        <use href="#khatam" transform="translate(0 80)"/>
+        <use href="#khatam" transform="translate(80 80)"/>
+        <use href="#khatam" transform="translate(40 40)"/>
+      </g>
+    </pattern>
+    <clipPath id="archClip">
+      <path d="M30.7 145A80 80 0 1 1 169.3 145L169.3 250 30.7 250Z"/>
+    </clipPath>
+    <clipPath id="heroArchClip">
+      <path d="M66.8 400A200 200 0 1 1 413.2 400L413.2 620 66.8 620Z"/>
+    </clipPath>
+    <radialGradient id="phGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#EFA63F" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#EFA63F" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="heroGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#EFA63F" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#EFA63F" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#EFA63F" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="duskIn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#232C61"/>
+      <stop offset="55%" stop-color="#2A3060"/>
+      <stop offset="82%" stop-color="#523447"/>
+      <stop offset="100%" stop-color="#7A4E33"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="#top">Kassem's <small>Lounge</small></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#menu">Menu</a>
+      <a href="#story">Story</a>
+      <a href="#visit">Visit</a>
+      <a href="#order">Order</a>
+      <a class="nav-cta" href="tel:01442954333"><span class="cta-book">Book a table · </span>01442 954333</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Kassem's Lounge · Family-run · Moroccan kitchen</p>
+      <h1>A taste of Morocco, in the heart of <em>Hemel</em>.</h1>
+      <p class="hero-sub">Tagines that have taken their time. Couscous steamed the long way. Mint tea poured from a height, the way it's done at home — served opposite the Water Gardens, Hemel Hempstead.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-solid" href="tel:01442954333">Book a table · 01442 954333</a>
+        <a class="btn btn-ghost" href="#menu">View the menu</a>
+      </div>
+    </div>
+    <div class="hero-arch-col">
+      <svg class="hero-arch" viewBox="0 0 480 620" aria-hidden="true" focusable="false">
+        <g clip-path="url(#heroArchClip)">
+          <rect width="480" height="620" fill="url(#duskIn)"/>
+          <circle class="lantern" cx="240" cy="470" r="190" fill="url(#heroGlow)"/>
+          <rect width="480" height="620" fill="url(#zellige)"/>
+          <use href="#khatam" class="glint g1" transform="translate(160 240) scale(0.62)"/>
+          <use href="#khatam" class="glint g2" transform="translate(320 360) scale(0.62)"/>
+          <use href="#khatam" class="glint g3" transform="translate(200 480) scale(0.62)"/>
+        </g>
+        <path d="M66.8 400A200 200 0 1 1 413.2 400L413.2 620M66.8 400L66.8 620" fill="none" stroke="#C9A050" stroke-width="2.2"/>
+        <path d="M55 406A212 212 0 1 1 425 406L425 620M55 406L55 620" fill="none" stroke="rgba(201,160,80,0.35)" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ STORY ============================ -->
+<section class="section story" id="story">
+  <div class="wrap story-grid">
+    <div class="reveal">
+      <p class="eyebrow">Our story</p>
+      <h2>It begins, as it always does, with mint tea.</h2>
+      <p>Before anything else at Kassem's, there is tea — poured high from a silver pot until the glass froths, sweet with fresh mint. It is how guests have been welcomed in Moroccan homes for generations, and it is how we welcome you.</p>
+      <p>Kassem's Lounge is a family-run kitchen and lounge in Hemel Hempstead, just opposite the Water Gardens. The recipes come from home: harira the way it is ladled out at dusk, tagines left on a low flame until the lamb gives up arguing, couscous steamed and raked and steamed again, bread that exists chiefly to chase the sauce.</p>
+      <p>We cook the whole Moroccan day — breakfasts of msemen and amlou, long lunches, slow dinners — and we keep the pot warm for whoever comes through the door.</p>
+      <ul class="facts">
+        <li>Family-run</li>
+        <li>Opposite the Water Gardens</li>
+        <li>Breakfast · Lunch · Dinner</li>
+        <li>Delivery available</li>
+      </ul>
+    </div>
+    <div class="tea-card reveal">
+      <figure class="ph">
+        <svg viewBox="0 0 200 256" role="img" aria-label="Placeholder for a photograph of Moroccan mint tea being poured from a silver teapot">
+          <g clip-path="url(#archClip)">
+            <rect width="200" height="256" fill="#212C55"/>
+            <circle cx="100" cy="165" r="95" fill="url(#phGlow)"/>
+            <rect width="200" height="256" fill="url(#zellige)"/>
+          </g>
+          <path class="arch-line" d="M30.7 145A80 80 0 1 1 169.3 145L169.3 250 30.7 250Z"/>
+          <path class="arch-line thin" d="M37.6 141A72 72 0 1 1 162.4 141M162.4 141L162.4 250M37.6 141L37.6 250"/>
+          <use href="#khatam" class="ph-star" transform="translate(100 152) scale(0.55)"/>
+        </svg>
+        <figcaption>Photo to come — the mint-tea pour</figcaption>
+      </figure>
+      <p class="tea-note">"Atay" first, always. The rest of the menu can wait its turn.</p>
+    </div>
+  </div>
+</section>
+
+<svg class="zdivider" viewBox="0 0 1200 80" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+  <rect width="1200" height="80" fill="url(#zellige)"/>
+</svg>
+
+<!-- ============================ MENU ============================ -->
+<section class="section menu" id="menu">
+  <div class="wrap">
+    <div class="menu-head reveal">
+      <p class="eyebrow">Menu highlights</p>
+      <h2>Cooked slow, served generous.</h2>
+      <p class="menu-note">A sample of what we serve — dish prices are being confirmed and are shown as £[..]. Call <a href="tel:01442954333">01442 954333</a> for today's menu and specials.</p>
+    </div>
+
+    <div class="menu-features">
+      <article class="feature reveal">
+        <figure class="ph">
+          <svg viewBox="0 0 200 256" role="img" aria-label="Placeholder for a photograph of lamb tagine with prunes and almonds">
+            <g clip-path="url(#archClip)">
+              <rect width="200" height="256" fill="#212C55"/>
+              <circle cx="100" cy="165" r="95" fill="url(#phGlow)"/>
+              <rect width="200" height="256" fill="url(#zellige)"/>
+            </g>
+            <path class="arch-line" d="M30.7 145A80 80 0 1 1 169.3 145L169.3 250 30.7 250Z"/>
+            <path class="arch-line thin" d="M37.6 141A72 72 0 1 1 162.4 141M162.4 141L162.4 250M37.6 141L37.6 250"/>
+            <use href="#khatam" class="ph-star" transform="translate(100 152) scale(0.55)"/>
+          </svg>
+          <figcaption>Photo to come — lamb tagine</figcaption>
+        </figure>
+        <h3>Lamb Tagine, Prunes &amp; Almonds</h3>
+        <p>Shoulder of lamb cooked low under a clay lid with prunes, toasted almonds, cinnamon and a whisper of honey — sweet, dark and falling apart.</p>
+        <p class="price">£[..]</p>
+      </article>
+
+      <article class="feature reveal">
+        <figure class="ph">
+          <svg viewBox="0 0 200 256" role="img" aria-label="Placeholder for a photograph of pastilla, a filo pie dusted with icing sugar and cinnamon">
+            <g clip-path="url(#archClip)">
+              <rect width="200" height="256" fill="#212C55"/>
+              <circle cx="100" cy="165" r="95" fill="url(#phGlow)"/>
+              <rect width="200" height="256" fill="url(#zellige)"/>
+            </g>
+            <path class="arch-line" d="M30.7 145A80 80 0 1 1 169.3 145L169.3 250 30.7 250Z"/>
+            <path class="arch-line thin" d="M37.6 141A72 72 0 1 1 162.4 141M162.4 141L162.4 250M37.6 141L37.6 250"/>
+            <use href="#khatam" class="ph-star" transform="translate(100 152) scale(0.55)"/>
+          </svg>
+          <figcaption>Photo to come — pastilla</figcaption>
+        </figure>
+        <h3>Pastilla (B'stilla)</h3>
+        <p>The famous sweet-savoury pie: spiced chicken and almonds folded in crisp warqa pastry, finished with icing sugar and cinnamon. A festival dish, any day you like.</p>
+        <p class="price">£[..]</p>
+      </article>
+
+      <article class="feature reveal">
+        <figure class="ph">
+          <svg viewBox="0 0 200 256" role="img" aria-label="Placeholder for a photograph of couscous royale piled with vegetables and meats">
+            <g clip-path="url(#archClip)">
+              <rect width="200" height="256" fill="#212C55"/>
+              <circle cx="100" cy="165" r="95" fill="url(#phGlow)"/>
+              <rect width="200" height="256" fill="url(#zellige)"/>
+            </g>
+            <path class="arch-line" d="M30.7 145A80 80 0 1 1 169.3 145L169.3 250 30.7 250Z"/>
+            <path class="arch-line thin" d="M37.6 141A72 72 0 1 1 162.4 141M162.4 141L162.4 250M37.6 141L37.6 250"/>
+            <use href="#khatam" class="ph-star" transform="translate(100 152) scale(0.55)"/>
+          </svg>
+          <figcaption>Photo to come — couscous royale</figcaption>
+        </figure>
+        <h3>Couscous Royale</h3>
+        <p>Hand-rolled grains steamed until featherlight, crowned with slow vegetables, chickpeas, lamb, chicken and merguez, with broth on the side for pouring.</p>
+        <p class="price">£[..]</p>
+      </article>
+    </div>
+
+    <div class="menu-groups">
+      <div class="mgroup reveal">
+        <h3>To begin</h3>
+        <dl>
+          <div class="mrow"><dt>Harira</dt><span class="leader"></span><dd class="price">£[..]</dd></div>
+          <p class="mdesc">Morocco's beloved soup — tomato, lentils, chickpeas and fine noodles, warm with ginger and coriander.</p>
+          <div class="mrow"><dt>Zaalouk</dt><span class="leader"></span><dd class="price">£[..]</dd></div>
+          <p class="mdesc">Smoky aubergine and tomato, crushed with garlic, cumin and olive oil. Bread is not optional.</p>
+          <div class="mrow"><dt>Briouats</dt><span class="leader"></span><dd class="price">£[..]</dd></div>
+          <p class="mdesc">Crisp filo triangles, filled and fried — spiced meat or herbed cheese.</p>
+        </dl>
+      </div>
+
+      <div class="mgroup reveal">
+        <h3>Tagines &amp; grand plates</h3>
+        <dl>
+          <div class="mrow"><dt>Chicken Tagine</dt><span class="leader"></span><dd class="price">£[..]</dd></div>
+          <p class="mdesc">With preserved lemon and green olives — sharp, golden and deeply savoury.</p>
+          <div class="mrow"><dt>Kefta &amp; Egg Tagine</dt><span class="leader"></span><dd class="price">£[..]</dd></div>
+          <p class="mdesc">Spiced meatballs simmered in tomato, eggs cracked in at the last minute, still bubbling at the table.</p>
+          <div class="mrow"><dt>Seven-Vegetable Tagine</dt><span class="leader"></span><dd class="price">£[..]</dd></div>
+          <p class="mdesc">The classic garden tagine — a different seven by season, always over couscous or with bread.</p>
+          <div class="mrow"><dt>Mechoui</dt><span class="leader"></span><dd class="price">£[..]</dd></div>
+          <p class="mdesc">Slow-roast lamb, seasoned simply with cumin and salt, tender enough to serve with a spoon.</p>
+        </dl>
+      </div>
+
+      <div class="mgroup reveal">
+        <h3>Moroccan mornings</h3>
+        <dl>
+          <div class="mrow"><dt>The Moroccan Breakfast</dt><span class="leader"></span><dd class="price">£[..]</dd></div>
+          <p class="mdesc">A spread to share: msemen flatbreads, baghrir "thousand-hole" pancakes, khlea preserved beef with eggs, amlou, olives and honey — with mint tea, of course.</p>
+          <div class="mrow"><dt>Msemen with Honey &amp; Amlou</dt><span class="leader"></span><dd class="price">£[..]</dd></div>
+          <p class="mdesc">Flaky pan-fried squares with almond-argan amlou for dipping.</p>
+          <div class="mrow"><dt>Baghrir</dt><span class="leader"></span><dd class="price">£[..]</dd></div>
+          <p class="mdesc">Semolina pancakes that drink up warm honey and butter through a thousand holes.</p>
+        </dl>
+      </div>
+
+      <div class="mgroup reveal">
+        <h3>Mint tea &amp; sweet things</h3>
+        <dl>
+          <div class="mrow"><dt>Moroccan Mint Tea</dt><span class="leader"></span><dd class="price">£[..]</dd></div>
+          <p class="mdesc">Gunpowder green tea and fresh mint, poured from a height for the froth. Served by the glass or the pot.</p>
+          <div class="mrow"><dt>Kaab el Ghazal</dt><span class="leader"></span><dd class="price">£[..]</dd></div>
+          <p class="mdesc">"Gazelle horns" — crescents of pastry around orange-blossom almond paste.</p>
+          <div class="mrow"><dt>Chebakia</dt><span class="leader"></span><dd class="price">£[..]</dd></div>
+          <p class="mdesc">Sesame-honey roses, fried and glossed — the taste of Ramadan evenings.</p>
+          <div class="mrow"><dt>Sellou</dt><span class="leader"></span><dd class="price">£[..]</dd></div>
+          <p class="mdesc">A rich, toasty spoon-sweet of ground almonds, sesame and browned flour.</p>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ EXPERIENCE ============================ -->
+<section class="section experience" id="experience">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">The lounge</p>
+      <h2>Lantern light, low tables, no hurry.</h2>
+      <p class="exp-lede">A lounge, in the Moroccan sense: a place you settle into, not a table you're turned from. Come at dusk and stay past it.</p>
+    </div>
+    <div class="exp-cols">
+      <div class="exp-col reveal">
+        <h3>The welcome</h3>
+        <p>Tea arrives before the menu does. In Morocco hospitality isn't a service style, it's a reflex — and this is a family room as much as a dining room.</p>
+      </div>
+      <div class="exp-col reveal">
+        <h3>The food</h3>
+        <p>Nothing here is rushed, because nothing in a tagine can be. Spices are toasted, broths are patient, and dishes arrive when they're ready — properly ready.</p>
+      </div>
+      <div class="exp-col reveal">
+        <h3>The pace</h3>
+        <p>Linger. Order another pot of tea, split one more pastry, let the conversation go around again. That's what the cushions are for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ VISIT ============================ -->
+<section class="section visit" id="visit">
+  <div class="wrap visit-grid">
+    <div class="reveal">
+      <p class="eyebrow">Visit us</p>
+      <h2>Opposite the Water Gardens.</h2>
+
+      <div class="vblock">
+        <h3>Find us</h3>
+        <p class="big">[Street address to confirm]</p>
+        <p>Opposite the Water Gardens<br>Hemel Hempstead, Hertfordshire</p>
+      </div>
+
+      <div class="vblock">
+        <h3>Call or book</h3>
+        <p class="big"><a href="tel:01442954333">01442 954333</a></p>
+        <p>Call to book a table, ask about today's tagines, or order for collection.</p>
+      </div>
+
+      <div class="vblock">
+        <h3>Hours</h3>
+        <p class="tbc">Opening hours to confirm — please call ahead. We serve Moroccan breakfast, lunch and dinner.</p>
+      </div>
+
+      <div class="vblock" id="order">
+        <h3>Order &amp; delivery</h3>
+        <p>Delivery is available — the tagines travel better than you'd think. Call <a href="tel:01442954333">01442 954333</a> to order to your door.</p>
+      </div>
+    </div>
+
+    <div class="map-card reveal">
+      <svg viewBox="0 0 420 320" role="img" aria-label="Stylised map showing Kassem's Lounge opposite the Water Gardens in Hemel Hempstead town centre">
+        <rect width="420" height="320" fill="#1B2547"/>
+        <!-- water gardens band -->
+        <path d="M118 -10 C 96 70 108 130 96 200 C 88 252 96 296 108 330 L 160 330 C 148 292 140 250 148 198 C 158 128 146 68 168 -10 Z" fill="#25406B"/>
+        <path d="M126 4 C 108 72 118 132 106 202 C 99 250 106 292 116 322" fill="none" stroke="rgba(237,228,207,0.22)" stroke-width="1.4"/>
+        <path d="M150 4 C 132 74 142 130 130 200 C 123 250 130 292 140 322" fill="none" stroke="rgba(237,228,207,0.14)" stroke-width="1.2"/>
+        <!-- garden trees along the water -->
+        <g fill="none" stroke="rgba(201,160,80,0.55)" stroke-width="1.3">
+          <circle cx="185" cy="70" r="7"/>
+          <circle cx="178" cy="130" r="9"/>
+          <circle cx="172" cy="196" r="7"/>
+          <circle cx="180" cy="252" r="8"/>
+          <circle cx="82" cy="110" r="7"/>
+          <circle cx="76" cy="220" r="8"/>
+        </g>
+        <!-- streets -->
+        <g stroke="rgba(201,160,80,0.22)" stroke-width="4" fill="none">
+          <path d="M232 -10 L 224 330"/>
+          <path d="M226 150 L 430 122"/>
+          <path d="M228 250 L 430 268"/>
+        </g>
+        <!-- marker: khatam star -->
+        <circle cx="284" cy="142" r="26" fill="none" stroke="rgba(239,166,63,0.35)" stroke-width="1"/>
+        <use href="#khatam" transform="translate(284 142) scale(0.5)" fill="#EFA63F" stroke="#0C1226" stroke-width="2"/>
+        <text class="map-label brand" x="284" y="98" text-anchor="middle">Kassem's Lounge</text>
+        <text class="map-small" x="284" y="190" text-anchor="middle">[street] — to confirm</text>
+        <text class="map-small" x="52" y="304">The Water Gardens</text>
+        <text class="map-small" x="408" y="146" text-anchor="end">Town centre</text>
+        <!-- north arrow -->
+        <g transform="translate(388 34)" stroke="rgba(237,228,207,0.5)" fill="none" stroke-width="1.2">
+          <path d="M0 12 L0 -12 M0 -12 L-5 -3 M0 -12 L5 -3"/>
+        </g>
+        <text class="map-small" x="388" y="62" text-anchor="middle">N</text>
+      </svg>
+      <p class="map-caption"><span>Opposite the Water Gardens · Hemel Hempstead</span><span>Illustrative — not to scale</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="wordmark" href="#top">Kassem's <small>Lounge</small></a>
+      <p class="foot-tag">A Taste of Morocco in the Heart of Hemel.</p>
+    </div>
+    <div class="foot-meta">
+      <p><a href="tel:01442954333">01442 954333</a></p>
+      <p>[Street address to confirm] — opposite the Water Gardens</p>
+      <p>Hemel Hempstead, Hertfordshire</p>
+    </div>
+    <div class="foot-meta">
+      <p>Family-run · Delivery available</p>
+      <p class="tbc">Hours, email &amp; social links to confirm</p>
+    </div>
+  </div>
+  <div class="wrap small-print">
+    <span>© 2026 Kassem's Lounge, Hemel Hempstead</span>
+    <span>Sample menu — prices &amp; details to be confirmed by the restaurant</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.body.classList.add('js');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.reveal');
+  if (reduced || !('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
