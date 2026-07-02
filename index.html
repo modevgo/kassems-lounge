@@ -22,21 +22,21 @@
 -->
 <style>
 /* ==========================================================================
-   KASSEM'S LOUNGE — "Majorelle Blue at Dusk"
-   Palette
-     Majorelle blue   #2A3CC7   signature vivid cobalt (bands, accents)
-     Deep majorelle   #161D63   night sections
-     Dusk ground      #0F1338   page ground        Dusk panel #181F55
-     Ink              #101228   footer
-     Saffron (radiant)#E9B94D   warm glows
-     Radiant gold     #E6C158   gold TEXT accents (eyebrows, prices, links)
-     24k gold-leaf    #FBEEC2 → #F3D77F → #E4B93B → #C9962B → #F0CE6E
-                                CTA gradient — champagne specular over warm 24k,
-                                with a diagonal gloss + hover lustre sweep
-     Velvet emerald   #0F3D2A–#14563B   SIGNATURE green — the tufted emerald
-                                banquettes (tea band + Atmosphere grounds, fills)
-     Emerald stroke   #27835B   signature green for rules, keylines, borders
+   KASSEM'S LOUNGE — "Velvet Emerald"
+   Palette — GREEN leads the house, blue is the deliberate Marrakech accent,
+   gold is the metal.
+     Forest ground    #0B2E20   page ground        Forest panel #113B28
+     Deep forest      #0D3626   section grounds
+     Velvet emerald   #0F3D2A–#14563B   the tufted emerald banquettes —
+                                the PRIMARY colour of the house
+     Emerald stroke   #27835B   rules, keylines, borders
      Atay mint        #7BD8AC   fresh mint — green text/linework on dark (AA)
+     Majorelle blue   #2A3CC7   SECONDARY accent — one blue band + fine
+                                details, a nod to the blue gardens of Marrakech
+     Classic gold     #E4D29A → #D3B878 → #C2A05C → #B08A44
+                                CTA metal — antique gilt: warm, matte-satin,
+                                one quiet top light, no lemon gloss
+     Gold text        #D9BC7B   eyebrows, prices, links (AA on forest grounds)
      Terracotta       #D9784A   warm accent, frames
      Ivory            #F0EADB   text on dark
    Type: high-contrast serif display (Didot/Bodoni/Playfair stack)
@@ -46,21 +46,21 @@
 
 :root{
   --majorelle:      #2A3CC7;
-  --majorelle-deep: #161D63;
-  --dusk:           #0F1338;
-  --dusk-2:         #131A4A;
-  --panel:          #181F55;
-  --ink:            #101228;
-  --saffron:        #E9B94D;
-  --canary:         #E6C158;
-  --gold-hi:        #F3D77F;
-  --gold:           #E4B93B;
-  --gold-deep:      #C9962B;
-  --gold-spark:     #FBEEC2;
-  /* 24k gold-leaf: diagonal gloss layer over a warm multi-stop metal */
+  --majorelle-deep: #1A2478;
+  --forest:         #0B2E20;
+  --forest-2:       #0D3626;
+  --panel:          #113B28;
+  --ink:            #071A12;
+  --saffron:        #D9A845;
+  --canary:         #D9BC7B;
+  --gold-hi:        #E9D9A8;
+  --gold:           #C9A961;
+  --gold-deep:      #9A783B;
+  --gold-spark:     #F2E7C4;
+  /* classic antique gold — one quiet top light over a warm, restrained metal */
   --grad-gold:
-    linear-gradient(115deg, rgba(255,253,244,0) 22%, rgba(255,251,232,.50) 38%, rgba(255,253,244,0) 52%),
-    linear-gradient(170deg, #FBEEC2 0%, #F3D77F 20%, #E4B93B 48%, #C9962B 76%, #F0CE6E 100%);
+    linear-gradient(180deg, rgba(255,251,238,.28) 0%, rgba(255,251,238,0) 46%),
+    linear-gradient(180deg, #E4D29A 0%, #D3B878 36%, #C2A05C 74%, #B08A44 100%);
   --emerald:        #14563B;
   --emerald-deep:   #0F3D2A;
   --green:          #27835B;
@@ -83,7 +83,7 @@ body{
   font-size: 1.0625rem;
   line-height: 1.75;
   color: var(--ivory);
-  background: var(--dusk);
+  background: var(--forest);
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
 }
@@ -127,10 +127,10 @@ h1,h2{ text-wrap: balance; }
 }
 .nav.scrolled{
   padding-block: .6rem;
-  background: rgba(20, 24, 74, .72);
+  background: rgba(9, 38, 26, .74);
   -webkit-backdrop-filter: blur(14px) saturate(1.3);
   backdrop-filter: blur(14px) saturate(1.3);
-  box-shadow: 0 1px 0 rgba(243,215,127,.45), 0 12px 32px rgba(10,12,40,.4);
+  box-shadow: 0 1px 0 rgba(201,169,97,.42), 0 12px 32px rgba(3,15,10,.45);
 }
 .brand{
   font-family: var(--serif);
@@ -148,17 +148,23 @@ h1,h2{ text-wrap: balance; }
 .nav-book{
   position: relative; overflow: hidden;
   background: var(--grad-gold); color: var(--ink) !important;
-  padding: .55rem 1.15rem !important; border-radius: 999px;
-  border-bottom: none !important; font-weight: 700; white-space: nowrap;
-  box-shadow: 0 6px 20px rgba(212,158,42,.45), 0 0 22px rgba(228,185,59,.28),
-              inset 0 0 0 1px rgba(255,246,214,.55),
-              inset 0 1px 0 rgba(255,255,255,.85), inset 0 -2px 6px rgba(139,94,14,.34);
+  padding: .58rem 1.3rem !important; border-radius: 3px;
+  border-bottom: none !important; white-space: nowrap;
+  font-weight: 600; font-size: .8rem !important;
+  letter-spacing: .12em; text-transform: uppercase;
+  box-shadow: 0 0 0 1px rgba(122,94,44,.85),              /* fine antique edge */
+              0 6px 18px rgba(3,15,10,.4),
+              inset 0 1px 0 rgba(255,250,232,.5);          /* one quiet top light */
   transition: transform .35s var(--ease-out), filter .35s var(--ease-out), box-shadow .35s var(--ease-out);
 }
-.nav-book:hover { transform: translateY(-2px); filter: brightness(1.08) saturate(1.06);
-  box-shadow: 0 10px 28px rgba(212,158,42,.55), 0 0 32px rgba(228,185,59,.4),
-              inset 0 0 0 1px rgba(255,246,214,.6),
-              inset 0 1px 0 rgba(255,255,255,.85), inset 0 -2px 6px rgba(139,94,14,.34); }
+.nav-book:hover { transform: translateY(-1px); filter: brightness(1.05);
+  box-shadow: 0 0 0 1px rgba(122,94,44,.95), 0 9px 24px rgba(3,15,10,.5),
+              inset 0 1px 0 rgba(255,250,232,.55); }
+/* engraved inner keyline — the gilt-frame detail */
+.nav-book::before, .btn-solid::before{
+  content:""; position: absolute; inset: 3px; pointer-events: none;
+  border: 1px solid rgba(94,70,28,.42); border-radius: 1px;
+}
 @media (max-width: 760px){ .nav-links li.hide-m { display: none; } }
 @media (max-width: 480px){
   .nav{ padding-inline: 1rem; }
@@ -171,7 +177,7 @@ h1,h2{ text-wrap: balance; }
   position: relative; min-height: 100svh;
   display: flex; align-items: flex-end;
   color: var(--white); overflow: hidden;
-  background: var(--majorelle-deep);
+  background: var(--emerald-deep);
 }
 .hero-media{ position: absolute; inset: 0; overflow: hidden; }
 .hero-media img{
@@ -187,13 +193,13 @@ h1,h2{ text-wrap: balance; }
 .hero-scrim{
   position: absolute; inset: 0;
   background:
-    linear-gradient(180deg, rgba(16,20,74,.55) 0%, rgba(16,20,74,.10) 34%, rgba(14,18,66,.24) 62%, rgba(12,15,58,.90) 100%),
-    linear-gradient(75deg, rgba(30,42,150,.48) 0%, rgba(30,42,150,0) 55%);
+    linear-gradient(180deg, rgba(7,26,18,.58) 0%, rgba(7,26,18,.10) 34%, rgba(8,30,21,.26) 62%, rgba(6,24,16,.92) 100%),
+    linear-gradient(75deg, rgba(15,61,42,.52) 0%, rgba(15,61,42,0) 55%);
 }
 .hero-glow{
   position: absolute; right: 8%; top: 16%;
   width: clamp(220px, 30vw, 480px); aspect-ratio: 1;
-  background: radial-gradient(circle, rgba(240,198,92,.44) 0%, rgba(236,190,80,.13) 42%, transparent 70%);
+  background: radial-gradient(circle, rgba(219,180,96,.4) 0%, rgba(211,172,84,.12) 42%, transparent 70%);
   filter: blur(6px);
   animation: lantern 6.5s ease-in-out infinite;
   pointer-events: none;
@@ -222,7 +228,7 @@ h1,h2{ text-wrap: balance; }
 .hero h1{
   font-size: clamp(2.7rem, 7.2vw, 6.2rem);
   max-width: 15ch; letter-spacing: -.012em;
-  text-shadow: 0 2px 30px rgba(10,12,40,.45);
+  text-shadow: 0 2px 30px rgba(3,15,10,.5);
 }
 .hero h1 .w{ display: inline-block; overflow: hidden; vertical-align: bottom; }
 .hero h1 .w > span{
@@ -233,9 +239,9 @@ h1,h2{ text-wrap: balance; }
 }
 @keyframes rise{ to { transform: translateY(0); } }
 .hero h1 em{
-  font-style: italic; color: #EBC868;
-  /* gold-leaf luminosity: warm halo + a grounding shade */
-  text-shadow: 0 0 26px rgba(233,185,77,.5), 0 0 60px rgba(228,185,59,.25), 0 2px 22px rgba(10,12,40,.5);
+  font-style: italic; color: #E0C886;
+  /* antique-gilt warmth: a low halo and a grounding shade — no blaze */
+  text-shadow: 0 0 20px rgba(203,166,90,.32), 0 2px 22px rgba(3,15,10,.55);
 }
 .hero-sub{
   margin-top: 1.4rem; max-width: 46ch;
@@ -249,51 +255,46 @@ h1,h2{ text-wrap: balance; }
 }
 @keyframes fadeup{ from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
 .btn{
-  display: inline-flex; align-items: center; gap: .6rem;
-  font-weight: 700; font-size: 1rem; letter-spacing: .03em;
-  text-decoration: none; border-radius: 999px;
-  padding: .95rem 1.9rem;
+  display: inline-flex; align-items: center; gap: .65rem;
+  font-weight: 600; font-size: .86rem; letter-spacing: .12em; text-transform: uppercase;
+  text-decoration: none; border-radius: 3px;
+  padding: 1.02rem 2rem;
   transition: transform .4s var(--ease-out), box-shadow .4s var(--ease-out), filter .4s var(--ease-out), border-color .4s var(--ease-out), color .4s var(--ease-out);
 }
 .btn-solid{
   position: relative; overflow: hidden;
   background: var(--grad-gold); color: var(--ink);
-  text-shadow: 0 1px 0 rgba(255,248,222,.35);
-  box-shadow: 0 12px 36px rgba(212,158,42,.48), 0 2px 8px rgba(139,94,14,.32),
-              0 0 34px rgba(228,185,59,.32),                    /* soft gold aura */
-              inset 0 0 0 1px rgba(255,246,214,.55),            /* gold keyline */
-              inset 0 2px 1px rgba(255,255,255,.9),             /* specular top light-catch */
-              inset 0 -3px 7px rgba(139,94,14,.38);
+  box-shadow: 0 0 0 1px rgba(122,94,44,.85),              /* fine antique edge */
+              0 12px 30px rgba(3,15,10,.42), 0 2px 6px rgba(3,15,10,.3),
+              inset 0 1px 0 rgba(255,250,232,.5);          /* one quiet top light */
 }
 .btn-solid:hover{
-  transform: translateY(-3px); filter: brightness(1.08) saturate(1.06);
-  box-shadow: 0 20px 52px rgba(212,158,42,.58), 0 3px 10px rgba(139,94,14,.34),
-              0 0 46px rgba(232,190,64,.45),
-              inset 0 0 0 1px rgba(255,246,214,.6),
-              inset 0 2px 1px rgba(255,255,255,.9),
-              inset 0 -3px 7px rgba(139,94,14,.38);
+  transform: translateY(-2px); filter: brightness(1.05);
+  box-shadow: 0 0 0 1px rgba(122,94,44,.95),
+              0 18px 40px rgba(3,15,10,.5), 0 3px 8px rgba(3,15,10,.32),
+              inset 0 1px 0 rgba(255,250,232,.55);
 }
-/* lustre sweep — a moving specular highlight, like light travelling across polished metal */
+/* satin sheen — a faint, slow light pass; a hint of metal, never gloss */
 .btn-solid::after, .nav-book::after{
   content:""; position: absolute; top: -30%; bottom: -30%; left: 0;
-  width: 38%; pointer-events: none; opacity: 0;
+  width: 44%; pointer-events: none; opacity: 0;
   background: linear-gradient(105deg,
-    rgba(255,253,244,0) 0%, rgba(255,252,238,.75) 42%,
-    rgba(255,255,255,.95) 50%,
-    rgba(255,252,238,.75) 58%, rgba(255,253,244,0) 100%);
+    rgba(255,251,238,0) 0%, rgba(255,250,234,.32) 45%,
+    rgba(255,252,240,.44) 50%,
+    rgba(255,250,234,.32) 55%, rgba(255,251,238,0) 100%);
   transform: translateX(-160%) skewX(-18deg);
 }
 .btn-solid:hover::after, .btn-solid:focus-visible::after,
 .nav-book:hover::after, .nav-book:focus-visible::after{
-  animation: lustre 1s var(--ease-out);
+  animation: lustre 1.4s var(--ease-out);
 }
 @keyframes lustre{
   0%   { transform: translateX(-160%) skewX(-18deg); opacity: 0; }
-  15%  { opacity: .95; }
-  100% { transform: translateX(440%) skewX(-18deg); opacity: 0; }
+  18%  { opacity: .5; }
+  100% { transform: translateX(380%) skewX(-18deg); opacity: 0; }
 }
-.btn-ghost{ color: var(--white); border: 1.5px solid rgba(255,255,255,.65); }
-.btn-ghost:hover{ transform: translateY(-3px); border-color: var(--gold-hi); color: var(--gold-hi); }
+.btn-ghost{ color: var(--ivory); border: 1px solid rgba(233,217,168,.55); }
+.btn-ghost:hover{ transform: translateY(-2px); border-color: var(--gold-hi); color: var(--gold-hi); }
 .hero-cue{
   position: absolute; left: 50%; bottom: 1.2rem; transform: translateX(-50%);
   width: 26px; height: 44px; border: 2px solid rgba(255,255,255,.55); border-radius: 14px;
@@ -319,10 +320,10 @@ h1,h2{ text-wrap: balance; }
 .story{
   position: relative;
   background:
-    radial-gradient(900px 620px at 85% 10%, rgba(233,190,80,.14), transparent 62%),
-    radial-gradient(760px 560px at 108% 78%, rgba(20,86,59,.34), transparent 60%),
-    radial-gradient(700px 520px at -10% 95%, rgba(42,60,199,.36), transparent 60%),
-    linear-gradient(180deg, var(--dusk), var(--dusk-2));
+    radial-gradient(900px 620px at 85% 10%, rgba(211,180,116,.10), transparent 62%),
+    radial-gradient(760px 560px at 108% 78%, rgba(20,86,59,.5), transparent 60%),
+    radial-gradient(700px 520px at -10% 95%, rgba(42,60,199,.14), transparent 60%),
+    linear-gradient(180deg, var(--forest), var(--forest-2));
   padding-block: clamp(5rem, 11vw, 9.75rem); overflow: hidden;
 }
 .story-grid{
@@ -344,7 +345,7 @@ h1,h2{ text-wrap: balance; }
   width: 100%; height: clamp(340px, 46vw, 560px); object-fit: cover;
   border-radius: clamp(150px, 17vw, 230px) clamp(150px, 17vw, 230px) 4px 4px;
   position: relative; z-index: 1;
-  box-shadow: 0 34px 70px rgba(4,6,28,.6), 0 10px 26px rgba(4,6,28,.4);
+  box-shadow: 0 34px 70px rgba(2,12,8,.6), 0 10px 26px rgba(2,12,8,.4);
 }
 .frame::before{
   content:""; position: absolute; inset: -1.15rem 1.15rem 1.15rem -1.15rem;
@@ -421,9 +422,9 @@ h1,h2{ text-wrap: balance; }
 .kitchen{
   position: relative;
   background:
-    radial-gradient(1000px 700px at 12% 8%, rgba(39,131,91,.20), transparent 60%),
-    radial-gradient(800px 600px at 105% 60%, rgba(42,60,199,.38), transparent 62%),
-    linear-gradient(180deg, var(--dusk-2), var(--dusk));
+    radial-gradient(1000px 700px at 12% 8%, rgba(39,131,91,.28), transparent 60%),
+    radial-gradient(800px 600px at 105% 60%, rgba(42,60,199,.16), transparent 62%),
+    linear-gradient(180deg, var(--forest-2), var(--forest));
   padding-block: clamp(5rem, 11vw, 9.75rem);
 }
 .kitchen-head{ max-width: 720px; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
@@ -439,14 +440,14 @@ h1,h2{ text-wrap: balance; }
 @media (max-width: 620px){ .dish-grid{ grid-template-columns: 1fr; } }
 .dish{
   background: var(--panel); border-radius: 6px; overflow: hidden;
-  border: 1px solid rgba(240,205,110,.26); /* gold hairline frame */
+  border: 1px solid rgba(201,169,97,.26); /* gold hairline frame */
   border-top: 3px solid var(--green); /* signature emerald keyline */
-  box-shadow: 0 18px 44px rgba(4,6,24,.45);
+  box-shadow: 0 18px 44px rgba(2,12,8,.45);
   transition: transform .55s var(--ease-out), box-shadow .55s var(--ease-out), border-color .55s var(--ease-out);
 }
 .dish:hover{
   transform: translateY(-8px);
-  box-shadow: 0 34px 70px rgba(4,6,24,.6), 0 0 0 1px rgba(39,131,91,.35);
+  box-shadow: 0 34px 70px rgba(2,12,8,.6), 0 0 0 1px rgba(39,131,91,.35);
   border-color: rgba(123,216,172,.55); border-top-color: var(--mint);
 }
 .dish-media{ position: relative; overflow: hidden; aspect-ratio: 4 / 3; }
@@ -459,10 +460,10 @@ h1,h2{ text-wrap: balance; }
 .js .dish.inview .dish-media img{ transform: scale(1); }
 .dish:hover .dish-media img,
 .js .dish.inview:hover .dish-media img{ transform: scale(1.07); transition-delay: 0s; }
-/* curtain wipe on first view — cobalt, a blade of emerald, then gold */
+/* curtain wipe on first view — emerald, a blade of Marrakech blue, then gold */
 .js .dish-media::after{
   content:""; position: absolute; inset: 0;
-  background: linear-gradient(105deg, var(--majorelle) 55%, var(--emerald) 55.4%, var(--emerald) 60%, var(--gold) 60.4%);
+  background: linear-gradient(105deg, var(--emerald) 55%, var(--majorelle) 55.4%, var(--majorelle) 60%, var(--gold) 60.4%);
   transform: translateX(0);
   transition: transform 1.15s var(--ease-wipe);
   transition-delay: var(--d, 0s);
@@ -478,15 +479,15 @@ h1,h2{ text-wrap: balance; }
 .menu-list{
   position: relative;
   margin-top: clamp(3rem, 6vw, 4.5rem);
-  background: linear-gradient(180deg, var(--panel), var(--dusk-2)); border-radius: 8px;
+  background: linear-gradient(180deg, var(--panel), var(--forest-2)); border-radius: 8px;
   padding: clamp(1.8rem, 4vw, 3rem);
-  border: 1px solid rgba(240,205,110,.24); /* gold hairline frame */
-  box-shadow: 0 24px 60px rgba(4,6,24,.4), 0 0 40px rgba(228,185,59,.07);
+  border: 1px solid rgba(201,169,97,.24); /* gold hairline frame */
+  box-shadow: 0 24px 60px rgba(2,12,8,.4), 0 0 40px rgba(201,169,97,.05);
 }
 .menu-list::before{
   content:""; position: absolute; inset: 0 0 auto 0; height: 4px;
   border-radius: 8px 8px 0 0;
-  background: linear-gradient(90deg, var(--gold-deep), var(--gold) 26%, var(--gold-hi) 40%, var(--green) 58%, var(--emerald) 82%, var(--mint) 100%);
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold) 22%, var(--green) 46%, var(--emerald) 72%, var(--majorelle) 92%, var(--mint) 100%);
 }
 .menu-list h3{ font-size: clamp(1.5rem, 2.6vw, 2rem); margin-bottom: 1.4rem; color: var(--white); }
 .menu-cols{ display: grid; grid-template-columns: 1fr 1fr; gap: .4rem clamp(2rem, 6vw, 5rem); }
@@ -516,7 +517,7 @@ h1,h2{ text-wrap: balance; }
   /* full deep-emerald treatment — the unmistakable green moment */
   background:
     linear-gradient(180deg, rgba(15,61,42,.82), rgba(20,86,59,.58) 50%, rgba(15,61,42,.86)),
-    linear-gradient(180deg, rgba(10,12,40,.30), rgba(10,12,40,.16) 50%, rgba(10,12,40,.34));
+    linear-gradient(180deg, rgba(4,16,11,.30), rgba(4,16,11,.16) 50%, rgba(4,16,11,.34));
 }
 .teaband-inner{ position: relative; z-index: 1; padding: 4rem var(--pad); max-width: 760px; }
 .teaband .display{ font-size: clamp(1.9rem, 4.4vw, 3.4rem); font-style: italic; }
@@ -528,7 +529,7 @@ h1,h2{ text-wrap: balance; }
   /* grounded in deep velvet emerald — green reads at a glance beside the blue */
   background:
     radial-gradient(1000px 680px at 90% -8%, rgba(47,158,109,.30), transparent 62%),
-    radial-gradient(760px 560px at -6% 104%, rgba(42,60,199,.30), transparent 60%),
+    radial-gradient(760px 560px at -6% 104%, rgba(42,60,199,.18), transparent 60%),
     linear-gradient(180deg, #0F3D2A 0%, #14563B 52%, #0D3423 100%);
   color: var(--white);
   padding-block: clamp(5rem, 11vw, 9.75rem);
@@ -546,7 +547,7 @@ h1,h2{ text-wrap: balance; }
 }
 @media (max-width: 860px){ .atmos-grid{ grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px){ .atmos-grid{ grid-template-columns: 1fr; grid-auto-rows: 240px; } }
-.atmos-grid figure{ position: relative; overflow: hidden; border-radius: 6px; margin: 0; box-shadow: 0 24px 54px rgba(4,8,26,.45); }
+.atmos-grid figure{ position: relative; overflow: hidden; border-radius: 6px; margin: 0; box-shadow: 0 24px 54px rgba(2,12,8,.45); }
 .atmos-grid .tall{ border-radius: clamp(80px, 10vw, 140px) clamp(80px, 10vw, 140px) 6px 6px; }
 .atmos-grid img{
   width: 100%; height: 100%; object-fit: cover;
@@ -566,10 +567,10 @@ h1,h2{ text-wrap: balance; }
 .visit{
   position: relative;
   background:
-    radial-gradient(900px 640px at 92% 88%, rgba(233,190,80,.14), transparent 60%),
-    radial-gradient(680px 500px at 50% -6%, rgba(20,86,59,.30), transparent 58%),
-    radial-gradient(760px 560px at 0% 0%, rgba(42,60,199,.42), transparent 62%),
-    linear-gradient(180deg, var(--dusk), var(--dusk-2));
+    radial-gradient(900px 640px at 92% 88%, rgba(211,180,116,.11), transparent 60%),
+    radial-gradient(680px 500px at 50% -6%, rgba(20,86,59,.44), transparent 58%),
+    radial-gradient(760px 560px at 0% 0%, rgba(42,60,199,.17), transparent 62%),
+    linear-gradient(180deg, var(--forest), var(--forest-2));
   padding-block: clamp(5rem, 11vw, 9.75rem); overflow: hidden;
 }
 .visit-grid{
@@ -691,7 +692,7 @@ footer a:hover{ color: var(--mint); }
       <span class="w"><span style="--i:2">in&nbsp;the&nbsp;Heart</span></span>
       <span class="w"><span style="--i:3">of&nbsp;<em>Hemel</em></span></span>
     </h1>
-    <p class="hero-sub">Slow-cooked tagines, fragrant couscous and mint tea poured from a height — handmade from family recipes, opposite the Water Gardens.</p>
+    <p class="hero-sub">Slow-cooked tagines, fragrant couscous and mint tea poured from a height — the flavours of Fez, Marrakech and the Atlas, handmade from family recipes opposite the Water Gardens.</p>
     <div class="hero-ctas">
       <a class="btn btn-solid" href="tel:01442954333">&#9742;&nbsp; Book a table &middot; 01442 954333</a>
       <a class="btn btn-ghost" href="#kitchen">Explore the kitchen &darr;</a>
@@ -705,9 +706,9 @@ footer a:hover{ color: var(--mint); }
   <div class="wrap story-grid">
     <div class="reveal">
       <p class="eyebrow"><span class="ar" lang="ar" dir="rtl">&#1605;&#1585;&#1581;&#1576;&#1575;</span> &middot; Marhaba &mdash; welcome</p>
-      <h2>Every guest is family. Every meal begins with mint tea.</h2>
-      <p>Kassem&rsquo;s Lounge is a family-run corner of Morocco in Hemel Hempstead. Our menu is crafted from recipes passed down through generations — the aroma of slow-cooked tagines, warm spices and freshly baked bread, made the way it&rsquo;s made at home.</p>
-      <p>Everything is prepared fresh, without shortcuts: vegetables charred for zaalouk, lamb simmered until it falls from the bone, semolina steamed and raked by hand.</p>
+      <h2>Every guest is family. Every plate is a journey through Morocco.</h2>
+      <p>Kassem&rsquo;s Lounge is a family-run corner of Morocco in Hemel Hempstead — and we mean all of it. Our recipes wander the way the country does: bread baked the way it&rsquo;s baked in the old medinas of Fez, saffron and preserved lemon from the souks of Marrakech, couscous steamed hearty and high the way Amazigh families make it in the Atlas mountains, chermoula on the grill like the Atlantic quaysides of Essaouira, and dates, almonds and warm spice carried in from the edge of the Sahara.</p>
+      <p>Everything is prepared fresh, without shortcuts, from recipes passed down through generations: vegetables charred for zaalouk, lamb simmered until it falls from the bone, semolina steamed and raked by hand — and mint tea to begin, always.</p>
       <blockquote>&ldquo;In Morocco, tea is the first word of every conversation. Sit — we&rsquo;ll pour.&rdquo;</blockquote>
     </div>
     <figure class="frame reveal" style="--d:.15s">
@@ -730,9 +731,9 @@ footer a:hover{ color: var(--mint); }
     <circle pathLength="1" cx="450" cy="336" r="26" />
   </svg>
   <div class="maj-head">
-    <p class="eyebrow">Our inspiration</p>
+    <p class="eyebrow">A thread of blue</p>
     <h2 class="reveal">From the <em>blue gardens</em> of Marrakech to Waterhouse Street</h2>
-    <p class="reveal" style="--d:.15s">The lounge takes its colours from the Jardin Majorelle — cobalt walls, canary-yellow pots, green palms — and its warmth from the family table. Cross the threshold and you&rsquo;re four thousand miles south.</p>
+    <p class="reveal" style="--d:.15s">Morocco is a country of deep greens and warm golds — palm groves and mint, brass and desert light. But one colour follows every traveller home: the cobalt of the Jardin Majorelle. We keep a thread of it running through the lounge, set among the emerald velvet where it belongs.</p>
   </div>
   <div class="maj-cards">
     <figure class="maj-card reveal" data-parallax="-0.06">
