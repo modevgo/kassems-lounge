@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kassem's Lounge</title>
+<meta name="description" content="Family-run Moroccan restaurant on Waterhouse Street, Hemel Hempstead. Tagines, grills, fresh bread and mint tea, open from 9am Tuesday to Saturday.">
+<meta property="og:title" content="Kassem's Lounge">
+<meta property="og:description" content="Family-run Moroccan cooking in Hemel Hempstead. Open from 9am, Tuesday to Saturday.">
+<meta property="og:image" content="assets/hero.jpg">
+<meta property="og:type" content="restaurant">
+<link rel="canonical" href="https://modevgo.github.io/kassems-lounge/v2/">
+</head>
+<body>
+<meta name="description" content="Kassem's Lounge — family-run Moroccan restaurant in Hemel Hempstead, opposite the Water Gardens. Tagines, grills, Moroccan breakfast from 9am. Call 01442 954333.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  :root {
+    --saffron: #EDB43A;
+    --saffron-deep: #D99A1C;
+    --ink: #1F2418;
+    --ink-soft: #5C6647;
+    --ink-faint: #8B937A;
+    --bread: #FFFDF7;
+    --bread-2: #F7F2E4;
+    --line: rgba(31, 36, 24, 0.16);
+    --line-strong: rgba(31, 36, 24, 0.55);
+    --hero-bg: var(--saffron);
+    --hero-ink: var(--ink);
+    --hero-line: rgba(31, 36, 24, 0.28);
+    --btn-bg: var(--ink);
+    --btn-fg: var(--saffron);
+    --bar-bg: rgba(31, 36, 24, 0.96);
+    --focus: #1F2418;
+    --display: "Young Serif", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #F1ECDC;
+      --ink-soft: #B9C0A4;
+      --ink-faint: #7F866E;
+      --bread: #16170F;
+      --bread-2: #1F2117;
+      --line: rgba(241, 236, 220, 0.16);
+      --line-strong: rgba(241, 236, 220, 0.5);
+      --hero-bg: #E2A72B;
+      --hero-ink: #16170F;
+      --hero-line: rgba(22, 23, 15, 0.3);
+      --btn-bg: #F1ECDC;
+      --btn-fg: #16170F;
+      --bar-bg: rgba(241, 236, 220, 0.97);
+      --focus: #EDB43A;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #F1ECDC;
+    --ink-soft: #B9C0A4;
+    --ink-faint: #7F866E;
+    --bread: #16170F;
+    --bread-2: #1F2117;
+    --line: rgba(241, 236, 220, 0.16);
+    --line-strong: rgba(241, 236, 220, 0.5);
+    --hero-bg: #E2A72B;
+    --hero-ink: #16170F;
+    --hero-line: rgba(22, 23, 15, 0.3);
+    --btn-bg: #F1ECDC;
+    --btn-fg: #16170F;
+    --bar-bg: rgba(241, 236, 220, 0.97);
+    --focus: #EDB43A;
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bread);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    font-feature-settings: "ss01";
+    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+
+  .wrap { width: min(100% - 2.5rem, 72rem); margin-inline: auto; }
+  .label {
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    min-height: 3rem; padding: 0.7rem 1.35rem;
+    background: var(--btn-bg); color: var(--btn-fg);
+    border: 1.5px solid var(--btn-bg); border-radius: 999px;
+    font: 600 0.95rem/1 var(--body); letter-spacing: 0.02em; text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn--ghost { background: transparent; color: inherit; border-color: currentColor; }
+  .btn svg { width: 1.05rem; height: 1.05rem; flex: none; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+
+  /* ---------- header ---------- */
+  .top {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--bread); border-bottom: 1px solid var(--line);
+  }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 3.75rem; }
+  .brand { font-family: var(--display); font-size: 1.3rem; text-decoration: none; letter-spacing: -0.01em; }
+  .nav { display: none; gap: 1.75rem; }
+  .nav a { text-decoration: none; font-weight: 500; font-size: 0.95rem; color: var(--ink-soft); }
+  .nav a:hover { color: var(--ink); }
+  .top .btn { min-height: 2.5rem; padding: 0.5rem 1rem; font-size: 0.875rem; }
+
+  /* ---------- hero ---------- */
+  .hero { background: var(--hero-bg); color: var(--hero-ink); position: relative; overflow: hidden; }
+  .hero .wrap {
+    display: grid; gap: 2.25rem; padding-block: 2.75rem 3rem;
+  }
+  .hero .label { color: var(--hero-ink); opacity: 0.8; }
+  .hero h1 {
+    font-size: clamp(2.9rem, 10.5vw, 6.25rem);
+    line-height: 0.96; letter-spacing: -0.015em; margin-top: 1rem;
+  }
+  .hero .lede {
+    font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.45; max-width: 30ch; margin-top: 1.4rem;
+  }
+  .hero .cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.9rem; }
+  .hero .btn--ghost { border-color: var(--hero-ink); color: var(--hero-ink); }
+  .hero .btn:not(.btn--ghost) { background: var(--hero-ink); color: var(--hero-bg); border-color: var(--hero-ink); }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin-top: 2rem;
+    padding-top: 1.1rem; border-top: 1px solid var(--hero-line);
+    font-size: 0.9rem; font-weight: 500;
+  }
+  .hero-meta strong { font-weight: 600; }
+
+  .arch {
+    border-radius: 999px 999px 14px 14px;
+    overflow: hidden; background: var(--bread-2);
+  }
+  .arch img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-fig { position: relative; margin: 0; align-self: end; }
+  .hero-fig .arch { aspect-ratio: 4 / 5; }
+  .hero-fig figcaption {
+    margin-top: 0.75rem; font-size: 0.82rem; font-weight: 500; opacity: 0.8;
+  }
+  /* the pour: a single line, like tea from a height */
+  .pour {
+    position: absolute; left: 50%; top: -3rem; width: 1.5px; height: 3rem;
+    background: var(--hero-ink); transform-origin: top; opacity: 0.55;
+  }
+
+  /* ---------- sections ---------- */
+  section { scroll-margin-top: 4rem; }
+  .sec { padding-block: 3.5rem; border-top: 1px solid var(--line); }
+  .sec-head { display: grid; gap: 0.6rem; margin-bottom: 2rem; }
+  .sec-head h2 { font-size: clamp(1.9rem, 4.5vw, 2.9rem); line-height: 1.05; letter-spacing: -0.01em; }
+  .sec-head p { color: var(--ink-soft); max-width: 52ch; }
+
+  /* hours */
+  .hours { display: grid; gap: 2rem; }
+  table.hours-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  .hours-table th, .hours-table td {
+    text-align: left; padding: 0.8rem 0; border-bottom: 1px solid var(--line); font-weight: 400;
+  }
+  .hours-table th { font-weight: 500; width: 45%; }
+  .hours-table td.closed { color: var(--ink-faint); font-style: italic; }
+  .hours-table tr[aria-current="date"] th,
+  .hours-table tr[aria-current="date"] td { font-weight: 600; }
+  .hours-table tr[aria-current="date"] th::before {
+    content: ""; display: inline-block; width: 0.5rem; height: 0.5rem; border-radius: 50%;
+    background: var(--saffron); margin-right: 0.6rem; vertical-align: 0.05em;
+  }
+  .hours-note { display: grid; gap: 1rem; align-content: start; }
+  .hours-note .big { font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; }
+  .hours-note .arch { aspect-ratio: 5 / 4; margin-top: 0.5rem; }
+
+  /* menu */
+  .menu { display: grid; gap: 2.75rem; }
+  .course { display: grid; gap: 0; }
+  .course h3 {
+    font-family: var(--body); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-soft); padding-bottom: 0.75rem; border-bottom: 1.5px solid var(--line-strong);
+  }
+  .dish { padding: 1rem 0; border-bottom: 1px solid var(--line); display: grid; gap: 0.25rem; }
+  .dish dt { font-family: var(--display); font-size: 1.3rem; line-height: 1.2; }
+  .dish dd { margin: 0; color: var(--ink-soft); font-size: 0.98rem; }
+  .course dl { margin: 0; }
+  .course .arch { aspect-ratio: 4 / 3; margin-top: 1.25rem; }
+  .menu-foot {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem;
+    padding: 1.5rem 0 0; border-top: 1.5px solid var(--line-strong);
+  }
+  .menu-foot p { max-width: 40ch; color: var(--ink-soft); }
+
+  /* the family */
+  .family { display: grid; gap: 2rem; }
+  .family .prose { display: grid; gap: 1.1rem; max-width: 58ch; }
+  .family .prose p { font-size: 1.1rem; }
+  .family .prose .lead { font-family: var(--display); font-size: clamp(1.55rem, 3.4vw, 2.2rem); line-height: 1.18; }
+  .family-figs { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: end; }
+  .family-figs .arch:first-child { aspect-ratio: 3 / 4; }
+  .family-figs .arch:last-child { aspect-ratio: 3 / 4; margin-bottom: 2.5rem; }
+  .rating {
+    display: inline-flex; align-items: baseline; gap: 0.6rem; margin-top: 0.4rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .rating .num { font-family: var(--display); font-size: 2.4rem; line-height: 1; }
+  .rating .stars { color: var(--saffron-deep); letter-spacing: 0.1em; font-size: 1rem; }
+  .rating small { color: var(--ink-soft); font-size: 0.9rem; }
+
+  /* find us */
+  .find { display: grid; gap: 2rem; }
+  .find address { font-style: normal; display: grid; gap: 0.35rem; }
+  .find address .street { font-family: var(--display); font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.15; }
+  .find address .town { font-size: 1.1rem; }
+  .find address .hint { color: var(--ink-soft); }
+  .find .cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; }
+  .find .tel { font-family: var(--display); font-size: 1.6rem; text-decoration: none; }
+  .find .tel:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+  .mini-hours { display: grid; grid-template-columns: auto 1fr; gap: 0.35rem 1.25rem; font-variant-numeric: tabular-nums; align-content: start; }
+  .mini-hours .k { color: var(--ink-soft); }
+  .mini-hours .closed { color: var(--ink-faint); font-style: italic; }
+  .find .arch { aspect-ratio: 4 / 3; }
+
+  /* footer */
+  footer { border-top: 1px solid var(--line); padding-block: 2rem 2.5rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; align-items: baseline; }
+  footer .social { display: flex; gap: 1.5rem; }
+  footer .social a { text-decoration: none; font-weight: 500; }
+  footer .social a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+  footer small { color: var(--ink-soft); }
+
+  /* thumb bar */
+  .bar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+    background: var(--bar-bg); color: var(--btn-fg);
+    padding: 0.6rem 1rem calc(0.6rem + env(safe-area-inset-bottom));
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;
+    backdrop-filter: blur(6px);
+  }
+  .bar a {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    min-height: 3rem; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 0.95rem;
+    border: 1.5px solid currentColor;
+  }
+  .bar a.primary { background: var(--saffron); color: #1F2418; border-color: var(--saffron); }
+  .bar svg { width: 1.05rem; height: 1.05rem; }
+
+  /* ---------- motion ---------- */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero h1, .hero .lede, .hero .cta, .hero .label, .hero-meta {
+      animation: settle 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    }
+    .hero .lede { animation-delay: 0.08s; }
+    .hero .cta { animation-delay: 0.16s; }
+    .hero-meta { animation-delay: 0.24s; }
+    .pour { animation: pour 1.4s cubic-bezier(0.6, 0, 0.2, 1) 0.2s both; }
+    .btn, .bar a { transition: transform 0.18s ease, background-color 0.18s ease; }
+  }
+  @keyframes settle { from { transform: translateY(14px); } to { transform: translateY(0); } }
+  @keyframes pour { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  /* ---------- wider screens ---------- */
+  @media (min-width: 640px) {
+    .hours { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .menu { grid-template-columns: 1fr 1fr; gap: 3rem 4rem; }
+    .find { grid-template-columns: 1.2fr 1fr; gap: 3rem; }
+  }
+  @media (min-width: 900px) {
+    body { padding-bottom: 0; }
+    .bar { display: none; }
+    .nav { display: flex; }
+    .hero .wrap {
+      grid-template-columns: 1.15fr 0.85fr; gap: 4rem; align-items: end;
+      padding-block: 4.5rem 4rem;
+    }
+    .hero-fig { max-width: 26rem; justify-self: end; }
+    .sec { padding-block: 5rem; }
+    .sec-head { grid-template-columns: 1fr 1fr; align-items: end; gap: 2rem; margin-bottom: 3rem; }
+    .sec-head p { justify-self: end; }
+    .family { grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .menu { grid-template-columns: 1fr 1fr 1fr; }
+    .menu .course--wide { grid-column: span 1; }
+  }
+  @media (min-width: 1100px) {
+    .hero h1 { font-size: clamp(5rem, 7.5vw, 6.5rem); }
+  }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Kassem's Lounge</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#menu">Menu</a>
+      <a href="#hours">Hours</a>
+      <a href="#family">The family</a>
+      <a href="#find">Find us</a>
+    </nav>
+    <a class="btn" href="tel:01442954333">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6.2 6.2l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      01442 954333
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <p class="label">Moroccan · Hemel Hempstead · opposite the Water Gardens</p>
+        <h1 id="hero-title">Mum's in the kitchen. Come in.</h1>
+        <p class="lede">Slow-cooked tagines, char-grilled skewers, fresh bread, and mint tea poured from a height. A family table, open from nine in the morning.</p>
+        <div class="cta">
+          <a class="btn" href="tel:01442954333">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6.2 6.2l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            Call to book a table
+          </a>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&destination=51+Waterhouse+Street%2C+Hemel+Hempstead+HP1+1EA" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Directions
+          </a>
+        </div>
+        <div class="hero-meta">
+          <span><strong>Tue–Thu</strong> 9:00–20:30</span>
+          <span><strong>Fri–Sat</strong> 9:00–21:00</span>
+          <span><strong>Sun &amp; Mon</strong> closed</span>
+          <span><strong>4.9</strong> on Google</span>
+        </div>
+      </div>
+      <figure class="hero-fig">
+        <span class="pour" aria-hidden="true"></span>
+        <div class="arch"><img src="../assets/hero.jpg" alt="Food on the table at Kassem's Lounge, Hemel Hempstead" width="800" height="1000"></div>
+        <figcaption>Cooked slowly, served generously.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="hours" aria-labelledby="hours-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="hours-title">Open from nine. Breakfast is Moroccan too.</h2>
+        <p>Most people find us for dinner. Regulars know to come early: msemen off the griddle, amlou, eggs, olives and a first pot of mint tea.</p>
+      </div>
+      <div class="hours">
+        <table class="hours-table">
+          <caption class="label" style="text-align:left;padding-bottom:0.75rem">Opening hours</caption>
+          <tbody>
+            <tr data-day="1"><th scope="row">Monday</th><td class="closed">Closed</td></tr>
+            <tr data-day="2"><th scope="row">Tuesday</th><td>9:00 – 20:30</td></tr>
+            <tr data-day="3"><th scope="row">Wednesday</th><td>9:00 – 20:30</td></tr>
+            <tr data-day="4"><th scope="row">Thursday</th><td>9:00 – 20:30</td></tr>
+            <tr data-day="5"><th scope="row">Friday</th><td>9:00 – 21:00</td></tr>
+            <tr data-day="6"><th scope="row">Saturday</th><td>9:00 – 21:00</td></tr>
+            <tr data-day="0"><th scope="row">Sunday</th><td class="closed">Closed</td></tr>
+          </tbody>
+        </table>
+        <div class="hours-note">
+          <p class="big">Closed Sunday and Monday — the family's days off.</p>
+          <p>No online booking. Ring <a href="tel:01442954333">01442 954333</a> and someone from the family will answer.</p>
+          <div class="arch"><img src="../assets/msemen-tea.jpg" alt="Moroccan breakfast: folded msemen flatbread, a bowl of amlou and a glass of mint tea" width="800" height="640"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="menu" aria-labelledby="menu-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="menu-title">What comes out of the kitchen</h2>
+        <p>Cooked slowly, spiced warmly, served generously. This is the shape of the menu — ask for the full one when you call or come in.</p>
+      </div>
+      <div class="menu">
+        <div class="course">
+          <h3>From the tagine</h3>
+          <dl>
+            <div class="dish"><dt>Lamb Tagine</dt><dd>Prunes, almonds, sesame.</dd></div>
+            <div class="dish"><dt>Chicken Tagine</dt><dd>Preserved lemon and olives.</dd></div>
+            <div class="dish"><dt>Mechoui</dt><dd>Slow-roasted lamb shoulder.</dd></div>
+            <div class="dish"><dt>Couscous</dt><dd>Steamed the long way, served with the tagines.</dd></div>
+          </dl>
+          <div class="arch"><img src="../assets/lamb-tagine.jpg" alt="Lamb tagine with prunes, almonds and sesame" width="800" height="600"></div>
+        </div>
+        <div class="course">
+          <h3>From the grill</h3>
+          <dl>
+            <div class="dish"><dt>Kofta &amp; Grills</dt><dd>Char-grilled skewers, buttered rice, briouats.</dd></div>
+            <div class="dish"><dt>Mixed Grill</dt><dd>A plate of the grill for sharing.</dd></div>
+          </dl>
+          <div class="arch"><img src="../assets/kofta-grill.jpg" alt="Char-grilled kofta skewers on buttered rice with briouats" width="800" height="600"></div>
+          <h3 style="margin-top:2.25rem">To start</h3>
+          <dl>
+            <div class="dish"><dt>Harira</dt><dd>Tomato, lentil and chickpea soup.</dd></div>
+            <div class="dish"><dt>Zaalouk</dt><dd>Smoked aubergine and tomato salad.</dd></div>
+            <div class="dish"><dt>Briouats</dt><dd>Crisp filo parcels.</dd></div>
+            <div class="dish"><dt>Homemade bread</dt><dd>Baked here, brought warm.</dd></div>
+          </dl>
+        </div>
+        <div class="course">
+          <h3>Breakfast &amp; sweet</h3>
+          <dl>
+            <div class="dish"><dt>Moroccan Breakfast</dt><dd>Msemen, amlou, eggs, olives.</dd></div>
+            <div class="dish"><dt>Pastilla</dt><dd>Sweet-savoury filo pie, almond and cinnamon.</dd></div>
+            <div class="dish"><dt>Chebakia &amp; Kaab el Ghazal</dt><dd>With orange blossom.</dd></div>
+            <div class="dish"><dt>Mint Tea</dt><dd>Poured from a height, the way it should be.</dd></div>
+          </dl>
+          <div class="arch"><img src="../assets/almond-pastry.jpg" alt="Kaab el ghazal almond pastries dusted with sugar, beside a glass of mint tea" width="800" height="600"></div>
+        </div>
+      </div>
+      <div class="menu-foot" style="margin-top:2.75rem">
+        <p>Portions are generous — reviewers keep saying so. For the full menu, ring us or come by.</p>
+        <a class="btn" href="tel:01442954333">Call for the menu</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="family" aria-labelledby="family-title">
+    <div class="wrap">
+      <div class="family">
+        <div class="prose">
+          <p class="label">A family-run room</p>
+          <h2 id="family-title" class="lead">Mum cooks. The rest of us look after you.</h2>
+          <p>Kassem's is a family restaurant in the plain sense: one family, one kitchen, one room. The cooking comes from Mum, the welcome comes from the rest of us, and the place feels personal the moment you walk in — because it is.</p>
+          <p>People who find us call it a hidden local gem. We would rather you didn't have to hunt: we're on Waterhouse Street, right opposite the Water Gardens.</p>
+          <div class="rating" aria-label="Rated 4.9 on Google">
+            <span class="num">4.9</span>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <small>on Google</small>
+          </div>
+        </div>
+        <div class="family-figs">
+          <div class="arch"><img src="../assets/interior.jpg" alt="Inside Kassem's Lounge: tables set with lanterns and patterned cloth" width="600" height="800"></div>
+          <div class="arch"><img src="../assets/brunch-spread.jpg" alt="A Moroccan breakfast spread across the table: breads, eggs, olives, dips and tea" width="600" height="800"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="find" aria-labelledby="find-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="find-title">Find us</h2>
+        <p>Opposite the Water Gardens in the middle of Hemel Hempstead.</p>
+      </div>
+      <div class="find">
+        <div>
+          <address>
+            <span class="street">51 Waterhouse Street</span>
+            <span class="town">Hemel Hempstead, HP1 1EA</span>
+            <span class="hint">Look for us across from the Water Gardens.</span>
+          </address>
+          <div class="cta">
+            <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=51+Waterhouse+Street%2C+Hemel+Hempstead+HP1+1EA" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              Get directions
+            </a>
+            <a class="btn btn--ghost" href="tel:01442954333">Call 01442 954333</a>
+          </div>
+          <div class="arch" style="margin-top:2rem"><img src="../assets/mixed-grill.jpg" alt="A mixed grill platter with skewers, rice and salad on the table at Kassem's Lounge" width="800" height="600"></div>
+        </div>
+        <div class="mini-hours" aria-label="Opening hours">
+          <span class="k">Mon</span><span class="closed">Closed</span>
+          <span class="k">Tue</span><span>9:00 – 20:30</span>
+          <span class="k">Wed</span><span>9:00 – 20:30</span>
+          <span class="k">Thu</span><span>9:00 – 20:30</span>
+          <span class="k">Fri</span><span>9:00 – 21:00</span>
+          <span class="k">Sat</span><span>9:00 – 21:00</span>
+          <span class="k">Sun</span><span class="closed">Closed</span>
+          <span class="k">Phone</span><span><a class="tel" href="tel:01442954333">01442 954333</a></span>
+          <span class="k">Bookings</span><span>By phone only</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brand">Kassem's Lounge</span>
+    <div class="social">
+      <a href="https://www.instagram.com/kassems.lounge/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/p/Kassems-Lounge-61577196157049/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <small>51 Waterhouse Street, Hemel Hempstead HP1 1EA · 01442 954333</small>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Call or get directions">
+  <a class="primary" href="tel:01442954333">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6.2 6.2l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+    Call
+  </a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=51+Waterhouse+Street%2C+Hemel+Hempstead+HP1+1EA" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+    Directions
+  </a>
+</nav>
+
+<script>
+  // Progressive enhancement only: mark today's row. Page is complete without it.
+  try {
+    var row = document.querySelector('.hours-table tr[data-day="' + new Date().getDay() + '"]');
+    if (row) row.setAttribute('aria-current', 'date');
+  } catch (e) {}
+</script>
+
+</body>
+</html>
