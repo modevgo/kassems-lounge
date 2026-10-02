@@ -1,0 +1,142 @@
+/* Kassem's Lounge — rebuilt stylesheet.
+   The original styles.css was never committed and exists only on the client's
+   laptop, so this is written back from her page's own class names, the fonts
+   her HTML already loads (Playfair Display + Inter), and the video she filmed:
+   deep green ground, gold accents, cream type. Single theme on purpose — the
+   room is dark green and gold, and the site should read the same in any OS
+   appearance. */
+:root{
+  color-scheme:dark;
+  --green:#13332a; --green-2:#0d251e; --green-3:#1b4537; --green-4:#255445;
+  --cream:#f3ead6; --cream-2:#cdc3ad; --cream-3:#9d9684;
+  --gold:#c9a227; --gold-2:#e3c45f; --gold-ink:#13332a;
+  --edge:rgba(201,162,39,.26);
+  --display:'Playfair Display',Georgia,'Times New Roman',serif;
+  --body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --w:min(1180px,92vw);
+  --r:3px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--green);color:var(--cream);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.1;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.6rem,4vw,2.5rem)}
+h3{font-size:1.15rem}
+p{margin:0}
+:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;
+  padding:.9rem max(16px,calc((100vw - var(--w))/2));background:rgba(13,37,30,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--edge)}
+.brand{display:flex;align-items:baseline;gap:.45rem;text-decoration:none;font-family:var(--display);font-size:1.25rem;color:var(--cream)}
+.brand small{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-family:var(--body)}
+.nav-links{display:flex;gap:1.4rem;margin-left:auto;flex-wrap:wrap}
+.nav-links a{text-decoration:none;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-2)}
+.nav-links a:hover{color:var(--gold-2)}
+.header-call{text-decoration:none;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;
+  border:1px solid var(--gold);color:var(--gold);padding:.55rem .95rem;border-radius:var(--r);white-space:nowrap}
+.header-call:hover{background:var(--gold);color:var(--gold-ink)}
+
+/* Hero */
+.hero{position:relative;min-height:min(78vh,620px);display:grid;align-items:end;overflow:hidden}
+.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,37,30,.45) 0%,rgba(13,37,30,.72) 55%,rgba(13,37,30,.96) 100%)}
+.hero-content{position:relative;width:var(--w);margin:0 auto;padding:4rem 0 2.2rem}
+.hero-content h1{font-size:clamp(2.6rem,9vw,5.2rem);letter-spacing:-.01em}
+.hero-content h1 span{display:block}
+.hero-content h1 span:last-child{color:var(--gold)}
+.hero-content>p{margin-top:1rem;font-size:clamp(1rem,2.2vw,1.2rem);color:var(--cream-2);max-width:34ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.hero-strip{position:relative;width:var(--w);margin:0 auto;display:flex;flex-wrap:wrap;gap:1.6rem;
+  padding:1rem 0 1.6rem;border-top:1px solid var(--edge);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+
+/* Buttons */
+.button{display:inline-block;text-decoration:none;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:.85rem 1.5rem;border-radius:var(--r);border:1px solid transparent;cursor:pointer;font-family:var(--body)}
+.button.primary{background:var(--gold);color:var(--gold-ink);border-color:var(--gold);font-weight:600}
+.button.primary:hover{background:var(--gold-2);border-color:var(--gold-2)}
+.button.secondary{border-color:var(--edge);color:var(--cream)}
+.button.secondary:hover{border-color:var(--gold);color:var(--gold-2)}
+
+/* Shared section rhythm */
+.signature,.image-rail,.dish-list,.story,.reviews,.visit,.booking{width:var(--w);margin:0 auto;padding:4.5rem 0}
+.section-label{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
+.text-link{display:inline-block;margin-top:1.1rem;color:var(--gold-2);font-size:.9rem}
+
+/* Signature */
+.signature{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.section-copy p+p,.section-copy h2+p{margin-top:1rem;color:var(--cream-2)}
+.food-frame{margin:0;border:1px solid var(--edge);padding:.6rem;background:var(--green-2)}
+.food-frame img{aspect-ratio:4/3;object-fit:cover}
+
+/* Gallery */
+.image-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.image-rail figure{margin:0}
+.image-rail img{aspect-ratio:3/4;object-fit:cover;border:1px solid var(--edge)}
+.image-rail figcaption{margin-top:.6rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-3)}
+
+/* Dishes */
+.dish-list{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;border-top:1px solid var(--edge);border-bottom:1px solid var(--edge)}
+.dish-list article span{font-family:var(--display);font-size:.95rem;color:var(--gold)}
+.dish-list article h3{margin:.35rem 0 .5rem}
+.dish-list article p{color:var(--cream-2);font-size:.94rem}
+
+/* Story */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.story-image{margin:0}
+.story-image img{aspect-ratio:4/5;object-fit:cover;border:1px solid var(--edge)}
+.story-panel p+p{margin-top:1rem}
+.story-panel p:not(.section-label){color:var(--cream-2)}
+
+/* Reviews */
+.reviews{display:grid;gap:2rem}
+.quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.quote-grid blockquote{margin:0;background:var(--green-3);border:1px solid var(--edge);border-left:3px solid var(--gold);padding:1.4rem}
+.quote-grid p{font-family:var(--display);font-size:1.08rem}
+.quote-grid cite{display:block;margin-top:.9rem;font-style:normal;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-3)}
+
+/* Visit */
+.visit{display:grid;grid-template-columns:1.25fr 1fr;gap:2rem;align-items:stretch}
+.visit-card,.hours-card{background:var(--green-3);border:1px solid var(--edge);padding:2rem}
+.info-list{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem}
+.info-list a{text-decoration:none;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--edge);padding:.6rem .9rem;border-radius:var(--r)}
+.info-list a:hover{background:var(--gold);color:var(--gold-ink);border-color:var(--gold)}
+.hours-card h3{font-size:.9rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-family:var(--body);font-weight:600}
+.hours-card dl{margin:1.1rem 0 0;display:grid;gap:.55rem}
+.hours-card dl>div{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px dotted var(--edge);padding-bottom:.45rem}
+.hours-card dt{color:var(--cream-2)}
+.hours-card dd{margin:0;font-variant-numeric:tabular-nums;color:var(--cream)}
+
+/* Booking */
+.booking{display:grid;grid-template-columns:1fr 1.1fr;gap:2.5rem;align-items:center;background:var(--green-2);
+  border-top:1px solid var(--edge);border-bottom:1px solid var(--edge);padding:3.5rem max(0px,calc((100vw - var(--w))/2));width:100%}
+#booking-form{display:flex;flex-wrap:wrap;gap:.9rem;align-items:flex-end}
+#booking-form label{display:flex;flex-direction:column;gap:.4rem;flex:1 1 9rem;min-width:0}
+#booking-form label span{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+#booking-form input,#booking-form select{font-family:var(--body);font-size:1rem;color:var(--cream);background:var(--green);
+  border:1px solid var(--edge);border-radius:var(--r);padding:.72rem .8rem;width:100%;min-width:0}
+#booking-form .button{flex:0 0 auto}
+.booking-say{grid-column:1/-1;margin-top:1.2rem;border:1px solid var(--edge);border-left:3px solid var(--gold);
+  background:rgba(201,162,39,.07);padding:1rem 1.1rem;font-family:var(--display);font-size:1.05rem}
+
+/* Footer */
+.footer{width:var(--w);margin:0 auto;padding:2.5rem 0 3.5rem;display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;
+  border-top:1px solid var(--edge);color:var(--cream-3);font-size:.85rem}
+.footer p:first-child{color:var(--gold);font-family:var(--display);font-size:1rem}
+
+@media (max-width:900px){
+  .signature,.story,.visit,.booking{grid-template-columns:1fr}
+  .image-rail,.quote-grid{grid-template-columns:1fr 1fr}
+  .dish-list{grid-template-columns:1fr 1fr}
+  .nav-links{order:3;width:100%;margin-left:0;gap:1rem}
+}
+@media (max-width:560px){
+  .image-rail,.quote-grid,.dish-list{grid-template-columns:1fr}
+  .signature,.image-rail,.dish-list,.story,.reviews,.visit{padding:3rem 0}
+  #booking-form label{flex:1 1 100%}
+  #booking-form .button{width:100%}
+}
