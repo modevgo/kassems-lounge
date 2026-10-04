@@ -67,6 +67,8 @@ p{margin:0}
 .section-label{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
 .text-link{display:inline-block;margin-top:1.1rem;color:var(--gold-2);font-size:.9rem}
 .catering .button{margin-top:1.6rem}
+.catering .catering-prompt{margin-top:1.6rem;font-family:var(--display);font-size:1.15rem;color:var(--cream)}
+.catering .catering-prompt+p{margin-top:.5rem}
 
 /* Signature */
 .signature,.catering{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
