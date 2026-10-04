@@ -63,15 +63,16 @@ p{margin:0}
 .button.secondary:hover{border-color:var(--gold);color:var(--gold-2)}
 
 /* Shared section rhythm */
-.signature,.image-rail,.dish-list,.story,.reviews,.visit,.booking{width:var(--w);margin:0 auto;padding:4.5rem 0}
+.signature,.catering,.image-rail,.dish-list,.story,.reviews,.visit,.booking{width:var(--w);margin:0 auto;padding:4.5rem 0}
 .section-label{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
 .text-link{display:inline-block;margin-top:1.1rem;color:var(--gold-2);font-size:.9rem}
+.catering .button{margin-top:1.6rem}
 
 /* Signature */
-.signature{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.signature,.catering{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
 .section-copy p+p,.section-copy h2+p{margin-top:1rem;color:var(--cream-2)}
-.food-frame{margin:0;border:1px solid var(--edge);padding:.6rem;background:var(--green-2)}
-.food-frame img{aspect-ratio:4/3;object-fit:cover}
+.food-frame,.catering-frame{margin:0;border:1px solid var(--edge);padding:.6rem;background:var(--green-2)}
+.food-frame img,.catering-frame img{aspect-ratio:4/3;object-fit:cover}
 
 /* Gallery */
 .image-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
@@ -129,14 +130,31 @@ p{margin:0}
 .footer p:first-child{color:var(--gold);font-family:var(--display);font-size:1rem}
 
 @media (max-width:900px){
-  .signature,.story,.visit,.booking{grid-template-columns:1fr}
+  .signature,.catering,.story,.visit,.booking{grid-template-columns:1fr}
   .image-rail,.quote-grid{grid-template-columns:1fr 1fr}
   .dish-list{grid-template-columns:1fr 1fr}
   .nav-links{order:3;width:100%;margin-left:0;gap:1rem}
 }
 @media (max-width:560px){
   .image-rail,.quote-grid,.dish-list{grid-template-columns:1fr}
-  .signature,.image-rail,.dish-list,.story,.reviews,.visit{padding:3rem 0}
+  .signature,.catering,.image-rail,.dish-list,.story,.reviews,.visit{padding:3rem 0}
   #booking-form label{flex:1 1 100%}
   #booking-form .button{width:100%}
 }
+
+/* Holding page (construction.html) — standalone, shares this stylesheet.
+   Centred card, no form, no JavaScript: everything a caller needs is a link. */
+body.holding{display:grid;min-height:100vh;place-items:center;padding:2.5rem max(16px,5vw)}
+.holding-card{width:min(640px,100%);text-align:center;background:var(--green-3);border:1px solid var(--edge);padding:clamp(2rem,6vw,3.5rem)}
+.holding-card .brand{justify-content:center;font-size:1.6rem;margin-bottom:2rem}
+.holding-card h1{font-size:clamp(1.7rem,5vw,2.4rem);margin-bottom:1rem}
+.holding-card>p{color:var(--cream-2);max-width:42ch;margin:0 auto}
+.holding-actions{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;margin-top:2rem}
+.holding-hours{margin-top:2.5rem;padding-top:1.8rem;border-top:1px solid var(--edge);display:grid;gap:.5rem;text-align:left}
+.holding-hours h2{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-family:var(--body);font-weight:600;text-align:center;margin-bottom:.6rem}
+.holding-hours div{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px dotted var(--edge);padding-bottom:.4rem}
+.holding-hours div:last-child{border-bottom:0}
+.holding-hours span:first-child{color:var(--cream-2)}
+.holding-hours span:last-child{font-variant-numeric:tabular-nums}
+.holding-where{margin-top:2rem;font-size:.9rem;color:var(--cream-3)}
+.holding-where a{color:var(--gold-2)}
