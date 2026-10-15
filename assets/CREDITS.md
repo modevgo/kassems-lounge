@@ -2,18 +2,26 @@
 
 ## Kassem's Lounge's own photography (interim)
 
-All restaurant and food photography below is **Kassem's Lounge's own**, taken
-from the restaurant's Instagram, **@kassems.lounge** (posts, story highlights
-and tagged Google Maps photos), used with the client's blessing as **interim
-samples**. Quality is roughly phone-screenshot grade (cropped from 589–800 px
-screen captures) — to be replaced with the client's hi-res originals and video
-when supplied.
+All restaurant and food photography below is **Kassem's Lounge's own**.
+
+**15 Oct 2026 — the client supplied originals; five files here are now his own
+hi-res media.** `hero.jpg`, `tagine-lanterns.jpg`, `brunch-spread.jpg`,
+`mezze-spread.jpg` and the video `msemen-tea.mp4` came direct from the client
+(1,500 px wide, 3–4x the Instagram crops they replace). Everything still listed
+as an Instagram source below is the old phone-screenshot grade (589–800 px) and
+is still waiting on an original.
+
+The rest were taken from the restaurant's Instagram, **@kassems.lounge** (posts,
+story highlights and tagged Google Maps photos), used with the client's blessing
+as **interim samples**.
 
 | File | Subject | Source |
 |---|---|---|
-| hero.jpg | Lantern-lit tagine spread — chicken tagine, bread basket, Moroccan salad, olives | IG story highlight "TAJINES" (6 June) |
-| brunch-spread.jpg | Moroccan brunch from above — khlii & eggs, msemen/baghrir, bread, mint tea | IG post, 3 June |
-| tagine-lanterns.jpg | Lamb tagine with prunes among mezze, lantern-lit table | IG post, 6 June |
+| hero.jpg | Chicken tagine with caramelised prunes and sesame, zaalouk and olives behind, lantern lit | **Client original, 15 Oct 2026** (1522x1033) |
+| tagine-lanterns.jpg | The same frame as hero.jpg — kept under its old name so v1–v5 pick up the quality too | **Client original, 15 Oct 2026** (1522x1033) |
+| brunch-spread.jpg | Moroccan breakfast from above — khlii & eggs, msemen/baghrir, bread, mint tea | **Client original, 15 Oct 2026** (1545x1018) |
+| mezze-spread.jpg | The full table from above — lamb and chicken tagines, couscous, zaalouk, olives, salad, bread | **Client original, 15 Oct 2026** (1536x1024) |
+| msemen-tea.mp4 | Msemen and baghrir with amlou and honey, mint tea, on the table (muted loop, 3s) | **Client original, 15 Oct 2026** (1024x576, re-encoded) |
 | lamb-tagine.jpg | Lamb tagine with caramelised prunes & sesame, bread basket | IG / Google Maps guest photo |
 | chicken-tagine.jpg | Chicken tagine, preserved lemon & olives, bread and lantern | IG / Google Maps guest photo |
 | open-tagine.jpg | Zellige-patterned tagine lid lifted over lamb with prunes | IG / Google Maps guest photo |
@@ -37,3 +45,13 @@ free for commercial use, no permission needed, attribution appreciated.
 | majorelle-fountain.jpg | Cobalt-blue fountain among cacti, Jardin Majorelle | https://images.unsplash.com/photo-1760727467149-4cec6fb5b34d |
 
 Instagram crops prepared 2 July 2026.
+
+## Supplied but not yet used
+
+The client's 15 Oct folder also held three more videos, all the restaurant's own
+and all usable: a tagine lid lifted over kefta with steam rising, a kefta tagine
+beside a mixed-grill plate, and the mixed grill on the dining-room table. They
+are not in the repo because nothing on the page needs them yet — ask before
+sourcing stock for a new section.
+
+Client originals prepared 15 Oct 2026.
