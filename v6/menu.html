@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Menu | Kassem's Lounge, Hemel Hempstead</title>
+<meta name="description" content="The full Kassem's Lounge menu with prices: Moroccan breakfast, tagines and couscous, charcoal grills, mezze, meals to share, shisha and mint tea. 100% halal. 51 Waterhouse Street, Hemel Hempstead.">
+<meta name="theme-color" content="#06120d">
+<meta property="og:title" content="Kassem's Lounge — the menu">
+<meta property="og:description" content="Moroccan breakfast, tagines, charcoal grills, mezze and shisha in Hemel Hempstead. 100% halal.">
+<meta property="og:image" content="https://modevgo.github.io/kassems-lounge/assets/mezze-spread.jpg">
+<meta property="og:type" content="restaurant">
+<link rel="canonical" href="https://modevgo.github.io/kassems-lounge/v6/menu.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===========================================================================
+   Kassem's Lounge — the menu.
+
+   Prices are the restaurant's own, off their printed card. This page is the
+   single place they live: nothing here duplicates a price into a second
+   format, because two copies drift and the wrong one goes out.
+
+   The printed card's grammar is kept — a gold rule with the course name set
+   into it, dish in small caps, price hard right — on v6's tokens, so the page
+   and the card in the customer's hand read as one restaurant. No JavaScript:
+   a menu that needs a script to render is a menu that can fail to render.
+   =========================================================================== */
+
+:root {
+  --ink:       #06120d;
+  --ink-2:     #0a1d15;
+  --tadelakt:  #e8dcc6;
+  --cream:     #f6f1e6;
+  --cream-2:   #cdd6cc;
+  --cream-3:   #8fa295;
+  --gold:      #d9b166;
+  --gold-2:    #f2dca9;
+  --gold-deep: #8e6826;
+  --edge:      rgba(217,177,102,.24);
+
+  --zellige: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%23d9b166' stroke-width='1'%3E%3Crect x='28' y='28' width='84' height='84'/%3E%3Crect x='28' y='28' width='84' height='84' transform='rotate(45 70 70)'/%3E%3Ccircle cx='70' cy='70' r='13'/%3E%3C/g%3E%3C/svg%3E");
+
+  --display: Fraunces, "Iowan Old Style", Georgia, serif;
+  --body: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --gut: max(20px, env(safe-area-inset-left, 0px));
+  --gut-r: max(20px, env(safe-area-inset-right, 0px));
+  --wrap: min(1120px, 100% - var(--gut) - var(--gut-r));
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 5.5rem; }
+body {
+  margin: 0; background: var(--ink); color: var(--cream);
+  font-family: var(--body); font-size: 1.0625rem; line-height: 1.6;
+  overflow-x: hidden;
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--gold-2); outline-offset: 3px; border-radius: 2px; }
+.wrap { width: var(--wrap); margin-inline: auto; }
+.skip { position: absolute; left: -999px; background: var(--gold); color: var(--ink); padding: .7rem 1rem; z-index: 99; }
+.skip:focus { left: 1rem; top: 1rem; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; margin: 0; letter-spacing: -.015em; }
+.eyebrow { font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin: 0; font-weight: 600; }
+
+/* ── nav: one way back to the room, always reachable ──────────────────── */
+.nav {
+  position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 1rem;
+  padding: .85rem var(--gut-r) .85rem var(--gut); padding-top: calc(.85rem + env(safe-area-inset-top, 0px));
+  background: rgba(6,18,13,.86);
+  -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%);
+  border-bottom: 1px solid var(--edge);
+}
+.brand { font-family: var(--display); font-size: 1.05rem; text-decoration: none; line-height: 1; }
+.brand small { display: block; font-family: var(--body); font-size: .56rem; letter-spacing: .34em; color: var(--gold); text-transform: uppercase; margin-top: .25rem; }
+.call {
+  margin-left: auto; text-decoration: none; white-space: nowrap; font-size: .76rem;
+  letter-spacing: .12em; text-transform: uppercase; font-weight: 600; padding: .62rem 1.05rem;
+  border: 1px solid var(--gold); color: var(--gold-2); border-radius: 999px; transition: background .3s, color .3s;
+}
+.call:hover { background: var(--gold); color: var(--ink); }
+
+/* ── head of the page ─────────────────────────────────────────────────── */
+.top { position: relative; isolation: isolate; padding: clamp(2.6rem, 7vw, 4.6rem) 0 clamp(1.6rem, 4vw, 2.4rem); text-align: center; }
+.top::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: var(--zellige); background-size: 140px 140px; opacity: .09;
+  -webkit-mask-image: radial-gradient(120% 80% at 50% 0%, #000 10%, transparent 72%);
+  mask-image: radial-gradient(120% 80% at 50% 0%, #000 10%, transparent 72%);
+}
+.top h1 { font-size: clamp(2.3rem, 1.4rem + 3.6vw, 3.9rem); margin: 1rem 0 .9rem; }
+.top p { color: var(--cream-2); max-width: 46ch; margin: 0 auto; }
+.halal {
+  display: inline-block; margin-top: 1.4rem; padding: .5rem 1.1rem; border: 1px solid var(--edge);
+  border-radius: 999px; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--gold-2); font-weight: 600;
+}
+
+/* ── jump chips ───────────────────────────────────────────────────────── */
+.jump { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin: 1.8rem auto 0; }
+.jump a {
+  text-decoration: none; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+  padding: .5rem .85rem; border: 1px solid rgba(246,241,230,.16); border-radius: 999px;
+  color: var(--cream-2); transition: border-color .3s, color .3s;
+}
+.jump a:hover { border-color: var(--gold); color: var(--gold-2); }
+
+/* ── a course ─────────────────────────────────────────────────────────── */
+.band { padding: clamp(2.4rem, 6vw, 3.6rem) 0; }
+.band.plaster { background: linear-gradient(180deg, var(--ink-2), var(--ink)); }
+
+.course-head { display: flex; align-items: center; gap: 1rem; margin-bottom: .4rem; }
+.course-head::before, .course-head::after { content: ""; flex: 1; height: 1px; background: var(--edge); }
+.course-head h2 {
+  font-family: var(--body); font-size: .86rem; font-weight: 600; letter-spacing: .26em;
+  text-transform: uppercase; color: var(--gold); white-space: nowrap;
+}
+.course-note { text-align: center; color: var(--cream-3); font-size: .9rem; margin: 0 0 1.8rem; }
+
+/* Two columns on a wide screen, one on a phone. The dish is a grid so the
+   price keeps its column whatever the name wraps to. */
+.dishes { display: grid; gap: 1.5rem 3rem; margin: 0; padding: 0; list-style: none; }
+@media (min-width: 760px) { .dishes.two { grid-template-columns: 1fr 1fr; } }
+
+.dish { display: grid; grid-template-columns: 1fr auto; gap: .2rem .9rem; align-items: baseline; }
+.dish .name { font-family: var(--display); font-size: 1.06rem; letter-spacing: .01em; }
+.dish .price { font-family: var(--display); font-size: 1rem; color: var(--gold-2); white-space: nowrap; }
+.dish .how { grid-column: 1 / -1; color: var(--cream-3); font-size: .93rem; line-height: 1.5; max-width: 52ch; }
+.veg { font-size: .62rem; letter-spacing: .12em; color: var(--gold); border: 1px solid var(--edge); border-radius: 3px; padding: .1rem .3rem; vertical-align: .14em; margin-left: .35rem; }
+
+/* A compact list: name and price only, no description. */
+.dishes.tight { gap: .85rem 3rem; }
+.dishes.tight .dish { border-bottom: 1px dotted rgba(246,241,230,.12); padding-bottom: .55rem; }
+
+/* ── the share meals ──────────────────────────────────────────────────── */
+.meals { display: grid; gap: 1.2rem; margin-top: 1.4rem; }
+@media (min-width: 820px) { .meals { grid-template-columns: repeat(3, 1fr); } }
+.meal { border: 1px solid var(--edge); border-radius: 14px; padding: 1.6rem 1.5rem 1.4rem; background: rgba(16,50,36,.42); display: flex; flex-direction: column; }
+.meal h3 { font-family: var(--body); font-size: .8rem; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+.meal ul { list-style: none; margin: 1.1rem 0 1.4rem; padding: 0; display: grid; gap: .6rem; }
+.meal li { position: relative; padding-left: 1.1rem; font-size: .97rem; color: var(--cream); }
+.meal li::before { content: ""; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--gold-deep); }
+.meal .tag { margin-top: auto; align-self: flex-start; font-family: var(--display); font-size: 1.25rem; color: var(--ink); background: var(--gold); border-radius: 8px; padding: .35rem .9rem; }
+
+/* ── the small print ──────────────────────────────────────────────────── */
+.note { border: 1px solid var(--edge); border-radius: 14px; padding: 1.6rem 1.5rem; margin-top: 1rem; }
+.note h3 { font-family: var(--body); font-size: .8rem; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); margin-bottom: .9rem; }
+.note ul { margin: 0; padding-left: 1.1rem; display: grid; gap: .55rem; color: var(--cream-2); font-size: .97rem; }
+.note li::marker { color: var(--gold-deep); }
+
+.policy { display: grid; gap: 1.2rem; }
+@media (min-width: 820px) { .policy { grid-template-columns: 1fr 1fr; align-items: start; } }
+
+/* ── foot ─────────────────────────────────────────────────────────────── */
+.back { text-align: center; padding: clamp(2.4rem, 6vw, 3.4rem) 0; }
+.btn {
+  display: inline-flex; align-items: center; gap: .55rem; text-decoration: none;
+  font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600;
+  padding: .95rem 1.5rem; border-radius: 999px; border: 1px solid var(--gold); color: var(--gold-2);
+  transition: background .3s, color .3s;
+}
+.btn:hover { background: var(--gold); color: var(--ink); }
+.foot { border-top: 1px solid var(--edge); padding: 1.6rem 0 calc(1.6rem + env(safe-area-inset-bottom, 0px)); font-size: .86rem; color: var(--cream-3); }
+.foot .wrap { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; justify-content: space-between; }
+.foot a { color: var(--gold-2); }
+
+@media print {
+  .nav, .jump, .back, .thumb { display: none; }
+  body { background: #fff; color: #000; }
+  .band.plaster { background: none; }
+  .dish .how, .foot { color: #333; }
+  .dish .price, .meal h3, .course-head h2 { color: #8e6826; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#menu">Skip to the menu</a>
+
+<header class="nav">
+  <a class="brand" href="./">Kassem's<small>Lounge</small></a>
+  <a class="call" href="tel:+441442954333">01442 954333</a>
+</header>
+
+<div class="top">
+  <div class="wrap">
+    <p class="eyebrow">51 Waterhouse Street, Hemel Hempstead</p>
+    <h1>The menu</h1>
+    <p>Moroccan breakfast, tagines left long over a low flame, lamb over charcoal, mezze to share &mdash; and mint tea poured from a height.</p>
+    <p class="halal">Our food is 100% halal</p>
+
+    <nav class="jump" aria-label="Jump to a course">
+      <a href="#breakfast">Breakfast</a>
+      <a href="#specials">Specials</a>
+      <a href="#grills">Grills</a>
+      <a href="#share">To share</a>
+      <a href="#mezze">Mezze</a>
+      <a href="#sides">Sides</a>
+      <a href="#children">Children</a>
+      <a href="#drinks">Drinks</a>
+      <a href="#shisha">Shisha</a>
+    </nav>
+  </div>
+</div>
+
+<main id="menu">
+
+<!-- Breakfast. The daytime service is Thursday to Sunday on the published hours. -->
+<section class="band plaster" id="breakfast">
+  <div class="wrap">
+    <div class="course-head"><h2>Breakfast</h2></div>
+    <p class="course-note">Served Thursday to Sunday, during the daytime service</p>
+
+    <ul class="dishes two">
+      <li class="dish">
+        <span class="name">Breakfast a la Bledi <span class="veg">V</span></span><span class="price">&pound;13.95</span>
+        <span class="how">Traditional Moroccan breakfast &mdash; fresh msmen, baghrir, harcha, Kiri, organic honey, organic olives, sweet homemade Almou (almond butter).</span>
+      </li>
+      <li class="dish">
+        <span class="name">Kassem's Breakfast</span><span class="price">&pound;12.95</span>
+        <span class="how">Anglo-Maroc traditional breakfast with eggs, mehret sausages, turkey bacon, hash brown, harissa loubya, grilled mushroom, tomato and toast.</span>
+      </li>
+      <li class="dish">
+        <span class="name">The Mediterranean</span><span class="price">&pound;14.95</span>
+        <span class="how">Feta and spinach pastry, eggs, grilled halloumi, tomato, mushroom, olives &amp; mehret sausage. Served with freshly baked bread and fig jam.</span>
+      </li>
+      <li class="dish">
+        <span class="name">Shackshuka <span class="veg">V</span></span><span class="price">&pound;11.95</span>
+        <span class="how">Poached eggs nested in a rich, spiced tomato sauce infused with bell peppers, onion and garlic. Served with freshly baked bread.</span>
+      </li>
+      <li class="dish">
+        <span class="name">Traditional Moroccan Khlii</span><span class="price">&pound;11.95</span>
+        <span class="how">Fried eggs cooked in fresh khlii, seasoned with aromatic herbs and spices and served with freshly baked bread.</span>
+      </li>
+      <li class="dish">
+        <span class="name">Moroccan Pancakes <span class="veg">V</span></span><span class="price">&pound;10.95</span>
+        <span class="how">Homemade baked Baghrir or msemen, served with warm and drizzled sweet honey butter and Amlou and sauce of choice.</span>
+      </li>
+    </ul>
+
+    <div class="note" style="margin-top:2rem">
+      <h3>Add ons</h3>
+      <ul class="dishes tight two" style="list-style:none;padding:0">
+        <li class="dish"><span class="name">Mehret Sausage (2)</span><span class="price">&pound;3.00</span></li>
+        <li class="dish"><span class="name">Egg</span><span class="price">&pound;2.00</span></li>
+        <li class="dish"><span class="name">Hash Brown (2)</span><span class="price">&pound;1.50</span></li>
+        <li class="dish"><span class="name">Kiri</span><span class="price">&pound;1.00</span></li>
+        <li class="dish"><span class="name">Toast</span><span class="price">&pound;2.00</span></li>
+        <li class="dish"><span class="name">Beans</span><span class="price">&pound;1.50</span></li>
+        <li class="dish"><span class="name">Turkey Bacon (2)</span><span class="price">&pound;2.00</span></li>
+        <li class="dish"><span class="name">Mushroom</span><span class="price">&pound;1.50</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Kassem's specials: the tagines and couscous the kitchen is known for. -->
+<section class="band" id="specials">
+  <div class="wrap">
+    <div class="course-head"><h2>Kassem's Specials</h2></div>
+    <p class="course-note">Tagines and couscous, cooked slow</p>
+
+    <ul class="dishes two">
+      <li class="dish">
+        <span class="name">Chicken Tagine</span><span class="price">&pound;21.95</span>
+        <span class="how">Slow-cooked chicken in a rich zesty lemon and onion sauce. Served with freshly baked bread.</span>
+      </li>
+      <li class="dish">
+        <span class="name">Tagine Al Hout</span><span class="price">&pound;21.95</span>
+        <span class="how">Fillets of fish stewed with tomato and peppers. Served with freshly baked bread.</span>
+      </li>
+      <li class="dish">
+        <span class="name">Lamb Tagine</span><span class="price">&pound;23.95</span>
+        <span class="how">Tender lamb, slow cooked with sweet prunes, almonds and sesame seeds in a blend of fragrant spices. Served with freshly baked bread and olives.</span>
+      </li>
+      <li class="dish">
+        <span class="name">Chicken Couscous</span><span class="price">&pound;22.95</span>
+        <span class="how">Morocco's traditional couscous dish; slow cooked chicken served with couscous &amp; vegetables topped with caramelised onions and sweet raisins.</span>
+      </li>
+      <li class="dish">
+        <span class="name">Kassem's Kofta Tagine</span><span class="price">&pound;22.95</span>
+        <span class="how">Succulent spiced meatballs nestled in a rich, aromatic tomato sauce, infused with fragrant garlic and caramelized onions. Perfectly paired with warm bread.</span>
+      </li>
+      <li class="dish">
+        <span class="name">Lamb Couscous</span><span class="price">&pound;24.95</span>
+        <span class="how">Morocco's traditional couscous dish; slow cooked tender lamb served with couscous &amp; vegetables topped with caramelised onions and sweet raisins.</span>
+      </li>
+      <li class="dish">
+        <span class="name">Khodar Tagine <span class="veg">V</span></span><span class="price">&pound;16.95</span>
+        <span class="how">Medley of vegetables cooked in a rich spiced aromatic onion sauce. Served with freshly baked bread.</span>
+      </li>
+      <li class="dish">
+        <span class="name">Khodar Couscous <span class="veg">V</span></span><span class="price">&pound;17.95</span>
+        <span class="how">Morocco's traditional couscous dish; served with fluffy steamed couscous and vegetables topped with caramelised onions and sweet raisins.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="band plaster" id="grills">
+  <div class="wrap">
+    <div class="course-head"><h2>Kassem's Grills</h2></div>
+    <p class="course-note">All grills served with rice or chips &amp; salad</p>
+
+    <ul class="dishes tight two">
+      <li class="dish"><span class="name">Harissa Wings</span><span class="price">&pound;14.95</span></li>
+      <li class="dish"><span class="name">Kassem's Kofta</span><span class="price">&pound;18.95</span></li>
+      <li class="dish"><span class="name">Chicken Shish</span><span class="price">&pound;16.95</span></li>
+      <li class="dish"><span class="name">Lamb Chops</span><span class="price">&pound;20.95</span></li>
+      <li class="dish"><span class="name">Lamb Shish</span><span class="price">&pound;18.95</span></li>
+      <li class="dish"><span class="name">Mixed Grill</span><span class="price">&pound;24.95</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- The share meals: the clearest thing on the printed card, so it keeps its shape here. -->
+<section class="band" id="share">
+  <div class="wrap">
+    <div class="course-head"><h2>Meals to share</h2></div>
+    <p class="course-note">One price, the table fed</p>
+
+    <div class="meals">
+      <article class="meal">
+        <h3>Meal for 2</h3>
+        <ul>
+          <li>Mixed olives &amp; baked bread</li>
+          <li>Cheese &amp; chicken briwat</li>
+          <li>Mixed grill with rice &amp; salad</li>
+          <li>Chicken tagine with baked bread</li>
+        </ul>
+        <span class="tag">&pound;50.00</span>
+      </article>
+      <article class="meal">
+        <h3>Meal for 4</h3>
+        <ul>
+          <li>Mixed olives &amp; baked bread</li>
+          <li>Hummus with flat bread</li>
+          <li>Cheese &amp; chicken briwat</li>
+          <li>Mixed grill with rice &amp; salad</li>
+          <li>Chicken tagine with baked bread</li>
+          <li>Lamb couscous</li>
+        </ul>
+        <span class="tag">&pound;90.00</span>
+      </article>
+      <article class="meal">
+        <h3>Meal for 6</h3>
+        <ul>
+          <li>Mixed olives &amp; baked bread</li>
+          <li>Hummus with flat bread</li>
+          <li>Cheese &amp; chicken briwat</li>
+          <li>Mixed grill with rice &amp; salad</li>
+          <li>Chicken tagine with baked bread</li>
+          <li>Kassem's kofta tagine</li>
+          <li>Lamb couscous</li>
+        </ul>
+        <span class="tag">&pound;125.00</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band plaster" id="mezze">
+  <div class="wrap">
+    <div class="course-head"><h2>Mezze</h2></div>
+    <p class="course-note">To begin, and to share</p>
+
+    <ul class="dishes two">
+      <li class="dish"><span class="name">Mixed Olives <span class="veg">V</span></span><span class="price">&pound;4.95</span></li>
+      <li class="dish"><span class="name">Grilled Halloumi <span class="veg">V</span></span><span class="price">&pound;5.95</span></li>
+      <li class="dish">
+        <span class="name">Hummus <span class="veg">V</span></span><span class="price">&pound;5.95</span>
+        <span class="how">Served with pitta bread.</span>
+      </li>
+      <li class="dish">
+        <span class="name">Zaaklock <span class="veg">V</span></span><span class="price">&pound;5.95</span>
+        <span class="how">Smoked aubergine, cooked with garlic, coriander and tomato. Served with warm bread.</span>
+      </li>
+      <li class="dish">
+        <span class="name">Bakkoula <span class="veg">V</span></span><span class="price">&pound;5.95</span>
+        <span class="how">Spinach cooked with garlic, olive oil, cumin and lemon. Served with warm bread.</span>
+      </li>
+      <li class="dish">
+        <span class="name">Cheese Briwat <span class="veg">V</span></span><span class="price">&pound;6.95</span>
+        <span class="how">Flaky Moroccan pastry with a savoury filling of spinach and cream cheese.</span>
+      </li>
+      <li class="dish">
+        <span class="name">Chicken Briwat</span><span class="price">&pound;8.95</span>
+        <span class="how">Chicken and tender noodles cooked with a blend of aromatic herbs and spices, wrapped in a flaky Moroccan pastry.</span>
+      </li>
+      <li class="dish">
+        <span class="name">Bastilla</span><span class="price">&pound;9.95</span>
+        <span class="how">A Moroccan masterpiece of crispy pastry layered with savoury chicken cooked with spices and a delicate almond filling, dusted with cinnamon and sugar.</span>
+      </li>
+      <li class="dish">
+        <span class="name">Harira Soup</span><span class="price">&pound;7.95</span>
+        <span class="how">Morocco's traditional home made soup.</span>
+      </li>
+      <li class="dish"><span class="name">Harissa Wings</span><span class="price">&pound;7.95</span></li>
+      <li class="dish"><span class="name">Mehret Sausage</span><span class="price">&pound;8.95</span></li>
+      <li class="dish"><span class="name">Calamari</span><span class="price">&pound;8.95</span></li>
+      <li class="dish"><span class="name">Garlic Prawns</span><span class="price">&pound;11.95</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" id="sides">
+  <div class="wrap">
+    <div class="course-head"><h2>Sides</h2></div>
+    <ul class="dishes tight two" style="margin-top:1.4rem">
+      <li class="dish"><span class="name">Bread Basket <span class="veg">V</span></span><span class="price">&pound;3.95</span></li>
+      <li class="dish"><span class="name">Chips <span class="veg">V</span></span><span class="price">&pound;4.50</span></li>
+      <li class="dish"><span class="name">Rice <span class="veg">V</span></span><span class="price">&pound;4.95</span></li>
+      <li class="dish"><span class="name">House Salad <span class="veg">V</span></span><span class="price">&pound;4.50</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band plaster" id="children">
+  <div class="wrap">
+    <div class="course-head"><h2>Children's menu</h2></div>
+    <ul class="dishes two" style="margin-top:1.4rem">
+      <li class="dish">
+        <span class="name">Chicken Shish served with chips or rice</span><span class="price">&pound;9.95</span>
+        <span class="how">Comes with a fruit shoot.</span>
+      </li>
+      <li class="dish">
+        <span class="name">Chicken Nuggets &amp; Chips</span><span class="price">&pound;8.95</span>
+        <span class="how">Comes with a fruit shoot.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" id="drinks">
+  <div class="wrap">
+    <div class="course-head"><h2>Hot drinks</h2></div>
+    <ul class="dishes tight two" style="margin-top:1.4rem">
+      <li class="dish"><span class="name">Espresso</span><span class="price">&pound;2.00</span></li>
+      <li class="dish"><span class="name">Hot Chocolate</span><span class="price">&pound;3.50</span></li>
+      <li class="dish"><span class="name">Cappuccino</span><span class="price">&pound;3.50</span></li>
+      <li class="dish"><span class="name">English Earl Grey Tea</span><span class="price">&pound;3.50</span></li>
+      <li class="dish"><span class="name">Latte</span><span class="price">&pound;3.50</span></li>
+      <li class="dish"><span class="name">Moroccan Mint Tea (pot for 1 or 2)</span><span class="price">&pound;4.50 / &pound;6.50</span></li>
+      <li class="dish"><span class="name">Flat White</span><span class="price">&pound;3.50</span></li>
+      <li class="dish"><span class="name">Iced Coffee</span><span class="price">&pound;4.00</span></li>
+      <li class="dish"><span class="name">Americano</span><span class="price">&pound;3.50</span></li>
+      <li class="dish"><span class="name">Syrup Shot</span><span class="price">&pound;0.50</span></li>
+    </ul>
+    <p class="course-note" style="margin:1.4rem 0 0;text-align:left">For milk alternatives, please ask a member of staff.</p>
+
+    <div class="course-head" style="margin-top:3rem"><h2>Soft drinks</h2></div>
+    <ul class="dishes two" style="margin-top:1.4rem">
+      <li class="dish"><span class="name">Coke / Coke Zero / Sprite</span><span class="price">&pound;3.50</span></li>
+      <li class="dish"><span class="name">Fruit Shoot</span><span class="price">&pound;2.00</span></li>
+      <li class="dish">
+        <span class="name">Hawaii</span><span class="price">&pound;3.50</span>
+        <span class="how">Traditional carbonated Moroccan tropical fruit drink.</span>
+      </li>
+      <li class="dish"><span class="name">J20</span><span class="price">&pound;3.75</span></li>
+      <li class="dish">
+        <span class="name">Pomms</span><span class="price">&pound;3.50</span>
+        <span class="how">Traditional carbonated Moroccan apple drink.</span>
+      </li>
+      <li class="dish"><span class="name">Orange / Apple / Pineapple Juice</span><span class="price">&pound;3.50</span></li>
+      <li class="dish"><span class="name">Redbull</span><span class="price">&pound;3.50</span></li>
+      <li class="dish"><span class="name">Cranberry Juice</span><span class="price">&pound;3.50</span></li>
+    </ul>
+
+    <div class="course-head" style="margin-top:3rem"><h2>Mocktails</h2></div>
+    <ul class="dishes two" style="margin-top:1.4rem">
+      <li class="dish">
+        <span class="name">The Marrakesh</span><span class="price">&pound;8.00</span>
+        <span class="how">A refreshing blend of apple &amp; raspberry with sparkling lemonade for a crisp, fruity finish.</span>
+      </li>
+      <li class="dish"><span class="name">Mango Mojito</span><span class="price">&pound;8.00</span></li>
+      <li class="dish">
+        <span class="name">The Casablanca</span><span class="price">&pound;8.00</span>
+        <span class="how">A vibrant mix of orange &amp; passionfruit with sparkling lemonade, bursting with tropical citrus flavour.</span>
+      </li>
+      <li class="dish"><span class="name">Classic Mojito</span><span class="price">&pound;8.00</span></li>
+      <li class="dish"><span class="name">Raspberry Mojito</span><span class="price">&pound;8.00</span></li>
+      <li class="dish"><span class="name">Strawberry Mojito</span><span class="price">&pound;8.00</span></li>
+      <li class="dish"><span class="name">Passion Fruit Mojito</span><span class="price">&pound;8.00</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band plaster" id="shisha">
+  <div class="wrap">
+    <div class="course-head"><h2>Shisha</h2></div>
+    <p class="course-note">On the outdoor terrace</p>
+
+    <div class="policy">
+      <ul class="dishes">
+        <li class="dish">
+          <span class="name">Al-Fhaker Original</span><span class="price">&pound;25.00</span>
+          <span class="how">Apple / Mint / Grape / Watermelon.</span>
+        </li>
+        <li class="dish">
+          <span class="name">Liyali</span><span class="price">&pound;28.00</span>
+          <span class="how">Frozen Blueberry / Frozen Raspberry / Love 66 / Lady Killer / Blue Mist.</span>
+        </li>
+        <li class="dish">
+          <span class="name">Savacco</span><span class="price">&pound;30.00</span>
+          <span class="how">Black Mamba / Purple Rain / Passionova.</span>
+        </li>
+      </ul>
+
+      <div class="note" style="margin-top:0">
+        <h3>Shisha policy</h3>
+        <ul>
+          <li>Shisha is available exclusively on our outdoor terrace, where smoking is permitted.</li>
+          <li>Maximum of 3 guests per shisha.</li>
+          <li>All guests wishing to use shisha must be 18 years of age or over.</li>
+          <li>We operate a Challenge 25 policy and reserve the right to request valid photo ID from anyone who appears to be under the age of 25.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="desserts">
+  <div class="wrap">
+    <div class="course-head"><h2>Desserts</h2></div>
+    <p class="course-note" style="margin-bottom:0">Please ask a member of staff for our cakes &amp; ice cream scoops</p>
+
+    <div class="note" style="margin-top:2.4rem">
+      <h3>Please note</h3>
+      <ul>
+        <li>Our food is 100% halal.</li>
+        <li><strong>(V)</strong> indicates vegetarian dishes.</li>
+        <li>Please speak to a member of staff about any dietary requirements or food allergies before placing your order.</li>
+        <li>An optional 12.5% service charge will be added to tables of 5 or more guests.</li>
+        <li>We reserve the right to refuse service where appropriate.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="back">
+  <div class="wrap">
+    <a class="btn" href="tel:+441442954333">Book a table &mdash; 01442 954333</a>
+  </div>
+</div>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Kassem's Lounge &middot; 51 Waterhouse Street, Hemel Hempstead HP1 1EA</span>
+    <span><a href="./">Back to the restaurant</a> &middot; <a href="tel:+441442954333">01442 954333</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
