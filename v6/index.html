@@ -280,7 +280,6 @@ address { font-style: normal; margin: 1.2rem 0 0; color: var(--cream-2); line-he
 .thumb svg { width: 1.05em; height: 1.05em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 @media (min-width: 700px) { .thumb { display: none; } }
 /* Clear the bar, or it sits on top of the last line of the footer. */
-@media (max-width: 699px) { footer.foot { padding-bottom: calc(5.2rem + env(safe-area-inset-bottom, 0px)); } }
 
 .links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.6rem; }
 .links a { text-decoration: none; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; padding: .55rem .95rem; border: 1px solid var(--edge); border-radius: 999px; color: var(--cream-2); transition: border-color .3s, color .3s; }
@@ -303,6 +302,7 @@ address { font-style: normal; margin: 1.2rem 0 0; color: var(--cream-2); line-he
 .say { margin: 1.3rem 0 0; font-family: var(--display); font-size: 1.2rem; color: #8b5a2a; }
 
 footer.foot { border-top: 1px solid var(--edge-soft); padding-block: 2.4rem calc(2.4rem + env(safe-area-inset-bottom, 0px)); }
+@media (max-width: 699px) { footer.foot { padding-bottom: calc(5.2rem + env(safe-area-inset-bottom, 0px)); } }
 footer.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem 2rem; font-size: .76rem; color: var(--cream-3); }
 footer.foot a { text-decoration: none; }
 
