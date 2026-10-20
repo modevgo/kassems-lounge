@@ -46,7 +46,7 @@
   --body: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --gut: max(20px, env(safe-area-inset-left, 0px));
   --gut-r: max(20px, env(safe-area-inset-right, 0px));
-  --wrap: min(1120px, 100% - var(--gut) - var(--gut-r));
+  --wrap: min(1180px, 100% - var(--gut) - var(--gut-r));
   color-scheme: dark;
 }
 
@@ -80,6 +80,13 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; m
   letter-spacing: .12em; text-transform: uppercase; font-weight: 600; padding: .62rem 1.05rem;
   border: 1px solid var(--gold); color: var(--gold-2); border-radius: 999px; transition: background .3s, color .3s;
 }
+.nav ul { display: none; list-style: none; margin: 0 auto; padding: 0; gap: 2rem; }
+.nav a.link { text-decoration: none; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--cream-2); position: relative; padding-block: .3rem; }
+.nav a.link[aria-current="page"] { color: var(--gold-2); }
+.nav a.link::after { content: ""; position: absolute; inset-inline: 0; bottom: 0; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .4s cubic-bezier(.2,.7,.2,1); }
+.nav a.link:hover::after, .nav a.link:focus-visible::after { transform: scaleX(1); }
+.nav a.link[aria-current="page"]::after { transform: scaleX(1); }
+@media (min-width: 920px) { .nav ul { display: flex; } }
 .call:hover { background: var(--gold); color: var(--ink); }
 
 /* ── head of the page ─────────────────────────────────────────────────── */
@@ -109,7 +116,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; m
 
 /* ── a course ─────────────────────────────────────────────────────────── */
 .band { padding: clamp(2.4rem, 6vw, 3.6rem) 0; }
-.band.plaster { background: linear-gradient(180deg, var(--ink-2), var(--ink)); }
+.band.deep { background: linear-gradient(180deg, var(--ink-2), var(--ink)); }
 
 .course-head { display: flex; align-items: center; gap: 1rem; margin-bottom: .4rem; }
 .course-head::before, .course-head::after { content: ""; flex: 1; height: 1px; background: var(--edge); }
@@ -162,14 +169,22 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; m
   transition: background .3s, color .3s;
 }
 .btn:hover { background: var(--gold); color: var(--ink); }
+.thumb { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 1px; background: var(--edge); border-top: 1px solid var(--edge); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.thumb a { display: flex; align-items: center; justify-content: center; gap: .5rem; padding: 1.05rem .8rem; background: var(--ink-2); color: var(--gold-2); text-decoration: none; font-family: var(--body); font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.thumb a:first-child { background: var(--gold); color: var(--ink); padding-left: calc(.8rem + env(safe-area-inset-left, 0px)); }
+.thumb a:last-child { padding-right: calc(.8rem + env(safe-area-inset-right, 0px)); }
+.thumb svg { width: 1.05em; height: 1.05em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+@media (min-width: 700px) { .thumb { display: none; } }
+
 .foot { border-top: 1px solid var(--edge); padding: 1.6rem 0 calc(1.6rem + env(safe-area-inset-bottom, 0px)); font-size: .86rem; color: var(--cream-3); }
+@media (max-width: 699px) { .foot { padding-bottom: calc(5.2rem + env(safe-area-inset-bottom, 0px)); } }
 .foot .wrap { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; justify-content: space-between; }
 .foot a { color: var(--gold-2); }
 
 @media print {
   .nav, .jump, .back, .thumb { display: none; }
   body { background: #fff; color: #000; }
-  .band.plaster { background: none; }
+  .band.deep { background: none; }
   .dish .how, .foot { color: #333; }
   .dish .price, .meal h3, .course-head h2 { color: #8e6826; }
 }
@@ -181,6 +196,13 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; m
 
 <header class="nav">
   <a class="brand" href="./">Kassem's<small>Lounge</small></a>
+  <ul>
+    <li><a class="link" href="#menu" aria-current="page">Menu</a></li>
+    <li><a class="link" href="./#carte">The carte</a></li>
+    <li><a class="link" href="./#catering">Catering</a></li>
+    <li><a class="link" href="./#story">Story</a></li>
+    <li><a class="link" href="./#visit">Visit</a></li>
+  </ul>
   <a class="call" href="tel:+441442954333">01442 954333</a>
 </header>
 
@@ -208,7 +230,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; m
 <main id="menu">
 
 <!-- Breakfast. The daytime service is Thursday to Sunday on the published hours. -->
-<section class="band plaster" id="breakfast">
+<section class="band deep" id="breakfast">
   <div class="wrap">
     <div class="course-head"><h2>Breakfast</h2></div>
     <p class="course-note">Served Thursday to Sunday, during the daytime service</p>
@@ -299,7 +321,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; m
   </div>
 </section>
 
-<section class="band plaster" id="grills">
+<section class="band deep" id="grills">
   <div class="wrap">
     <div class="course-head"><h2>Kassem's Grills</h2></div>
     <p class="course-note">All grills served with rice or chips &amp; salad</p>
@@ -361,7 +383,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; m
   </div>
 </section>
 
-<section class="band plaster" id="mezze">
+<section class="band deep" id="mezze">
   <div class="wrap">
     <div class="course-head"><h2>Mezze</h2></div>
     <p class="course-note">To begin, and to share</p>
@@ -417,7 +439,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; m
   </div>
 </section>
 
-<section class="band plaster" id="children">
+<section class="band deep" id="children">
   <div class="wrap">
     <div class="course-head"><h2>Children's menu</h2></div>
     <ul class="dishes two" style="margin-top:1.4rem">
@@ -487,7 +509,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; m
   </div>
 </section>
 
-<section class="band plaster" id="shisha">
+<section class="band deep" id="shisha">
   <div class="wrap">
     <div class="course-head"><h2>Shisha</h2></div>
     <p class="course-note">On the outdoor terrace</p>
@@ -546,6 +568,11 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; m
 </div>
 
 </main>
+
+<nav class="thumb" aria-label="Call or get directions">
+  <a href="tel:+441442954333"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Kassem%27s+Lounge%2C+51+Waterhouse+Street%2C+Hemel+Hempstead+HP1+1EA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 21 3l-8 18-2-7-8-3z"/></svg>Take me there</a>
+</nav>
 
 <footer class="foot">
   <div class="wrap">
