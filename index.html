@@ -2,656 +2,705 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kassem's Lounge</title>
-<meta name="description" content="Family-run Moroccan restaurant on Waterhouse Street, Hemel Hempstead. Tagines cooked slowly, lamb over charcoal, fresh bread, and Moroccan breakfast from ten Thursday to Sunday.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kassem's Lounge | Moroccan cooking in Hemel Hempstead</title>
+<meta name="description" content="Family-run Moroccan cooking on Waterhouse Street, Hemel Hempstead. Tagines left long over a low flame, lamb over charcoal, bread from the oven and mint tea. Lunch Thursday to Sunday, dinner Tuesday to Sunday.">
+<meta name="theme-color" content="#06120d">
 <meta property="og:title" content="Kassem's Lounge">
 <meta property="og:description" content="Family-run Moroccan cooking in Hemel Hempstead. Lunch Thursday to Sunday, dinner Tuesday to Sunday. Bookings by phone.">
-<meta property="og:image" content="assets/hero.jpg">
+<meta property="og:image" content="https://kassems.co.uk/assets/hero.jpg">
 <meta property="og:type" content="restaurant">
-<link rel="canonical" href="https://modevgo.github.io/kassems-lounge/">
-</head>
-<body>
+<link rel="canonical" href="https://kassems.co.uk/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=DM+Mono:wght@400;500&display=swap">
+<link rel="preload" as="image" fetchpriority="high"
+      imagesrcset="assets/opt/hero-480.avif 480w, assets/opt/hero-960.avif 960w, assets/opt/hero-1440.avif 1440w"
+      imagesizes="100vw" type="image/avif">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ——— Zellige at night. One committed world: glazed tile, gold, charcoal dark. ——— */
-:root{
-  color-scheme:dark;
-  --ink:#0a171d; --glaze:#0f2229; --raised:#163239; --edge:rgba(213,174,90,.22);
-  --cream:#f1e6cf; --cream-2:#c8bca4; --cream-3:#8f8977;
-  --gold:#d5ae5a; --gold-2:#f0d287; --gold-3:#8f6f2c;
-  --clay:#b7562f; --cobalt:#2f5fa8; --teal:#1f6b5e;
-  --display:'Italiana','Didot','Bodoni MT',Georgia,serif;
-  --body:'Newsreader',Georgia,'Times New Roman',serif;
-  --mono:'DM Mono',ui-monospace,'SF Mono',Menlo,monospace;
-  --w:min(1240px,92vw);
-  --hero-tile:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' fill='none' stroke='%23d5ae5a' stroke-width='1' stroke-opacity='.55'%3E%3Cpolygon points='100,50 85.36,64.64 85.36,85.36 64.64,85.36 50,100 35.36,85.36 14.64,85.36 14.64,64.64 0,50 14.64,35.36 14.64,14.64 35.36,14.64 50,0 64.64,14.64 85.36,14.64 85.36,35.36'/%3E%3Ccircle cx='50' cy='50' r='50' stroke-opacity='.12'/%3E%3Ccircle cx='50' cy='50' r='38.27' stroke-opacity='.12'/%3E%3C/svg%3E");
-  --wall-tile:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' stroke='%230b1216' stroke-width='1' stroke-linejoin='round'%3E%3Crect width='100' height='100' fill='%230b1216' stroke='none'/%3E%3Cpolygon points='50,50 85.36,35.36 100,50 85.36,64.64' fill='%231f5f55'/%3E%3Cpolygon points='50,50 85.36,64.64 85.36,85.36 64.64,85.36' fill='%23244a8c'/%3E%3Cpolygon points='50,50 64.64,85.36 50,100 35.36,85.36' fill='%231f5f55'/%3E%3Cpolygon points='50,50 35.36,85.36 14.64,85.36 14.64,64.64' fill='%23244a8c'/%3E%3Cpolygon points='50,50 14.64,64.64 0,50 14.64,35.36' fill='%231f5f55'/%3E%3Cpolygon points='50,50 14.64,35.36 14.64,14.64 35.36,14.64' fill='%23244a8c'/%3E%3Cpolygon points='50,50 35.36,14.64 50,0 64.64,14.64' fill='%231f5f55'/%3E%3Cpolygon points='50,50 64.64,14.64 85.36,14.64 85.36,35.36' fill='%23244a8c'/%3E%3Cpolygon points='63.86,55.74 55.74,63.86 44.26,63.86 36.14,55.74 36.14,44.26 44.26,36.14 55.74,36.14 63.86,44.26' fill='%23e9dcc0'/%3E%3Cpolygon points='0,-50 14.64,-35.36 14.64,-14.64 35.36,-14.64 50,0 35.36,14.64 14.64,14.64 14.64,35.36 0,50 -14.64,35.36 -14.64,14.64 -35.36,14.64 -50,0 -35.36,-14.64 -14.64,-14.64 -14.64,-35.36' fill='%23c08a2e'/%3E%3Cpolygon points='-14.64,-14.64 14.64,-14.64 14.64,14.64 -14.64,14.64' fill='%238c3b22'/%3E%3Cpolygon points='100,-50 114.64,-35.36 114.64,-14.64 135.36,-14.64 150,0 135.36,14.64 114.64,14.64 114.64,35.36 100,50 85.36,35.36 85.36,14.64 64.64,14.64 50,0 64.64,-14.64 85.36,-14.64 85.36,-35.36' fill='%23c08a2e'/%3E%3Cpolygon points='85.36,-14.64 114.64,-14.64 114.64,14.64 85.36,14.64' fill='%238c3b22'/%3E%3Cpolygon points='0,50 14.64,64.64 14.64,85.36 35.36,85.36 50,100 35.36,114.64 14.64,114.64 14.64,135.36 0,150 -14.64,135.36 -14.64,114.64 -35.36,114.64 -50,100 -35.36,85.36 -14.64,85.36 -14.64,64.64' fill='%23c08a2e'/%3E%3Cpolygon points='-14.64,85.36 14.64,85.36 14.64,114.64 -14.64,114.64' fill='%238c3b22'/%3E%3Cpolygon points='100,50 114.64,64.64 114.64,85.36 135.36,85.36 150,100 135.36,114.64 114.64,114.64 114.64,135.36 100,150 85.36,135.36 85.36,114.64 64.64,114.64 50,100 64.64,85.36 85.36,85.36 85.36,64.64' fill='%23c08a2e'/%3E%3Cpolygon points='85.36,85.36 114.64,85.36 114.64,114.64 85.36,114.64' fill='%238c3b22'/%3E%3C/svg%3E");
-  --star:polygon(100% 50%,85.36% 64.64%,85.36% 85.36%,64.64% 85.36%,50% 100%,35.36% 85.36%,14.64% 85.36%,14.64% 64.64%,0% 50%,14.64% 35.36%,14.64% 14.64%,35.36% 14.64%,50% 0%,64.64% 14.64%,85.36% 14.64%,85.36% 35.36%);
-  --arch-h:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 130' preserveAspectRatio='none'%3E%3Cpath d='M8 130V68.8A46 46 0 1 1 92 68.8V130Z'/%3E%3C/svg%3E");
-  --arch-p:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 130' preserveAspectRatio='none'%3E%3Cpath d='M8 130V52C8 22 30 8 50 2C70 8 92 22 92 52V130Z'/%3E%3C/svg%3E");
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--ink);color:var(--cream);font-family:var(--body);font-size:1.125rem;line-height:1.6;font-weight:400;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:inherit}
-h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1;margin:0;text-wrap:balance}
-p{margin:0}
-:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px}
-.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--ink);padding:.6rem 1rem;font-family:var(--mono);z-index:99}
-.skip:focus{left:1rem;top:1rem}
+/* ===========================================================================
+   Kassem's Lounge — v6.
 
-/* type roles */
-.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500}
-.leaf{background:linear-gradient(100deg,#b98f3d 0%,#f4dc95 28%,#d5ae5a 44%,#8f6f2c 58%,#f0d287 78%,#c9a24a 100%);background-size:250% 100%;background-position:0 0;-webkit-background-clip:text;background-clip:text;color:transparent}
-@supports not ((-webkit-background-clip:text) or (background-clip:text)){.leaf{background:none;color:var(--gold)}}
-.lede{font-size:clamp(1.2rem,1.05rem + .7vw,1.55rem);font-weight:300;line-height:1.45;color:var(--cream)}
-.lede em,.copy em{font-style:italic;color:var(--gold-2)}
-.copy{max-width:36rem;color:var(--cream-2)}
-.copy p+p{margin-top:1.1em}
-.rule{height:1px;background:linear-gradient(90deg,var(--gold),rgba(213,174,90,0));transform-origin:left;width:min(220px,40%)}
+   A Moroccan room, not a dark restaurant template. The grammar is borrowed
+   from the real thing: ZELLIGE (the eight-point khatim and its strapwork),
+   the MOORISH HORSESHOE ARCH as a frame rather than a rounded rectangle,
+   TADELAKT — warm polished plaster — to stop the page being black on black,
+   and brass lantern light that pools rather than floods.
 
-/* buttons */
-.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:.95rem 1.5rem;border:1px solid var(--gold);border-radius:999px;color:var(--gold-2);transition:background-color .25s,color .25s,transform .25s}
-.btn:hover{background:var(--gold);color:var(--ink);transform:translateY(-1px)}
-.btn.solid{background:var(--gold);color:var(--ink)}
-.btn.solid:hover{background:var(--gold-2)}
-.btn svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+   MOTION is scroll-driven CSS, never a JavaScript observer, and it is built so
+   that it CANNOT hide anything. This project has already shipped a page that
+   sat at opacity 0 behind an observer that never fired. So: every animated
+   element is visible by default, the motion is opted into inside @supports,
+   and no keyframe animates opacity up from zero. A rise that never runs is a
+   2rem offset. A wipe that never runs is a two-thirds-visible photograph.
+   =========================================================================== */
 
-/* nav */
-.nav{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 4vw;background:rgba(10,23,29,.92);border-bottom:1px solid var(--edge)}
-.nav .mark{font-family:var(--display);font-size:1.45rem;text-decoration:none;letter-spacing:.02em;color:var(--cream)}
-.nav ul{display:none;list-style:none;margin:0;padding:0;gap:2rem}
-.nav ul a{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--cream-2);padding:.4rem 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
-.nav ul a:hover{color:var(--gold-2);border-color:var(--gold)}
-.nav .call{display:none}
-@media (min-width:700px){
-  .nav ul{display:flex}
-  .nav .call{display:inline-flex;padding:.6rem 1.1rem;font-size:.72rem}
-  @supports (backdrop-filter:blur(8px)) or (-webkit-backdrop-filter:blur(8px)){.nav{background:rgba(10,23,29,.72);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}}
+@property --sweep { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+@property --glow  { syntax: "<percentage>"; inherits: false; initial-value: 40%; }
+
+:root {
+  --ink:       #06120d;
+  --ink-2:     #0a1d15;
+  --forest:    #10322478;
+  --tadelakt:  #e8dcc6;   /* polished plaster: the warm wall, not a white card */
+  --tadelakt-2:#d8c8ab;
+  --clay:      #b4603a;
+  --cream:     #f6f1e6;
+  --cream-2:   #cdd6cc;
+  --cream-3:   #8fa295;
+  --gold:      #d9b166;
+  --gold-2:    #f2dca9;
+  --gold-deep: #8e6826;
+  --edge:      rgba(217,177,102,.24);
+  --edge-soft: rgba(246,241,230,.10);
+
+  /* The khatim — two squares at 45°, which is how a zellige star is actually set. */
+  --zellige: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%23d9b166' stroke-width='1'%3E%3Crect x='28' y='28' width='84' height='84'/%3E%3Crect x='28' y='28' width='84' height='84' transform='rotate(45 70 70)'/%3E%3Ccircle cx='70' cy='70' r='13'/%3E%3C/g%3E%3C/svg%3E");
+  /* A horseshoe arch: the curve passes its own widest point before it drops. */
+  --arch: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 130' preserveAspectRatio='none'%3E%3Cpath d='M18,130 L18,70 A40,40 0 1,1 82,70 L82,130 Z' fill='%23000'/%3E%3C/svg%3E");
+
+  --display: Fraunces, "Iowan Old Style", Georgia, serif;
+  --body: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --gut: max(20px, env(safe-area-inset-left, 0px));
+  --gut-r: max(20px, env(safe-area-inset-right, 0px));
+  --wrap: min(1180px, 100% - var(--gut) - var(--gut-r));
+  color-scheme: dark;
 }
 
-/* hero */
-.hero{position:relative;overflow:hidden;background:var(--ink) var(--hero-tile) center/120px 120px;isolation:isolate}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
-.js .hero{background-image:none}
-.hero::before{content:"";position:absolute;inset:0;z-index:1;background:
-  linear-gradient(90deg,rgba(10,23,29,.97) 0%,rgba(10,23,29,.88) 34%,rgba(10,23,29,.38) 66%,rgba(10,23,29,.55) 100%),
-  linear-gradient(180deg,rgba(10,23,29,.2) 0%,rgba(10,23,29,0) 30%,rgba(10,23,29,0) 70%,var(--ink) 100%);pointer-events:none}
-.hero-grid{position:relative;z-index:2;width:var(--w);margin:0 auto;display:grid;gap:2.5rem;padding:3.5rem 0 4rem;min-height:min(86svh,880px);align-content:center}
-.hero-copy{display:grid;gap:1.4rem;align-content:center}
-.wordmark{font-size:clamp(4.2rem,15vw,11.5rem);letter-spacing:-.01em;line-height:.9}
-.wordmark small{display:block;font-family:var(--display);font-size:.28em;letter-spacing:.42em;text-transform:uppercase;padding-left:.12em;margin-top:.3em;color:var(--gold)}
-.hero .lede{max-width:30rem}
-.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.4rem}
-.meta{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;color:var(--cream-3);display:flex;flex-wrap:wrap;gap:.4rem 1.2rem}
-.meta b{color:var(--gold-2);font-weight:500}
-.meta .star{color:var(--gold)}
-.hero-arch{margin:0;position:relative;aspect-ratio:100/130;width:min(78vw,420px);justify-self:center;-webkit-mask:var(--arch-h) center/100% 100% no-repeat;mask:var(--arch-h) center/100% 100% no-repeat;overflow:hidden;background:var(--raised)}
-.hero-arch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,23,29,0) 55%,rgba(10,23,29,.55) 100%),linear-gradient(120deg,rgba(213,174,90,.12),rgba(31,107,94,.12));pointer-events:none}
-.plx img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;filter:saturate(1.08) contrast(1.05) brightness(.96);will-change:transform}
-.hero-frame{position:relative;justify-self:center}
-.hero-frame::before{content:"";position:absolute;inset:-14px;-webkit-mask:var(--arch-h) center/100% 100% no-repeat;mask:var(--arch-h) center/100% 100% no-repeat;background:linear-gradient(160deg,rgba(213,174,90,.55),rgba(213,174,90,.05) 45%,rgba(240,210,135,.5));pointer-events:none;z-index:0}
-.hero-frame::after{content:"";position:absolute;inset:-12px;-webkit-mask:var(--arch-h) center/100% 100% no-repeat;mask:var(--arch-h) center/100% 100% no-repeat;background:var(--ink);pointer-events:none;z-index:0}
-.hero-frame .hero-arch{position:relative;z-index:1}
-@media (min-width:700px){
-  .hero-grid{grid-template-columns:7fr 5fr;gap:4rem;padding:4rem 0 5rem}
-  .hero-arch{width:min(38vw,460px)}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--ink); color: var(--cream);
+  font-family: var(--body); font-size: 1.0625rem; line-height: 1.65;
+  overflow-x: hidden;
+}
+img, video { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--gold-2); outline-offset: 3px; border-radius: 2px; }
+.wrap { width: var(--wrap); margin-inline: auto; }
+.skip { position: absolute; left: -999px; background: var(--gold); color: var(--ink); padding: .7rem 1rem; z-index: 99; }
+.skip:focus { left: 1rem; top: 1rem; }
+
+h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; margin: 0; text-wrap: balance; letter-spacing: -.015em; }
+p { text-wrap: pretty; }
+.eyebrow { font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin: 0; font-weight: 600; }
+.lead { font-size: clamp(1.05rem, .95rem + .5vw, 1.28rem); color: var(--cream-2); max-width: 38ch; }
+.muted { color: var(--cream-2); }
+.h-sec { font-size: clamp(2rem, 1.3rem + 3vw, 3.5rem); margin-top: 1.4rem; }
+
+.gilt {
+  background: linear-gradient(100deg, var(--gold-deep) 0%, var(--gold) 28%, var(--gold-2) 44%, var(--gold) 60%, var(--gold-deep) 100%);
+  background-size: 300% 100%; background-position: var(--sweep) 0;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 
-/* page-load orchestration: every start state is visible; reduced-motion removes it entirely */
-@keyframes rise{from{transform:translate3d(0,22px,0);opacity:.3}to{transform:none;opacity:1}}
-@keyframes leaf{from{background-position:130% 0}to{background-position:0 0}}
-@keyframes settle{from{transform:scale(.94);opacity:.4}to{transform:none;opacity:1}}
-.hero-copy>*{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
-.hero-copy>:nth-child(1){animation-delay:.15s}.hero-copy>:nth-child(2){animation-delay:.3s}.hero-copy>:nth-child(3){animation-delay:.5s}.hero-copy>:nth-child(4){animation-delay:.65s}.hero-copy>:nth-child(5){animation-delay:.8s}
-.wordmark .leaf{animation:leaf 3s .7s cubic-bezier(.3,.6,.2,1) both}
-.hero-frame{animation:settle 1.6s .4s cubic-bezier(.2,.7,.2,1) both}
-
-/* sections */
-section{position:relative}
-.wrap{width:var(--w);margin:0 auto}
-/* A grid child defaults to min-width:auto, so its longest unbreakable run sets
-   the column. On a phone that pushed headings and the hours table past the
-   viewport, and body{overflow-x:hidden} CLIPPED them rather than scrolling. */
-.hero-grid>*,.room-grid>*,.breakfast-grid>*,.panel-grid>*,.carte>*,.course>*,.shelf>*,.stack,.stack>*{min-width:0}
-.hoursline,.note,.meta{overflow-wrap:anywhere}
-@media (max-width:560px){.hours div{flex-wrap:wrap;gap:.1rem .8rem}.hours dd{margin-left:auto}}
-.section{padding:clamp(4.5rem,9vw,8rem) 0}
-.h2{font-size:clamp(2.4rem,1.6rem + 4vw,4.6rem);letter-spacing:-.005em;line-height:1;margin:.7rem 0 1.4rem}
-.head{display:grid;gap:.4rem}
-
-/* the room */
-.room-grid{display:grid;gap:3rem;align-items:center}
-.room-arch{margin:0;position:relative;aspect-ratio:100/130;width:min(80vw,440px);justify-self:center;-webkit-mask:var(--arch-p) center/100% 100% no-repeat;mask:var(--arch-p) center/100% 100% no-repeat;overflow:hidden;background:var(--raised)}
-.room-arch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,23,29,0) 60%,rgba(10,23,29,.5) 100%),linear-gradient(200deg,rgba(47,95,168,.18),rgba(213,174,90,.1));pointer-events:none}
-.room-frame{position:relative;justify-self:center}
-.room-frame::before{content:"";position:absolute;inset:-12px;-webkit-mask:var(--arch-p) center/100% 100% no-repeat;mask:var(--arch-p) center/100% 100% no-repeat;background:linear-gradient(20deg,rgba(213,174,90,.5),rgba(213,174,90,.06) 50%,rgba(240,210,135,.45))}
-.room-frame::after{content:"";position:absolute;inset:-10px;-webkit-mask:var(--arch-p) center/100% 100% no-repeat;mask:var(--arch-p) center/100% 100% no-repeat;background:var(--ink)}
-.room-frame .room-arch{position:relative;z-index:1}
-.gem{margin:2.2rem 0 0;padding:1.4rem 0 0;border-top:1px solid var(--edge);display:grid;grid-template-columns:auto minmax(0,1fr);gap:1.2rem;align-items:baseline}
-.gem .big{font-family:var(--display);font-size:3.2rem;line-height:1;color:var(--gold-2)}
-.gem p{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;color:var(--cream-3);line-height:1.6}
-@media (min-width:860px){.room-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:5rem}.room-frame{order:-1}}
-
-/* the zellige wall */
-.wall{position:relative;height:clamp(300px,52vw,620px);overflow:hidden;background:var(--ink) var(--wall-tile) center/96px 96px;isolation:isolate}
-.wall canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.js .wall{background-image:none}
-.wall::before,.wall::after{content:"";position:absolute;left:0;right:0;height:22%;z-index:2;pointer-events:none}
-.wall::before{top:0;background:linear-gradient(180deg,var(--ink),rgba(10,23,29,0))}
-.wall::after{bottom:0;background:linear-gradient(0deg,var(--ink),rgba(10,23,29,0))}
-.wall-cap{position:absolute;left:0;right:0;bottom:1.4rem;z-index:3;text-align:center;font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream-2);padding:0 4vw}
-.wall-cap b{color:var(--gold-2);font-weight:500}
-
-/* the kitchen */
-.kitchen{background:linear-gradient(180deg,var(--ink),var(--glaze) 30%,var(--glaze) 70%,var(--ink))}
-.carte{display:grid;gap:4.5rem;margin-top:3rem}
-.course{display:grid;gap:2rem;align-items:start}
-.course .label{display:flex;align-items:center;gap:1rem}
-.course .label::after{content:"";flex:1;height:1px;background:var(--edge)}
-.dishes{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;gap:1.1rem}
-.dishes li{display:grid;gap:.15rem;position:relative;padding-left:1.2rem}
-.dishes li::before{content:"";position:absolute;left:0;top:.95rem;width:7px;height:7px;background:var(--gold);clip-path:var(--star);transform:scale(1);transition:transform .3s}
-.dishes li:hover::before{transform:scale(1.9) rotate(22.5deg)}
-.dish{font-family:var(--display);font-size:clamp(1.7rem,1.3rem + 1.2vw,2.3rem);letter-spacing:.01em;color:var(--cream);line-height:1.1}
-.how{font-style:italic;font-weight:300;color:var(--cream-2);font-size:1.05rem}
-.shelf{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem;align-items:center}
-.tile{margin:0;position:relative;overflow:hidden;background:var(--raised);aspect-ratio:1}
-.tile img,.tile video{width:100%;height:100%;object-fit:cover;filter:saturate(1.08) contrast(1.06) brightness(.94);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
-.tile:hover img,.tile:hover video{transform:scale(1.05)}
-@media (prefers-reduced-motion:reduce){.tile video{display:none}.tile.tea{background:var(--raised) url(assets/msemen-tea.jpg) center/cover}}
-.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(213,174,90,.14),rgba(10,23,29,0) 40%,rgba(10,23,29,.35) 100%);pointer-events:none}
-.tile .sheen{position:absolute;inset:-40% -60%;background:linear-gradient(110deg,rgba(240,210,135,0) 40%,rgba(240,210,135,.28) 50%,rgba(240,210,135,0) 60%);transform:translate3d(-45%,0,0);pointer-events:none;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
-.tile:hover .sheen{transform:translate3d(45%,0,0)}
-.tile.star{clip-path:var(--star)}
-.tile.arch{aspect-ratio:100/130;border-radius:999px 999px 6px 6px}
-.tile.framed{aspect-ratio:4/3;outline:1px solid var(--edge);outline-offset:8px}
-.tile.wide{aspect-ratio:16/10}
-.tile.up{transform:translateY(-1.5rem)}
-.tile.down{transform:translateY(1.5rem)}
-.tile.small{width:78%;justify-self:end}
-@media (min-width:860px){
-  .course{grid-template-columns:5fr 7fr;gap:4rem}
-  .course:nth-child(even) .text{order:2}
-  .shelf.three{grid-template-columns:1.1fr 1fr .9fr}
+/* ── zellige ground ───────────────────────────────────────────────────── */
+.zel { position: relative; isolation: isolate; }
+.zel::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: var(--zellige); background-size: 140px 140px;
+  opacity: .085;
+  -webkit-mask-image: radial-gradient(120% 80% at 50% 0%, #000 10%, transparent 72%);
+  mask-image: radial-gradient(120% 80% at 50% 0%, #000 10%, transparent 72%);
+}
+/* Lantern light pools where the eye lands, instead of lighting the whole wall. */
+.lamp::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(60% 46% at 72% 18%, rgba(217,177,102,.16), transparent 70%);
 }
 
-/* breakfast */
-.breakfast-grid{display:grid;gap:3rem;align-items:center}
-.stack{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));align-items:end}
-.stack .tile.wide{grid-column:3/13;grid-row:1}
-.stack .tea{grid-column:1/7;grid-row:1;z-index:2;margin-bottom:-2rem;aspect-ratio:100/130;border-radius:999px 999px 6px 6px;outline:1px solid var(--edge);outline-offset:6px;background:var(--ink)}
-.steam{position:absolute;left:50%;top:18%;width:34%;aspect-ratio:1;margin-left:-17%;pointer-events:none;display:none;z-index:3}
-.steam i{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,rgba(241,230,207,.5),rgba(241,230,207,0) 62%);filter:blur(8px);opacity:0;animation:steam 5.5s linear infinite}
-.steam i:nth-child(2){animation-delay:1.8s;left:-22%}.steam i:nth-child(3){animation-delay:3.6s;left:22%}
-@keyframes steam{0%{transform:translate3d(0,15%,0) scale(.5);opacity:0}20%{opacity:.75}100%{transform:translate3d(-12%,-150%,0) scale(1.5);opacity:0}}
-.hoursline{margin-top:1.6rem;font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;color:var(--gold-2)}
-@media (min-width:860px){.breakfast-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:5rem}.motion .steam{display:block}}
+/* ── nav ──────────────────────────────────────────────────────────────── */
+.nav {
+  position: fixed; inset-inline: 0; top: 0; z-index: 50; display: flex; align-items: center; gap: 1rem;
+  padding: 1.15rem var(--gut-r) 1.15rem var(--gut); padding-top: calc(1.15rem + env(safe-area-inset-top, 0px));
+  transition: background .35s ease, padding .35s ease, border-color .35s ease;
+  border-bottom: 1px solid transparent;
+}
+.nav.solid {
+  background: rgba(6,18,13,.74);
+  -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%);
+  border-bottom-color: var(--edge); padding-block: .7rem;
+}
+.brand { font-family: var(--display); font-size: 1.05rem; text-decoration: none; line-height: 1; }
+.brand small { display: block; font-family: var(--body); font-size: .56rem; letter-spacing: .34em; color: var(--gold); text-transform: uppercase; margin-top: .25rem; }
+.nav ul { display: none; list-style: none; margin: 0 auto; padding: 0; gap: 2rem; }
+.nav a.link { text-decoration: none; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--cream-2); position: relative; padding-block: .3rem; }
+.nav a.link::after { content: ""; position: absolute; inset-inline: 0; bottom: 0; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .4s cubic-bezier(.2,.7,.2,1); }
+.nav a.link:hover::after, .nav a.link:focus-visible::after { transform: scaleX(1); }
+.call { margin-left: auto; text-decoration: none; white-space: nowrap; font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; padding: .62rem 1.05rem; border: 1px solid var(--gold); color: var(--gold-2); border-radius: 999px; transition: background .3s, color .3s; }
+.call:hover { background: var(--gold); color: var(--ink); }
+@media (min-width: 920px) { .nav ul { display: flex; } }
 
-/* visit */
-.visit{padding-bottom:clamp(4rem,8vw,7rem)}
-.panel{position:relative;border:1px solid var(--edge);background:var(--glaze) var(--hero-tile) center/140px 140px;overflow:hidden}
-.panel::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,34,41,.98),rgba(15,34,41,.9) 55%,rgba(15,34,41,.6));pointer-events:none}
-.panel>*{position:relative}
-.panel-grid{display:grid;gap:2.6rem;padding:clamp(2rem,5vw,4rem)}
-.phone{font-family:var(--display);font-size:clamp(2.4rem,1.4rem + 4.5vw,4.4rem);text-decoration:none;letter-spacing:.02em;line-height:1;display:inline-block;color:var(--cream)}
-.phone:hover{color:var(--gold-2)}
-.addr{font-style:normal;color:var(--cream-2);line-height:1.5;margin-top:1rem}
-.addr b{font-weight:500;color:var(--cream)}
-.hours{margin:1rem 0 0;padding:0;display:grid;font-family:var(--mono);font-size:.9rem;font-variant-numeric:tabular-nums}
-.hours div{display:flex;justify-content:space-between;gap:1rem;padding:.75rem 0;border-top:1px solid var(--edge)}
-.hours div:last-child{border-bottom:1px solid var(--edge)}
-.hours dt{color:var(--cream-2)}.hours dd{margin:0;color:var(--cream)}
-.hours .closed dd{color:var(--clay);letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}
-#now{font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;margin-top:1rem;display:flex;align-items:center;gap:.6rem;color:var(--cream-2)}
-#now::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--cream-3);box-shadow:0 0 0 3px rgba(143,137,119,.2)}
-#now[data-state="open"]::before{background:#6fbf8a;box-shadow:0 0 0 3px rgba(111,191,138,.25)}
-#now[data-state="closed"]::before{background:var(--clay);box-shadow:0 0 0 3px rgba(183,86,47,.25)}
-.social{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
-.note{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--cream-3);margin-top:1.4rem;line-height:1.7}
-@media (min-width:860px){.panel-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:4rem}}
+/* ── buttons ──────────────────────────────────────────────────────────── */
+.cta { display: flex; flex-wrap: wrap; gap: .8rem; }
+.btn {
+  --b: var(--gold);
+  display: inline-flex; align-items: center; gap: .55rem; text-decoration: none;
+  font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600;
+  padding: .95rem 1.5rem; border-radius: 999px; border: 1px solid var(--b);
+  position: relative; overflow: hidden; isolation: isolate; cursor: pointer;
+  font-family: var(--body); transition: color .35s, border-color .35s;
+}
+.btn::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(100deg, var(--gold-deep), var(--gold-2)); transform: translateY(101%); transition: transform .45s cubic-bezier(.2,.7,.2,1); }
+.btn.solid { color: var(--ink); }
+.btn.solid::before { transform: translateY(0); }
+.btn.solid:hover::before { transform: translateY(-101%); }
+.btn.solid:hover { color: var(--gold-2); }
+.btn.ghost { color: var(--cream); --b: var(--edge-soft); }
+.btn.ghost:hover { color: var(--ink); border-color: var(--gold); }
+.btn.ghost:hover::before { transform: translateY(0); }
+.btn svg { width: 1.05em; height: 1.05em; fill: none; stroke: currentColor; stroke-width: 1.7; }
+.btn.dark { --b: rgba(6,18,13,.35); color: var(--ink); }
+.btn.dark::before { background: linear-gradient(100deg, #1b3d2d, #0a1d15); transform: translateY(101%); }
+.btn.dark:hover { color: var(--gold-2); border-color: transparent; }
+.btn.dark:hover::before { transform: translateY(0); }
 
-/* footer + thumb bar */
-footer{border-top:1px solid var(--edge);padding:2rem 0 calc(2rem + 68px + env(safe-area-inset-bottom));font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--cream-3)}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.8rem 2rem}
-footer a{text-decoration:none;color:var(--cream-2)}footer a:hover{color:var(--gold-2)}
-.thumb{position:fixed;left:0;right:0;bottom:0;z-index:45;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1px;background:var(--edge);border-top:1px solid var(--edge);padding-bottom:env(safe-area-inset-bottom)}
-.thumb a{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem;background:var(--ink);color:var(--gold-2);text-decoration:none;font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
-.thumb a:first-child{background:var(--gold);color:var(--ink)}
-.thumb svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-@media (min-width:700px){.thumb{display:none}footer{padding-bottom:2.4rem}}
+/* ── hero ─────────────────────────────────────────────────────────────── */
+.hero { position: relative; min-height: 100svh; display: grid; align-items: end; overflow: clip; }
+.hero-media { position: absolute; inset: 0; z-index: 0; }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; transform-origin: 58% 62%; }
+.hero-media::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(6,18,13,.80) 0%, rgba(6,18,13,.26) 32%, rgba(6,18,13,.55) 68%, var(--ink) 100%),
+    linear-gradient(90deg, rgba(6,18,13,.90) 0%, rgba(6,18,13,.62) 36%, rgba(6,18,13,0) 70%);
+}
+.hero-inner { position: relative; z-index: 1; width: var(--wrap); margin-inline: auto; padding-block: 0 clamp(2.5rem, 7vh, 5rem); }
+.hero h1 { font-size: clamp(3.2rem, 1.6rem + 9.5vw, 8.5rem); line-height: .88; }
+.hero h1 span { display: block; }
+.hero .lead { margin: 1.3rem 0 1.9rem; font-size: clamp(1.05rem, .95rem + .6vw, 1.4rem); color: var(--cream); }
+.pill {
+  display: inline-flex; align-items: center; gap: .55rem; margin-bottom: 1.1rem;
+  font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--cream-2);
+  border: 1px solid var(--edge); border-radius: 999px; padding: .4rem .85rem;
+  background: rgba(6,18,13,.45);
+}
+.pill::before { content: ""; width: .45rem; height: .45rem; border-radius: 50%; background: var(--cream-3); }
+.pill[data-state="open"]::before { background: #74d49a; box-shadow: 0 0 10px #74d49a; }
+.pill[data-state="closed"]::before { background: var(--gold-deep); }
+.hero-foot {
+  position: relative; z-index: 1; width: var(--wrap); margin-inline: auto;
+  border-top: 1px solid var(--edge); padding-block: 1.1rem calc(1.4rem + env(safe-area-inset-bottom, 0px));
+  display: flex; flex-wrap: wrap; gap: .5rem 2.2rem;
+  font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--cream-3);
+}
+.hero-foot b { color: var(--gold); font-weight: 600; }
 
-/* grain: a static overlay, desktop only */
-.grain{display:none;position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.055;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E") repeat}
-@media (min-width:700px){.grain{display:block}}
+/* ── bands ────────────────────────────────────────────────────────────── */
+.band { padding-block: clamp(5rem, 11vw, 9rem); position: relative; }
+.band.deep { background: linear-gradient(180deg, var(--ink), var(--ink-2) 20%, var(--ink-2) 80%, var(--ink)); }
+.band.plaster {
+  background: var(--tadelakt); color: #22301f;
+  background-image: radial-gradient(130% 90% at 20% 0%, rgba(255,255,255,.55), transparent 60%),
+                    radial-gradient(90% 70% at 90% 100%, rgba(180,96,58,.16), transparent 62%);
+}
+.band.plaster .eyebrow { color: #8b5a2a; }
+.band.plaster .muted, .band.plaster .lead { color: #3c4a38; }
+.band.plaster .gilt { background: linear-gradient(100deg, #8b5a2a, #b4603a 40%, #8b5a2a); -webkit-background-clip: text; background-clip: text; }
+.split { display: grid; gap: clamp(2.2rem, 5vw, 4.5rem); align-items: center; }
+.split > * { min-width: 0; }
+@media (min-width: 900px) { .split { grid-template-columns: minmax(0,1fr) minmax(0,1.08fr); } .split.flip > figure { order: -1; } }
 
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .steam{display:none!important}
-  .plx img{will-change:auto}
+/* A photograph framed as an arch, with a gilt hairline standing off it. */
+.arch { position: relative; margin: 0; }
+.arch img { width: 100%; aspect-ratio: 100 / 130; object-fit: cover;
+  -webkit-mask: var(--arch) center/100% 100% no-repeat; mask: var(--arch) center/100% 100% no-repeat; }
+.arch::before {
+  content: ""; position: absolute; inset: -11px; pointer-events: none;
+  background: linear-gradient(160deg, var(--gold), rgba(217,177,102,.12) 45%, var(--gold-2));
+  -webkit-mask: var(--arch) center/100% 100% no-repeat; mask: var(--arch) center/100% 100% no-repeat;
+}
+.arch::after {
+  content: ""; position: absolute; inset: -9px; pointer-events: none; background: var(--ink);
+  -webkit-mask: var(--arch) center/100% 100% no-repeat; mask: var(--arch) center/100% 100% no-repeat;
+}
+.arch img { position: relative; z-index: 1; }
+.band.plaster .arch::after { background: var(--tadelakt); }
+
+/* A rectangular plate frame for the wide overheads, which an arch would crop. */
+.plate { position: relative; margin: 0; }
+.plate img { width: 100%; object-fit: cover; aspect-ratio: 3 / 2; }
+.plate::after { content: ""; position: absolute; inset: 10px; border: 1px solid var(--edge); pointer-events: none; }
+.band.plaster .plate::after { border-color: rgba(139,90,42,.4); }
+
+/* ── the carte ────────────────────────────────────────────────────────── */
+.carte { display: grid; gap: clamp(2.5rem, 6vw, 4.5rem); margin-top: clamp(2.5rem, 6vw, 4rem); }
+.course { display: grid; gap: 1.2rem 3rem; align-items: start; }
+@media (min-width: 820px) { .course { grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); } }
+.course > * { min-width: 0; }
+.course-label { display: flex; align-items: center; gap: 1rem; }
+.course-label::after { content: ""; flex: 1; height: 1px; background: var(--edge); }
+@media (min-width: 820px) { .course-label::after { display: none; } }
+.dishes { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.15rem; }
+.dishes li { display: grid; gap: .1rem; position: relative; padding-left: 1.35rem; }
+/* A khatim in miniature as the bullet — eight points, drawn, not a dot. */
+.dishes li::before {
+  content: ""; position: absolute; left: 0; top: .62em; width: .6rem; height: .6rem;
+  background: var(--gold); opacity: .85;
+  clip-path: polygon(50% 0, 62% 29%, 93% 18%, 82% 48%, 100% 50%, 82% 62%, 93% 82%, 62% 71%, 50% 100%, 38% 71%, 7% 82%, 18% 62%, 0 50%, 18% 38%, 7% 18%, 38% 29%);
+}
+.dish-name { font-family: var(--display); font-size: clamp(1.25rem, 1.05rem + .7vw, 1.7rem); line-height: 1.15; }
+.dish-how { color: var(--cream-3); font-style: italic; font-size: .95rem; }
+.band.plaster .dish-how { color: #6b7a66; }
+
+/* ── gallery rail ─────────────────────────────────────────────────────── */
+.rail {
+  display: grid; grid-auto-flow: column; grid-auto-columns: min(78vw, 32rem); gap: 1rem;
+  overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gut); padding: 1rem var(--gut-r) 2rem var(--gut);
+  scrollbar-width: thin; scrollbar-color: var(--gold-deep) transparent;
+}
+.rail figure { margin: 0; scroll-snap-align: center; }
+.rail img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.rail figcaption { margin-top: .8rem; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--cream-3); }
+.rail-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .6rem 1.5rem; }
+.rail-hint { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--cream-3); }
+
+/* ── reviews ──────────────────────────────────────────────────────────── */
+.score { font-family: var(--display); font-size: clamp(5rem, 3rem + 13vw, 12rem); line-height: .85; font-variant-numeric: tabular-nums; margin: 1.4rem 0 0; }
+.quotes { display: grid; gap: 1rem; margin-top: 2.5rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+.quotes blockquote { margin: 0; padding: 1.7rem; border: 1px solid var(--edge-soft); background: rgba(246,241,230,.03); min-width: 0; }
+.quotes p { margin: 0; font-family: var(--display); font-size: 1.12rem; line-height: 1.35; }
+.quotes cite { display: block; margin-top: 1rem; font-style: normal; font-size: .66rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+
+/* ── visit ────────────────────────────────────────────────────────────── */
+.panel { border: 1px solid var(--edge); background: linear-gradient(160deg, var(--forest), rgba(6,18,13,.55)); padding: clamp(1.6rem, 4vw, 3rem); }
+.panel-grid { display: grid; gap: clamp(2rem, 5vw, 3.5rem); }
+.panel-grid > * { min-width: 0; }
+@media (min-width: 860px) { .panel-grid { grid-template-columns: minmax(0,1.05fr) minmax(0,1fr); } }
+.tel { font-family: var(--display); font-size: clamp(1.9rem, 1.2rem + 3vw, 3rem); text-decoration: none; display: inline-block; line-height: 1; margin-top: .9rem; }
+address { font-style: normal; margin: 1.2rem 0 0; color: var(--cream-2); line-height: 1.8; }
+.go { margin-top: 1.6rem; }
+
+/* The phone bar: what someone already on Waterhouse Street needs, always in reach. */
+.thumb { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 1px; background: var(--edge); border-top: 1px solid var(--edge); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.thumb a { display: flex; align-items: center; justify-content: center; gap: .5rem; padding: 1.05rem .8rem; background: var(--ink-2); color: var(--gold-2); text-decoration: none; font-family: var(--body); font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.thumb a:first-child { background: var(--gold); color: var(--ink); padding-left: calc(.8rem + env(safe-area-inset-left, 0px)); }
+.thumb a:last-child { padding-right: calc(.8rem + env(safe-area-inset-right, 0px)); }
+.thumb svg { width: 1.05em; height: 1.05em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+@media (min-width: 700px) { .thumb { display: none; } }
+/* Clear the bar, or it sits on top of the last line of the footer. */
+@media (max-width: 699px) { footer.foot { padding-bottom: calc(5.2rem + env(safe-area-inset-bottom, 0px)); } }
+
+.links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.6rem; }
+.links a { text-decoration: none; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; padding: .55rem .95rem; border: 1px solid var(--edge); border-radius: 999px; color: var(--cream-2); transition: border-color .3s, color .3s; }
+.links a:hover { border-color: var(--gold); color: var(--gold-2); }
+.hours { margin: 1rem 0 0; padding: 0; display: grid; font-variant-numeric: tabular-nums; font-size: .95rem; }
+.hours div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .1rem 1rem; padding-block: .72rem; border-top: 1px solid var(--edge-soft); }
+.hours div:last-child { border-bottom: 1px solid var(--edge-soft); }
+.hours dt { color: var(--cream-3); }
+.hours dd { margin: 0 0 0 auto; color: var(--cream); }
+.hours .shut dd { color: var(--gold-deep); text-transform: uppercase; font-size: .76rem; letter-spacing: .14em; }
+.hours .today { background: rgba(217,177,102,.08); box-shadow: inset 2px 0 0 var(--gold); padding-inline: .6rem; margin-inline: -.6rem; }
+
+/* ── booking ──────────────────────────────────────────────────────────── */
+.book form { display: grid; gap: 1rem; margin-top: 2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); align-items: end; }
+.book label { display: grid; gap: .45rem; min-width: 0; }
+.book span { font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: #6b7a66; }
+.book input, .book select { font: inherit; font-size: .95rem; color: #22301f; background: rgba(255,255,255,.55); border: 1px solid rgba(139,90,42,.35); padding: .8rem .9rem; border-radius: 4px; width: 100%; min-width: 0; }
+.book button { grid-column: 1 / -1; justify-self: start; }
+@media (min-width: 740px) { .book button { grid-column: auto; justify-self: stretch; height: 3.05rem; } }
+.say { margin: 1.3rem 0 0; font-family: var(--display); font-size: 1.2rem; color: #8b5a2a; }
+
+footer.foot { border-top: 1px solid var(--edge-soft); padding-block: 2.4rem calc(2.4rem + env(safe-area-inset-bottom, 0px)); }
+footer.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem 2rem; font-size: .76rem; color: var(--cream-3); }
+footer.foot a { text-decoration: none; }
+
+/* ===========================================================================
+   MOTION — opted into, and incapable of hiding anything.
+   =========================================================================== */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-media img { animation: kenburns linear both; animation-timeline: scroll(root); animation-range: 0 100svh; }
+    @keyframes kenburns { from { scale: 1.06; translate: 0 0; } to { scale: 1.16; translate: 0 5%; } }
+
+    .hero-inner, .hero-foot { animation: heroLift linear both; animation-timeline: scroll(root); animation-range: 0 90svh; }
+    @keyframes heroLift { to { opacity: .06; translate: 0 -2.5rem; } }
+
+    /* translate only — never opacity from zero */
+    .rise { animation: rise linear both; animation-timeline: view(); animation-range: entry 8% cover 26%; }
+    @keyframes rise { from { translate: 0 2rem; } }
+
+    /* a partial wipe: at 0% the photograph is two thirds visible, not absent */
+    .arch img, .plate img { animation: unmask linear both; animation-timeline: view(); animation-range: entry 4% cover 32%; }
+    @keyframes unmask { from { clip-path: inset(0 0 34% 0); scale: 1.07; } to { clip-path: inset(0 0 0 0); scale: 1; } }
+
+    .gilt { animation: sweep linear both; animation-timeline: view(); animation-range: entry 10% exit 90%; }
+    @keyframes sweep { from { --sweep: 0%; } to { --sweep: 100%; } }
+
+    .drawn::after { content: ""; display: block; height: 1px; background: currentColor; opacity: .5; margin-top: .9rem; transform-origin: left; animation: draw linear both; animation-timeline: view(); animation-range: entry 10% cover 24%; }
+    @keyframes draw { from { scale: 0 1; } to { scale: 1 1; } }
+
+    .course { animation: rise linear both; animation-timeline: view(); animation-range: entry 2% cover 22%; }
+    .rail figure { animation: settle linear both; animation-timeline: view(inline); animation-range: entry 0% exit 100%; }
+    @keyframes settle { 0% { scale: .94; opacity: .72; } 50% { scale: 1; opacity: 1; } 100% { scale: .94; opacity: .72; } }
+
+    .score { animation: rise linear both; animation-timeline: view(); animation-range: entry 10% cover 30%; }
+
+    /* The zellige ground drifts a little as the band passes, so the pattern
+       reads as a wall behind the page rather than a texture stuck to it. */
+    .zel::before { animation: drift linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+    @keyframes drift { from { background-position: 0 -60px; } to { background-position: 0 60px; } }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .drawn::after { content: ""; display: block; height: 1px; background: currentColor; opacity: .5; margin-top: .9rem; }
+  .gilt { background-position: 42% 0; }
+}
+@supports not (animation-timeline: view()) {
+  .drawn::after { content: ""; display: block; height: 1px; background: currentColor; opacity: .5; margin-top: .9rem; }
+  .gilt { background-position: 42% 0; }
+  .hero-media img { scale: 1.06; }
 }
 </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
 
-<a class="skip" href="#kitchen">Skip to the menu</a>
-
-<header class="nav">
-  <a class="mark" href="#top">Kassem's Lounge</a>
-  <nav aria-label="Sections">
-    <ul>
-      <li><a href="#room">The room</a></li>
-      <li><a href="#kitchen">Kitchen</a></li>
-      <li><a href="#breakfast">Breakfast</a></li>
-      <li><a href="#visit">Visit</a></li>
-    </ul>
-  </nav>
-  <a class="btn call" href="tel:01442954333"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>01442 954333</a>
+<header class="nav" id="nav">
+  <a class="brand" href="#top">Kassem's<small>Lounge</small></a>
+  <ul>
+    <li><a class="link" href="menu.html">Menu</a></li>
+    <li><a class="link" href="#carte">The carte</a></li>
+    <li><a class="link" href="#catering">Catering</a></li>
+    <li><a class="link" href="#story">Story</a></li>
+    <li><a class="link" href="#visit">Visit</a></li>
+  </ul>
+  <a class="call" href="tel:+441442954333">01442 954333</a>
 </header>
 
-<main id="top">
-
-<section class="hero" aria-labelledby="name">
-  <canvas id="girih" aria-hidden="true"></canvas>
-  <div class="hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow">Moroccan · family-run · Hemel Hempstead</p>
-      <h1 id="name" class="wordmark"><span class="leaf">Kassem's</span><small>Lounge</small></h1>
-      <p class="lede">One family, one kitchen, one room, opposite the Water Gardens. Tagines cooked slow, lamb over charcoal, fresh bread — and <em>Moroccan breakfast from ten, Thursday to Sunday.</em></p>
-      <div class="cta">
-        <a class="btn solid" href="tel:01442954333"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call to book</a>
-        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=Kassem%27s+Lounge%2C+51+Waterhouse+Street%2C+Hemel+Hempstead+HP1+1EA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Take me there</a>
-      </div>
-      <p class="meta"><span><span class="star">★</span> <b>4.9</b> on Google</span><span>Bookings by phone only</span><span>Lunch Thu–Sun · dinner Tue–Sun</span></p>
+<main id="main">
+<section class="hero" id="top" aria-label="Kassem's Lounge">
+  <div class="hero-media">
+    <picture>
+      <source type="image/avif" sizes="100vw" srcset="assets/opt/hero-480.avif 480w, assets/opt/hero-960.avif 960w, assets/opt/hero-1440.avif 1440w">
+      <source type="image/webp" sizes="100vw" srcset="assets/opt/hero-480.webp 480w, assets/opt/hero-960.webp 960w, assets/opt/hero-1440.webp 1440w">
+      <img src="assets/hero.jpg" width="1522" height="1033" fetchpriority="high"
+           alt="A chicken tagine with caramelised prunes and sesame at Kassem's Lounge, zaalouk and olives behind it and a brass lantern lit on the table">
+    </picture>
+  </div>
+  <div class="hero-inner">
+    <p class="pill" id="now">Moroccan &middot; family-run &middot; Hemel Hempstead</p>
+    <h1><span>Kassem's</span><span class="gilt">Lounge</span></h1>
+    <p class="lead">Tagines left long over a low flame, lamb over charcoal, bread from the oven &mdash; and mint tea poured from a height, in one small room opposite the Water Gardens.</p>
+    <div class="cta">
+      <a class="btn solid" href="#book">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        Book a table
+      </a>
+      <a class="btn ghost" href="#carte">See the carte</a>
     </div>
-    <div class="hero-frame">
-      <figure class="hero-arch plx"><img src="assets/hero.jpg" alt="A chicken tagine with caramelised prunes and sesame at Kassem's Lounge, zaalouk and olives behind it, a brass lantern lit on the table" width="1522" height="1033" fetchpriority="high"></figure>
-    </div>
+  </div>
+  <div class="hero-foot">
+    <span><b>4.9</b> on Google</span><span>Open Tue&ndash;Sun</span><span>Bookings by phone</span><span>51 Waterhouse Street</span>
   </div>
 </section>
 
-<section id="room" class="section" aria-labelledby="room-h">
-  <div class="wrap room-grid">
-    <div>
-      <div class="head">
-        <p class="eyebrow">The room</p>
-        <h2 id="room-h" class="h2">One family. One kitchen. One room.</h2>
-        <div class="rule"></div>
-      </div>
-      <div class="copy" style="margin-top:1.6rem">
-        <p>Kassem's is run by one family, and it cooks the way a family kitchen does: slowly. The tagines take their time. The mechoui is a whole lamb shoulder, roasted until it falls. Kofta and grills come off the charcoal, and the bread is fresh.</p>
-        <p>It is one room on Waterhouse Street, opposite the Water Gardens. Reviewers keep reaching for the same words: <em>a hidden local gem.</em></p>
-      </div>
-      <div class="gem">
-        <span class="big">4.9</span>
-        <p>on Google<br>Family-run · Hemel Hempstead HP1</p>
-      </div>
-    </div>
-    <div class="room-frame">
-      <figure class="room-arch plx"><img src="assets/interior.jpg" alt="Inside Kassem's Lounge: the single dining room, tables laid, warm light" width="800" height="1040" loading="lazy"></figure>
-    </div>
-  </div>
-</section>
-
-<section class="wall" aria-label="Zellige tilework, drawn live">
-  <canvas id="zellige" aria-hidden="true"></canvas>
-  <p class="wall-cap"><b>Zellige</b> — cut by hand, set by rule. This one is drawn live from compass and straightedge.</p>
-</section>
-
-<section id="kitchen" class="section kitchen" aria-labelledby="kitchen-h">
+<!-- The carte, on plaster: a Moroccan room is not black, it is warm lime wall. -->
+<section class="band plaster zel" id="carte">
   <div class="wrap">
-    <div class="head">
-      <p class="eyebrow">From the kitchen</p>
-      <h2 id="kitchen-h" class="h2">Cooked slow, over charcoal, with fresh bread.</h2>
-      <div class="rule"></div>
-    </div>
+    <p class="eyebrow drawn rise">The carte</p>
+    <h2 class="h-sec rise">Cooked slow, over charcoal, <span class="gilt">with fresh bread.</span></h2>
 
     <div class="carte">
-
       <article class="course">
-        <div class="text">
-          <p class="eyebrow label">Tagines</p>
-          <ul class="dishes">
-            <li><span class="dish">Lamb Tagine</span><span class="how">prunes, almonds, sesame</span></li>
-            <li><span class="dish">Chicken Tagine</span><span class="how">preserved lemon, olives</span></li>
-          </ul>
-        </div>
-        <div class="shelf three">
-          <figure class="tile star down"><img src="assets/lamb-tagine.jpg" alt="Lamb tagine with prunes, almonds and sesame" loading="lazy"><span class="sheen"></span></figure>
-          <figure class="tile arch up"><img src="assets/chicken-tagine.jpg" alt="Chicken tagine with preserved lemon and green olives" loading="lazy"><span class="sheen"></span></figure>
-          <figure class="tile star small"><img src="assets/open-tagine.jpg" alt="A tagine opened at the table, steam rising" loading="lazy"><span class="sheen"></span></figure>
-        </div>
+        <p class="eyebrow course-label">Tagines</p>
+        <ul class="dishes">
+          <li><span class="dish-name">Lamb Tagine</span><span class="dish-how">prunes, almonds, sesame</span></li>
+          <li><span class="dish-name">Chicken Tagine</span><span class="dish-how">preserved lemon, olives</span></li>
+        </ul>
       </article>
 
       <article class="course">
-        <div class="text">
-          <p class="eyebrow label">From the charcoal</p>
-          <ul class="dishes">
-            <li><span class="dish">Kofta &amp; Grills</span><span class="how">over charcoal</span></li>
-            <li><span class="dish">Mechoui</span><span class="how">slow-roasted lamb shoulder</span></li>
-          </ul>
-        </div>
-        <div class="shelf">
-          <figure class="tile framed"><img src="assets/kofta-grill.jpg" alt="Kofta and grilled meats fresh off the charcoal" loading="lazy"><span class="sheen"></span></figure>
-          <figure class="tile arch down"><img src="assets/mixed-grill.jpg" alt="A mixed grill platter with bread and salad" loading="lazy"><span class="sheen"></span></figure>
-        </div>
+        <p class="eyebrow course-label">From the charcoal</p>
+        <ul class="dishes">
+          <li><span class="dish-name">Kofta &amp; Grills</span><span class="dish-how">over charcoal</span></li>
+          <li><span class="dish-name">Lamb Chops</span><span class="dish-how">over charcoal, rice or chips &amp; salad</span></li>
+        </ul>
       </article>
 
       <article class="course">
-        <div class="text">
-          <p class="eyebrow label">To begin, and to share</p>
-          <ul class="dishes">
-            <li><span class="dish">Harira</span><span class="how">the soup</span></li>
-            <li><span class="dish">Zaalouk</span><span class="how">aubergine, tomato</span></li>
-            <li><span class="dish">Briouats</span><span class="how">crisp filled pastries</span></li>
-            <li><span class="dish">Pastilla</span><span class="how">layered pastry, sweet and savoury</span></li>
-            <li><span class="dish">Couscous</span><span class="how">steamed, as it should be</span></li>
-          </ul>
-        </div>
-        <div class="shelf">
-          <figure class="tile wide" style="grid-column:1/-1"><img src="assets/mezze-spread.jpg" alt="A full table at Kassem's Lounge from above: lamb and chicken tagines, couscous, zaalouk, olives, salad and bread" loading="lazy"><span class="sheen"></span></figure>
-        </div>
+        <p class="eyebrow course-label">To begin, and to share</p>
+        <ul class="dishes">
+          <li><span class="dish-name">Harira</span><span class="dish-how">the soup</span></li>
+          <li><span class="dish-name">Zaaklock</span><span class="dish-how">smoked aubergine, garlic, tomato</span></li>
+          <li><span class="dish-name">Briwat</span><span class="dish-how">crisp filled pastries, cheese or chicken</span></li>
+          <li><span class="dish-name">Bastilla</span><span class="dish-how">layered pastry, sweet and savoury</span></li>
+          <li><span class="dish-name">Couscous</span><span class="dish-how">steamed, as it should be</span></li>
+        </ul>
       </article>
 
       <article class="course">
-        <div class="text">
-          <p class="eyebrow label">Sweet, and tea</p>
-          <ul class="dishes">
-            <li><span class="dish">Chebakia</span><span class="how">sesame, honey</span></li>
-            <li><span class="dish">Kaab el Ghazal</span><span class="how">gazelle horns, almond</span></li>
-            <li><span class="dish">Mint Tea</span><span class="how">poured from a height</span></li>
-          </ul>
-        </div>
-        <div class="shelf">
-          <figure class="tile star up"><img src="assets/almond-pastry.jpg" alt="Kaab el ghazal almond pastries" loading="lazy"><span class="sheen"></span></figure>
-          <figure class="tile arch"><img src="assets/msemen-tea.jpg" alt="Mint tea poured from a height beside msemen" loading="lazy"><span class="sheen"></span></figure>
-        </div>
+        <p class="eyebrow course-label">Sweet, and tea</p>
+        <ul class="dishes">
+          <li><span class="dish-name">Cakes &amp; Ice Cream</span><span class="dish-how">ask for today's</span></li>
+          <li><span class="dish-name">Moroccan Pancakes</span><span class="dish-how">baghrir, honey butter, amlou</span></li>
+          <li><span class="dish-name">Mint Tea</span><span class="dish-how">poured from a height</span></li>
+        </ul>
       </article>
-
     </div>
-  </div>
-</section>
 
-<section id="breakfast" class="section" aria-labelledby="bf-h">
-  <div class="wrap breakfast-grid">
-    <div>
-      <div class="head">
-        <p class="eyebrow">From ten, Thursday to Sunday</p>
-        <h2 id="bf-h" class="h2">Moroccan breakfast.</h2>
-        <div class="rule"></div>
-      </div>
-      <div class="copy" style="margin-top:1.6rem">
-        <p>Msemen, amlou, eggs, olives — and mint tea poured from a height, because that is how it is poured. The room opens at ten from Thursday to Sunday, and breakfast is the reason.</p>
-      </div>
-      <p class="hoursline">Thu–Sat 10:00–14:00 &amp; 17:00–23:00 · Sun 10:00–21:00 · Tue–Wed 17:00–22:30 · Mon closed</p>
+    <div class="cta" style="margin-top:clamp(2.2rem,5vw,3rem)">
+      <a class="btn" href="menu.html">See the full menu</a>
     </div>
-    <div class="stack">
-      <figure class="tile wide"><img src="assets/brunch-spread.jpg" alt="Moroccan breakfast spread: msemen, amlou, eggs and olives" loading="lazy"><span class="sheen"></span></figure>
-      <figure class="tile tea"><video src="assets/msemen-tea.mp4" poster="assets/msemen-tea.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Msemen and baghrir with amlou and honey, and a glass of mint tea, on the table at Kassem's Lounge"></video><span class="sheen"></span>
-        <span class="steam" aria-hidden="true"><i></i><i></i><i></i></span>
+
+    <div class="split" style="margin-top:clamp(3rem,7vw,5rem)">
+      <figure class="plate">
+        <picture>
+          <source type="image/avif" sizes="(min-width:900px) 46vw, 92vw" srcset="assets/opt/mezze-spread-480.avif 480w, assets/opt/mezze-spread-960.avif 960w, assets/opt/mezze-spread-1440.avif 1440w">
+          <source type="image/webp" sizes="(min-width:900px) 46vw, 92vw" srcset="assets/opt/mezze-spread-480.webp 480w, assets/opt/mezze-spread-960.webp 960w, assets/opt/mezze-spread-1440.webp 1440w">
+          <img src="assets/mezze-spread.jpg" width="1536" height="1024" loading="lazy"
+               alt="A full table at Kassem's Lounge from above: lamb and chicken tagines, couscous, zaalouk, olives, salad and bread">
+        </picture>
       </figure>
-    </div>
-  </div>
-</section>
-
-<section id="visit" class="section visit" aria-labelledby="visit-h">
-  <div class="wrap">
-    <div class="head">
-      <p class="eyebrow">Visit</p>
-      <h2 id="visit-h" class="h2">Opposite the Water Gardens.</h2>
-      <div class="rule"></div>
-    </div>
-    <div class="panel" style="margin-top:2.4rem">
-      <div class="panel-grid">
-        <div>
-          <p class="eyebrow">Bookings by phone</p>
-          <a class="phone" href="tel:01442954333" style="margin-top:.6rem">01442 954333</a>
-          <address class="addr"><b>Kassem's Lounge</b><br>51 Waterhouse Street<br>Hemel Hempstead HP1 1EA<br>Opposite the Water Gardens</address>
-          <div class="social">
-            <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=Kassem%27s+Lounge%2C+51+Waterhouse+Street%2C+Hemel+Hempstead+HP1+1EA" target="_blank" rel="noopener">Take me there</a>
-            <a class="btn" href="https://www.instagram.com/kassems.lounge/" target="_blank" rel="noopener">Instagram</a>
-            <a class="btn" href="https://www.facebook.com/p/Kassems-Lounge-61577196157049/" target="_blank" rel="noopener">Facebook</a>
-          </div>
-          <p class="note">There is no booking system. Call, and the family takes the booking.</p>
-        </div>
-        <div>
-          <p class="eyebrow">Hours</p>
-          <dl class="hours">
-            <div class="closed"><dt>Monday</dt><dd>Closed</dd></div>
-            <div><dt>Tuesday</dt><dd>17:00 – 22:30</dd></div>
-            <div><dt>Wednesday</dt><dd>17:00 – 22:30</dd></div>
-            <div><dt>Thursday</dt><dd>10:00 – 14:00 &amp; 17:00 – 23:00</dd></div>
-            <div><dt>Friday</dt><dd>10:00 – 14:00 &amp; 17:00 – 23:00</dd></div>
-            <div><dt>Saturday</dt><dd>10:00 – 14:00 &amp; 17:00 – 23:00</dd></div>
-            <div><dt>Sunday</dt><dd>10:00 – 21:00</dd></div>
-          </dl>
-          <p id="now" hidden></p>
-        </div>
+      <div class="rise">
+        <p class="lead">Kassem's Lounge serves Moroccan and Mediterranean dishes in a small, welcoming spot on Waterhouse Street. The food is built around slow cooking, warm spices, fresh bread and generous hospitality.</p>
+        <div class="cta" style="margin-top:1.8rem"><a class="btn dark" href="#book">Book a table</a></div>
       </div>
     </div>
   </div>
 </section>
 
+<section class="band zel lamp" aria-label="Photographs from the restaurant">
+  <div class="wrap rail-head rise">
+    <h2 style="font-size:clamp(1.6rem,1.2rem + 1.8vw,2.4rem)">From the table</h2>
+    <p class="rail-hint">Swipe &rarr;</p>
+  </div>
+  <div class="rail">
+    <figure>
+      <picture>
+        <source type="image/avif" sizes="(min-width:700px) 32rem, 78vw" srcset="assets/opt/brunch-spread-480.avif 480w, assets/opt/brunch-spread-960.avif 960w, assets/opt/brunch-spread-1440.avif 1440w">
+        <source type="image/webp" sizes="(min-width:700px) 32rem, 78vw" srcset="assets/opt/brunch-spread-480.webp 480w, assets/opt/brunch-spread-960.webp 960w, assets/opt/brunch-spread-1440.webp 1440w">
+        <img src="assets/brunch-spread.jpg" loading="lazy" alt="Moroccan breakfast from above: khlii and eggs, msemen and baghrir, bread and mint tea">
+      </picture>
+      <figcaption>Breakfast, Thursday to Sunday</figcaption>
+    </figure>
+    <figure>
+      <picture>
+        <source type="image/avif" sizes="(min-width:700px) 32rem, 78vw" srcset="assets/opt/tagine-lanterns-480.avif 480w, assets/opt/tagine-lanterns-960.avif 960w, assets/opt/tagine-lanterns-1440.avif 1440w">
+        <source type="image/webp" sizes="(min-width:700px) 32rem, 78vw" srcset="assets/opt/tagine-lanterns-480.webp 480w, assets/opt/tagine-lanterns-960.webp 960w, assets/opt/tagine-lanterns-1440.webp 1440w">
+        <img src="assets/tagine-lanterns.jpg" loading="lazy" alt="A chicken tagine with caramelised prunes and sesame beside zaalouk and olives">
+      </picture>
+      <figcaption>Tagines and mezze</figcaption>
+    </figure>
+    <figure>
+      <picture>
+        <source type="image/avif" sizes="(min-width:700px) 32rem, 78vw" srcset="assets/opt/kofta-grill-480.avif 480w">
+        <source type="image/webp" sizes="(min-width:700px) 32rem, 78vw" srcset="assets/opt/kofta-grill-480.webp 480w">
+        <img src="assets/kofta-grill.jpg" loading="lazy" alt="Kofta skewers, buttered rice, briouats and salads from above">
+      </picture>
+      <figcaption>From the charcoal</figcaption>
+    </figure>
+    <figure>
+      <picture>
+        <source type="image/avif" sizes="(min-width:700px) 32rem, 78vw" srcset="assets/opt/mixed-grill-480.avif 480w">
+        <source type="image/webp" sizes="(min-width:700px) 32rem, 78vw" srcset="assets/opt/mixed-grill-480.webp 480w">
+        <img src="assets/mixed-grill.jpg" loading="lazy" alt="A mixed grill of lamb chops and shish over rice">
+      </picture>
+      <figcaption>The mixed grill</figcaption>
+    </figure>
+    <figure>
+      <picture>
+        <source type="image/avif" sizes="(min-width:700px) 32rem, 78vw" srcset="assets/opt/almond-pastry-480.avif 480w">
+        <source type="image/webp" sizes="(min-width:700px) 32rem, 78vw" srcset="assets/opt/almond-pastry-480.webp 480w">
+        <img src="assets/almond-pastry.jpg" loading="lazy" alt="Almond pastries dusted with icing sugar">
+      </picture>
+      <figcaption>Sweet, and tea</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="band deep zel" id="catering">
+  <div class="wrap split flip">
+    <figure class="arch">
+      <picture>
+        <source type="image/avif" sizes="(min-width:900px) 46vw, 92vw" srcset="assets/opt/kofta-grill-480.avif 480w">
+        <source type="image/webp" sizes="(min-width:900px) 46vw, 92vw" srcset="assets/opt/kofta-grill-480.webp 480w">
+        <img src="assets/kofta-grill.jpg" loading="lazy" alt="A Moroccan sharing spread of grilled meats, rice, salads and mezze from Kassem's Lounge">
+      </picture>
+    </figure>
+    <div class="rise">
+      <p class="eyebrow drawn">Private catering &amp; events</p>
+      <h2 class="h-sec">Bring the taste of Morocco to your next event. &#127474;&#127462;</h2>
+      <p class="muted" style="margin-top:1.4rem">Whether you&rsquo;re planning a private celebration, wedding, birthday, family gathering, corporate event or special occasion, Kassem&rsquo;s Lounge can bring our Moroccan food and hospitality to you.</p>
+      <p class="muted">As a family-run restaurant, we love bringing people together over generous, flavourful food. Our catering menus can be tailored to your event, guest numbers, budget and dietary requirements, with options including Moroccan sharing dishes, tagines, couscous, grilled meats, salads and more.</p>
+      <p class="muted">We can offer collection, delivery or a full catering service with set-up and service, depending on your needs.</p>
+      <p style="font-family:var(--display);font-size:1.3rem;color:var(--gold-2)">Planning an event? We&rsquo;d love to cater for you.</p>
+      <div class="cta" style="margin-top:1.6rem"><a class="btn solid" href="tel:+441442954333">Enquire about catering</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="band zel lamp" id="story">
+  <div class="wrap split">
+    <div class="rise">
+      <p class="eyebrow drawn">Family tradition</p>
+      <h2 class="h-sec">Food that feels cooked for guests, <span class="gilt">not customers.</span></h2>
+      <p class="muted" style="margin-top:1.4rem">The Google reviews tell a clear story: mum cooks from the kitchen, the family welcomes people in front of house, and the room feels personal from the moment you arrive.</p>
+    </div>
+    <figure class="arch">
+      <picture>
+        <source type="image/avif" sizes="(min-width:900px) 46vw, 92vw" srcset="assets/opt/interior-480.avif 480w">
+        <source type="image/webp" sizes="(min-width:900px) 46vw, 92vw" srcset="assets/opt/interior-480.webp 480w">
+        <img src="assets/interior.jpg" loading="lazy" alt="The green and gold dining room at Kassem's Lounge, lit warm">
+      </picture>
+    </figure>
+  </div>
+</section>
+
+<section class="band deep" id="reviews">
+  <div class="wrap">
+    <p class="eyebrow drawn rise">Loved locally</p>
+    <p class="score gilt">4.9</p>
+    <h2 style="font-size:clamp(1.5rem,1.2rem + 1.4vw,2.1rem);margin-top:.4rem">stars on Google Reviews</h2>
+    <div class="quotes">
+      <blockquote class="rise"><p>Guests praise the Moroccan cooking and generous portions.</p><cite>Google review theme</cite></blockquote>
+      <blockquote class="rise"><p>Warm hospitality comes up again and again.</p><cite>Google review theme</cite></blockquote>
+      <blockquote class="rise"><p>Many visitors describe it as a hidden local gem.</p><cite>Google review theme</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="band zel" id="visit">
+  <div class="wrap">
+    <p class="eyebrow drawn rise">Visit us</p>
+    <h2 class="h-sec" style="margin-bottom:2.4rem">Opposite the Water Gardens.</h2>
+    <div class="panel panel-grid">
+      <div>
+        <p class="eyebrow">Bookings by phone</p>
+        <a class="tel gilt" href="tel:+441442954333">01442 954333</a>
+        <address><b>Kassem's Lounge</b><br>51 Waterhouse Street<br>Hemel Hempstead HP1 1EA</address>
+        <a class="btn ghost go" href="https://www.google.com/maps/dir/?api=1&amp;destination=Kassem%27s+Lounge%2C+51+Waterhouse+Street%2C+Hemel+Hempstead+HP1+1EA" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 21 3l-8 18-2-7-8-3z"/></svg>
+          Take me there
+        </a>
+        <div class="links">
+          <a href="https://www.instagram.com/kassems.lounge/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/p/Kassems-Lounge-61577196157049/" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">Opening hours</p>
+        <dl class="hours" id="hours">
+          <div class="shut" data-day="1"><dt>Monday</dt><dd>Closed</dd></div>
+          <div data-day="2"><dt>Tuesday</dt><dd>17:00 &ndash; 22:30</dd></div>
+          <div data-day="3"><dt>Wednesday</dt><dd>17:00 &ndash; 22:30</dd></div>
+          <div data-day="4"><dt>Thursday</dt><dd>10:00 &ndash; 14:00 &amp; 17:00 &ndash; 23:00</dd></div>
+          <div data-day="5"><dt>Friday</dt><dd>10:00 &ndash; 14:00 &amp; 17:00 &ndash; 23:00</dd></div>
+          <div data-day="6"><dt>Saturday</dt><dd>10:00 &ndash; 14:00 &amp; 17:00 &ndash; 23:00</dd></div>
+          <div data-day="0"><dt>Sunday</dt><dd>10:00 &ndash; 21:00</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band plaster zel book" id="book">
+  <div class="wrap">
+    <p class="eyebrow drawn rise">Book a table</p>
+    <h2 class="h-sec">Call ahead and the family <span class="gilt">will look after you.</span></h2>
+    <p class="muted" style="margin-top:1.2rem;max-width:46ch">There is no online booking system &mdash; the family takes the booking. Fill this in and it writes you the sentence to say, then places the call.</p>
+    <form id="booking-form">
+      <label><span>Name</span><input name="name" type="text" autocomplete="name" placeholder="Your name"></label>
+      <label><span>Date</span><input name="date" type="date"></label>
+      <label><span>Guests</span><select name="guests"><option>2 guests</option><option>3 guests</option><option>4 guests</option><option>5+ guests</option></select></label>
+      <button class="btn dark" type="submit">Prepare the call</button>
+    </form>
+    <p class="say" id="say" hidden></p>
+  </div>
+</section>
 </main>
 
-<footer>
+<nav class="thumb" aria-label="Call or get directions">
+  <a href="tel:+441442954333"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Kassem%27s+Lounge%2C+51+Waterhouse+Street%2C+Hemel+Hempstead+HP1+1EA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 21 3l-8 18-2-7-8-3z"/></svg>Take me there</a>
+</nav>
+
+<footer class="foot">
   <div class="wrap">
-    <span>Kassem's Lounge · 51 Waterhouse Street, Hemel Hempstead HP1 1EA</span>
-    <span><a href="tel:01442954333">01442 954333</a> · <a href="https://www.instagram.com/kassems.lounge/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/p/Kassems-Lounge-61577196157049/" target="_blank" rel="noopener">Facebook</a></span>
+    <span>Kassem's Lounge &middot; 51 Waterhouse Street, Hemel Hempstead HP1 1EA</span>
+    <span><a href="tel:+441442954333">01442 954333</a></span>
   </div>
 </footer>
 
-<div class="thumb" aria-label="Quick actions">
-  <a href="tel:01442954333"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
-  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Kassem%27s+Lounge%2C+51+Waterhouse+Street%2C+Hemel+Hempstead+HP1+1EA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Take me there</a>
-</div>
-<div class="grain" aria-hidden="true"></div>
-
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Restaurant","name":"Kassem's Lounge","servesCuisine":"Moroccan","telephone":"+441442954333","address":{"@type":"PostalAddress","streetAddress":"51 Waterhouse Street","addressLocality":"Hemel Hempstead","postalCode":"HP1 1EA","addressCountry":"GB"},"openingHours":["Tu-We 17:00-22:30","Th-Sa 10:00-14:00","Th-Sa 17:00-23:00","Su 10:00-21:00"],"sameAs":["https://www.instagram.com/kassems.lounge/","https://www.facebook.com/p/Kassems-Lounge-61577196157049/"],"acceptsReservations":"True"}
+{"@context":"https://schema.org","@type":"Restaurant","name":"Kassem's Lounge","servesCuisine":"Moroccan","telephone":"+441442954333","address":{"@type":"PostalAddress","streetAddress":"51 Waterhouse Street","addressLocality":"Hemel Hempstead","postalCode":"HP1 1EA","addressCountry":"GB"},"openingHours":["Tu-We 17:00-22:30","Th-Sa 10:00-14:00","Th-Sa 17:00-23:00","Su 10:00-21:00"],"sameAs":["https://www.instagram.com/kassems.lounge/","https://www.facebook.com/p/Kassems-Lounge-61577196157049/"],"acceptsReservations":"True","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","bestRating":"5"}}
 </script>
 
 <script>
 (function () {
   'use strict';
-  var root = document.documentElement;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var small = window.matchMedia('(max-width: 699px)').matches;
-  var animate = !reduce && !small;           // phones and reduced-motion get one static frame, no loop
-  root.classList.add('js');
-  if (animate) root.classList.add('motion');
 
-  /* —— 8-fold star-and-cross tessellation, pitch S ——
-     star: tips r=.5S at 45k°, inner r=.38268S at 22.5+45k°; the cross is the gap between four stars. */
-  var SIN = 0.38268;
-  var CR = [[0,-.5],[.1464,-.3536],[.1464,-.1464],[.3536,-.1464],[.5,0],[.3536,.1464],[.1464,.1464],[.1464,.3536],[0,.5],[-.1464,.3536],[-.1464,.1464],[-.3536,.1464],[-.5,0],[-.3536,-.1464],[-.1464,-.1464],[-.1464,-.3536]];
-  function starRel(S) { var p = []; for (var k = 0; k < 16; k++) { var a = k * Math.PI / 8, r = k % 2 ? S * SIN : S * 0.5; p.push([r * Math.cos(a), r * Math.sin(a)]); } return p; }
-  function ease(p) { return p <= 0 ? 0 : p >= 1 ? 1 : 1 - Math.pow(1 - p, 3); }
-  function inset(pts, gap) {                    // pull every vertex toward the centroid by a fixed grout width
-    var cx = 0, cy = 0, n = pts.length, i;
-    for (i = 0; i < n; i++) { cx += pts[i][0]; cy += pts[i][1]; }
-    cx /= n; cy /= n;
-    var out = [];
-    for (i = 0; i < n; i++) { var dx = cx - pts[i][0], dy = cy - pts[i][1], d = Math.hypot(dx, dy) || 1, f = Math.min(0.45, gap / d); out.push([pts[i][0] + dx * f, pts[i][1] + dy * f]); }
-    return { pts: out, cx: cx, cy: cy };
+  var nav = document.getElementById('nav');
+  var hero = document.getElementById('top');
+  if (nav && hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) { nav.classList.toggle('solid', !e[0].isIntersecting); },
+      { rootMargin: '-72px 0px 0px 0px' }).observe(hero);
   }
 
-  var COBALT = [36, 74, 140], TEAL = [31, 95, 85], CREAM = [233, 220, 192], OCHRE = [192, 138, 46], CLAY = [140, 59, 34];
-
-  function Tiles(canvas, mode) {
-    var ctx = canvas.getContext('2d');
-    if (!ctx) return;
-    var W = 0, H = 0, S = 0, cells = [], pieces = [], t0 = performance.now(), last = 0, running = false, raf = 0, inView = false, built = false;
-
-    function build() {
-      var r = canvas.getBoundingClientRect(); W = r.width; H = r.height;
-      if (!W || !H) return;
-      var dpr = Math.min(window.devicePixelRatio || 1, animate ? 1.5 : 2);
-      canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      S = mode === 'hero' ? Math.max(96, Math.min(150, W / 9)) : Math.max(72, Math.min(120, W / 12));
-      cells = []; pieces = [];
-      var nx = Math.ceil(W / S) + 1, ny = Math.ceil(H / S) + 1, fx = W * 0.62, fy = H * 0.5, maxd = Math.hypot(W, H);
-      var rel = starRel(S), crel = CR.map(function (p) { return [p[0] * S, p[1] * S]; }), gap = S * 0.022;
-      for (var j = -1; j <= ny; j++) for (var i = -1; i <= nx; i++) {
-        var x = i * S, y = j * S, cx = x + S / 2, cy = y + S / 2;
-        cells.push({ x: x, y: y, star: true, birth: 150 + Math.hypot(x - fx, y - fy) / maxd * 1700 + Math.random() * 250 });
-        cells.push({ x: cx, y: cy, star: false, birth: 150 + Math.hypot(cx - fx, cy - fy) / maxd * 1700 + Math.random() * 250 });
-        if (mode !== 'wall') continue;
-        var k, abs;
-        for (k = 0; k < 8; k++) {                                   // eight kites
-          abs = [[x, y], rel[(2 * k + 15) % 16], rel[2 * k], rel[(2 * k + 1) % 16]].map(function (p, n) { return n ? [x + p[0], y + p[1]] : p; });
-          addPiece(abs, k % 2 ? COBALT : TEAL, gap);
-        }
-        var oct = []; for (k = 0; k < 8; k++) { var a = Math.PI / 8 + k * Math.PI / 4; oct.push([x + S * 0.15 * Math.cos(a), y + S * 0.15 * Math.sin(a)]); }
-        addPiece(oct, CREAM, gap * 0.6);
-        var q = S * 0.1464;
-        addPiece([[cx - q, cy - q], [cx + q, cy - q], [cx + q, cy + q], [cx - q, cy + q]], CLAY, gap);
-        for (k = 0; k < 4; k++) {                                   // four arms of the cross
-          var b = k * 4; abs = [crel[(b + 14) % 16], crel[(b + 15) % 16], crel[b], crel[b + 1], crel[b + 2]].map(function (p) { return [cx + p[0], cy + p[1]]; });
-          addPiece(abs, OCHRE, gap);
-        }
-      }
-      built = true;
-    }
-    function addPiece(abs, col, gap) {
-      var s = inset(abs, gap);
-      pieces.push({ pts: s.pts, cx: s.cx, cy: s.cy, c: col, j: 0.93 + Math.random() * 0.14, ph: Math.random() * 6.283 });
-    }
-    function poly(pts) { ctx.beginPath(); ctx.moveTo(pts[0][0], pts[0][1]); for (var i = 1; i < pts.length; i++) ctx.lineTo(pts[i][0], pts[i][1]); ctx.closePath(); }
-
-    var rel0, crel0;
-    function drawHero(t) {
-      ctx.clearRect(0, 0, W, H);
-      if (!rel0 || rel0.S !== S) { rel0 = starRel(S); rel0.S = S; crel0 = starRel(S * 0.52); }
-      var Lx = W * (0.62 + 0.3 * Math.sin(t * 0.00016)), Ly = H * (0.5 + 0.42 * Math.cos(t * 0.00013));
-      var inv = 1 / (2 * Math.pow(0.42 * Math.max(W, H), 2)), q = S * 0.1464;
-      ctx.lineWidth = 1.1; ctx.lineJoin = 'round';
-      for (var i = 0; i < cells.length; i++) {
-        var c = cells[i], p = ease((t - c.birth) / 900);
-        if (p <= 0) continue;
-        var dx = c.x - Lx, dy = c.y - Ly, sp = Math.exp(-(dx * dx + dy * dy) * inv), a = p * (0.2 + 0.6 * sp);
-        ctx.save(); ctx.translate(c.x, c.y);
-        if (p < 1) { ctx.scale(p, p); ctx.rotate((1 - p) * 0.6); }
-        if (c.star) {
-          ctx.strokeStyle = 'rgba(213,174,90,' + a.toFixed(3) + ')';
-          poly(rel0); ctx.stroke();
-          poly(crel0); ctx.stroke();
-          ctx.strokeStyle = 'rgba(213,174,90,' + (a * 0.22).toFixed(3) + ')';
-          ctx.beginPath(); ctx.arc(0, 0, S * 0.5, 0, 6.283); ctx.stroke();
-          ctx.beginPath(); ctx.arc(0, 0, S * SIN, 0, 6.283); ctx.stroke();
-        } else {
-          ctx.strokeStyle = 'rgba(240,210,135,' + (a * 0.85).toFixed(3) + ')';
-          ctx.strokeRect(-q, -q, 2 * q, 2 * q);
-          ctx.rotate(Math.PI / 4); ctx.strokeRect(-q * 0.5, -q * 0.5, q, q);
-        }
-        ctx.restore();
-      }
-    }
-    function drawWall(t) {
-      ctx.fillStyle = '#0b1216'; ctx.fillRect(0, 0, W, H);
-      var Lx = W * (0.5 + 0.42 * Math.sin(t * 0.00019)), Ly = H * (0.5 + 0.36 * Math.sin(t * 0.00027 + 1.3));
-      var sig = 0.24 * Math.max(W, H), inv = 1 / (2 * sig * sig);
-      for (var i = 0; i < pieces.length; i++) {
-        var p = pieces[i], dx = p.cx - Lx, dy = p.cy - Ly, sp = Math.exp(-(dx * dx + dy * dy) * inv);
-        var f = 0.5 + 0.5 * Math.sin(t * 0.0011 + p.ph), k = p.j * (0.74 + 0.5 * sp * (0.55 + 0.45 * f)), w = 95 * sp * f;
-        ctx.fillStyle = 'rgb(' + Math.min(255, p.c[0] * k + w | 0) + ',' + Math.min(255, p.c[1] * k + w | 0) + ',' + Math.min(255, p.c[2] * k + w | 0) + ')';
-        poly(p.pts); ctx.fill();
-      }
-      var g = ctx.createRadialGradient(Lx, Ly, 0, Lx, Ly, sig * 1.7);
-      g.addColorStop(0, 'rgba(240,210,135,.18)'); g.addColorStop(1, 'rgba(240,210,135,0)');
-      ctx.globalCompositeOperation = 'screen'; ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-      ctx.globalCompositeOperation = 'source-over';
-    }
-    var draw = mode === 'hero' ? drawHero : drawWall;
-
-    function frame(now) {
-      raf = 0; if (!running) return;
-      if (mode === 'wall' && now - last < 30) { raf = requestAnimationFrame(frame); return; }   // 30fps is plenty for glaze
-      last = now; draw(now - t0); raf = requestAnimationFrame(frame);
-    }
-    function start() { if (running || !animate || !built) return; running = true; raf = requestAnimationFrame(frame); }
-    function stop() { running = false; if (raf) { cancelAnimationFrame(raf); raf = 0; } }
-    function still() { draw(animate && !built ? 0 : 60000); }
-
-    build();
-    if (animate) {
-      if ('IntersectionObserver' in window) {
-        new IntersectionObserver(function (e) { inView = e[0].isIntersecting; if (inView && !document.hidden) start(); else stop(); }, { rootMargin: '60px' }).observe(canvas);
-      } else { inView = true; start(); }
-      document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else if (inView) start(); });
-    } else { still(); }
-    var rt;
-    window.addEventListener('resize', function () {
-      clearTimeout(rt);
-      rt = setTimeout(function () { var was = running; stop(); build(); t0 = performance.now() - 6000; if (was) start(); else still(); }, 160);
-    });
-  }
-
-  var hero = document.getElementById('girih'), wall = document.getElementById('zellige');
-  if (hero) Tiles(hero, 'hero');
-  if (wall) Tiles(wall, 'wall');
-
-  /* parallax: transform only, rAF-throttled, desktop + motion only */
-  if (animate) {
-    var heroImg = document.querySelector('.hero-arch img'), roomFig = document.querySelector('.room-arch'), roomImg = roomFig && roomFig.querySelector('img');
-    var ticking = false;
-    function onScroll() {
-      if (ticking) return; ticking = true;
-      requestAnimationFrame(function () {
-        ticking = false;
-        var y = window.scrollY, vh = window.innerHeight;
-        if (heroImg && y < vh * 1.5) heroImg.style.transform = 'translate3d(0,' + Math.min(y * 0.09, 70).toFixed(1) + 'px,0)';
-        if (roomImg) { var r = roomFig.getBoundingClientRect(); if (r.bottom > 0 && r.top < vh) roomImg.style.transform = 'translate3d(0,' + ((r.top + r.height / 2 - vh / 2) * -0.07).toFixed(1) + 'px,0)'; }
-      });
-    }
-    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
-    /* decorative rules grow in — they are ornament, never content */
-    var rules = document.querySelectorAll('.rule');
-    rules.forEach(function (r) { r.style.transform = 'scaleX(.15)'; r.style.transition = 'transform 1.4s cubic-bezier(.2,.7,.2,1)'; });
-    if ('IntersectionObserver' in window) {
-      var ro = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.style.transform = 'scaleX(1)'; ro.unobserve(e.target); } }); }, { threshold: 0.5 });
-      rules.forEach(function (r) { ro.observe(r); });
-    } else { rules.forEach(function (r) { r.style.transform = 'scaleX(1)'; }); }
-  }
-
-  /* open now — London time, from the published hours */
+  /* Open now, London time, read off the published hours. A day is a LIST of
+     windows: Thursday to Saturday close between lunch and dinner, and a single
+     range cannot say "closed now, opens again at five". The pill starts as the
+     strapline, so with JavaScript off it still says something true. */
   try {
-    var el = document.getElementById('now');
-    var parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/London', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date());
-    var o = {}; parts.forEach(function (p) { o[p.type] = p.value; });
-    var names = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    var d = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(o.weekday), m = (+o.hour) * 60 + (+o.minute);
-    /* minutes from midnight, one entry per SERVICE — Thu-Sat close between
-       lunch and dinner, so a day is a list of windows, not one range. */
-    var H = { 0: [[600, 1260]], 2: [[1020, 1350]], 3: [[1020, 1350]],
-              4: [[600, 840], [1020, 1380]], 5: [[600, 840], [1020, 1380]], 6: [[600, 840], [1020, 1380]] };
-    var fmt = function (x) { return Math.floor(x / 60) + ':' + ('0' + x % 60).slice(-2); };
-    if (el && d >= 0) {
-      var open = null, next = null, nextDay = -1;
+    var pill = document.getElementById('now');
+    var p = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/London', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date());
+    var o = {}; p.forEach(function (x) { o[x.type] = x.value; });
+    var names = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var d = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday);
+    var m = (+o.hour) * 60 + (+o.minute);
+    var H = { 0: [[600,1260]], 2: [[1020,1350]], 3: [[1020,1350]],
+              4: [[600,840],[1020,1380]], 5: [[600,840],[1020,1380]], 6: [[600,840],[1020,1380]] };
+    var fmt = function (x) { return Math.floor(x/60) + ':' + ('0' + x%60).slice(-2); };
+    var row = document.querySelector('#hours [data-day="' + d + '"]');
+    if (row) row.classList.add('today');
+    if (pill && d >= 0) {
+      var open = null, next = null, nd = -1;
       (H[d] || []).forEach(function (w) {
         if (m >= w[0] && m < w[1]) open = w;
-        else if (next === null && m < w[0]) { next = w; nextDay = 0; }
+        else if (next === null && m < w[0]) { next = w; nd = 0; }
       });
-      if (open) { el.textContent = 'Open now · until ' + fmt(open[1]); el.dataset.state = 'open'; }
+      if (open) { pill.textContent = 'Open now · until ' + fmt(open[1]); pill.dataset.state = 'open'; }
       else {
         if (next === null) for (var k = 1; k < 8 && next === null; k++) {
-          var dd = (d + k) % 7;
-          if (H[dd]) { next = H[dd][0]; nextDay = k; }
+          var dd = (d + k) % 7; if (H[dd]) { next = H[dd][0]; nd = k; }
         }
         if (next) {
-          el.textContent = 'Closed now · opens ' + (nextDay === 0 ? 'today' : nextDay === 1 ? 'tomorrow' : names[(d + nextDay) % 7]) + ' at ' + fmt(next[0]);
-          el.dataset.state = 'closed';
+          pill.textContent = 'Closed now · opens ' + (nd === 0 ? 'today' : nd === 1 ? 'tomorrow' : names[(d+nd)%7]) + ' at ' + fmt(next[0]);
+          pill.dataset.state = 'closed';
         }
       }
-      el.hidden = false;
     }
   } catch (e) {}
+
+  /* Prepare Call — the client's own idea, kept. Without JavaScript the form
+     does nothing and every phone link on the page still works. */
+  var form = document.getElementById('booking-form');
+  var say = document.getElementById('say');
+  if (form && say) {
+    var dt = form.querySelector('input[name="date"]');
+    var pad = function (n) { return String(n).padStart(2, '0'); };
+    var now = new Date();
+    var today = now.getFullYear() + '-' + pad(now.getMonth()+1) + '-' + pad(now.getDate());
+    if (dt) { dt.value = today; dt.min = today; }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = (form.querySelector('input[name="name"]').value || '').trim();
+      var guests = form.querySelector('select[name="guests"]').value;
+      var when = '';
+      if (dt && dt.value) {
+        var q = dt.value.split('-');
+        var d2 = new Date(+q[0], +q[1]-1, +q[2]);
+        when = dt.value === today ? 'today' : 'on ' + d2.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
+      }
+      say.textContent = 'Hello, ' + (name ? 'it’s ' + name : 'I’d like to book') +
+        '. A table for ' + guests.toLowerCase() + (when ? ' ' + when : '') + ', please.';
+      say.hidden = false;
+      window.location.href = 'tel:+441442954333';
+    });
+  }
 })();
 </script>
-
 </body>
 </html>
