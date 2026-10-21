@@ -1,0 +1,13 @@
+# kassems.co.uk
+User-agent: *
+Allow: /
+
+# Build history, kept for old links. Not the live site — do not index.
+Disallow: /v1/
+Disallow: /v2/
+Disallow: /v3/
+Disallow: /v4/
+Disallow: /v5/
+Disallow: /v6/
+
+Sitemap: https://kassems.co.uk/sitemap.xml
