@@ -1,0 +1,12 @@
+# kassems.co.uk
+User-agent: *
+Allow: /
+
+Sitemap: https://kassems.co.uk/sitemap.xml
+
+# /v1/../v6/ are build history, kept because links to them were already sent.
+# They are NOT disallowed on purpose: each one carries <meta name="robots"
+# content="noindex,follow"> and a canonical to the live page, and a crawler
+# that is blocked here can never read either. A disallowed URL with inbound
+# links still gets indexed URL-only, so disallowing them would pin the
+# duplicates in the index instead of removing them.
